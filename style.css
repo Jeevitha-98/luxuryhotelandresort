@@ -1,0 +1,413 @@
+/* --- BRAND CONSTANTS & DESIGN SYSTEM --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+}
+
+/* --- STACKING PRELOADER STRUCTURE --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.stack-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.stack-element {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 14px;
+    color: var(--text-light);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: stackIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Architectural Stacking Logic */
+.stack-element:nth-child(1) { 
+    animation-delay: 0.1s; 
+    font-size: 1.1rem; 
+    font-family: var(--font-sans); 
+    color: var(--accent); 
+    letter-spacing: 5px; 
+    font-weight: 200;
+}
+
+.stack-element:nth-child(2) { 
+    animation-delay: 0.5s; 
+    text-transform: uppercase;
+}
+
+/* Ambient Geometric Structural Baseline */
+.stack-line {
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin-top: 15px;
+    animation: lineExpand 0.8s ease forwards 0.9s;
+}
+
+/* Exit Trigger Class */
+body.loaded #preloader {
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+/* --- SIMULATED DESTINATION PAGE (HOME REVEAL) --- */
+#home-stub {
+    opacity: 0;
+    transform: scale(0.95);
+    text-align: center;
+    transition: opacity 1s ease 0.5s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+
+body.loaded #home-stub {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#home-stub h1 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+#home-stub p {
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* --- HARD KEYFRAMES --- */
+@keyframes stackIn {
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes lineExpand {
+    to { 
+        width: 220px; 
+    }
+}
+
+/* --- RESPONSIVE MEDIA ADAPTABILITY --- */
+@media (max-width: 768px) {
+    .stack-element { 
+        font-size: 2.6rem; 
+        letter-spacing: 8px; 
+    }
+    .stack-element:nth-child(1) { 
+        font-size: 0.9rem; 
+        letter-spacing: 4px; 
+    }
+    @keyframes lineExpand { 
+        to { width: 160px; } 
+    }
+}
+
+@media (max-width: 480px) {
+    .stack-element { 
+        font-size: 2rem; 
+        letter-spacing: 6px; 
+    }
+}
+
+/* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold Accent */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --header-height: 90px;
+}
+
+/* --- STRUCTURE OVERRIDES FOR THE INDEPENDENT COMPONENT --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 1000;
+    font-family: var(--font-sans);
+    transition: var(--transition);
+}
+
+/* Scroll Morph Ambient Adjustment Profile */
+header.scrolled {
+    background: rgba(12, 16, 13, 0.9);
+    height: 75px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+/* Brand Identity Profile Wrapper */
+.logo-link {
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    text-decoration: none;
+}
+
+.brand-logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+header.scrolled .brand-logo {
+    height: 32px;
+}
+
+/* Navigation System Core Structural Block */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin-left: 4rem;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0 auto; /* Force structural alignment perfectly to screen center space */
+    gap: 3rem;
+}
+
+.nav-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-light);
+}
+
+/* Luxury Interactive Highlight State */
+.nav-link.active {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Corner Interface Auth Link Block */
+.auth-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn-auth {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-auth:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+/* --- RESPONSIVE STRUCTURAL OVERLAYS & CONTROLS --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-light);
+    transition: var(--transition);
+    transform-origin: left center;
+}
+
+/* --- MOBILE FLUID LAYOUT GRID BREAKPOINTS --- */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Screen Blurring Underlay Layer */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(12, 16, 13, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        transition: opacity 0.5s ease, backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease;
+        z-index: 998;
+    }
+
+    header.menu-open .nav-overlay {
+        opacity: 1;
+        pointer-events: auto;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Target Slide-Out Menu Panel */
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 320px;
+        height: 100vh;
+        background-color: rgba(28, 34, 30, 0.98);
+        border-left: 1px solid rgba(212, 175, 55, 0.15);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        margin-left: 0;
+        padding: 4rem 2rem;
+        transform: translateX(100%);
+        transition: var(--transition);
+        z-index: 999;
+    }
+
+    header.menu-open .nav-container {
+        transform: translateX(0);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+        margin: 0;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+    }
+
+    /* Morphing Transformation Sequences For Hamburger Icon lines */
+    header.menu-open .hamburger-bar:nth-child(1) {
+        transform: rotate(45deg) translate(2px, -2px);
+        background-color: var(--accent);
+    }
+
+    header.menu-open .hamburger-bar:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    header.menu-open .hamburger-bar:nth-child(3) {
+        transform: rotate(-45deg) translate(2px, 2px);
+        background-color: var(--accent);
+    }
+}
+
+/* =========================================
+   HIDE HEADER DURING PRELOADING
+========================================= */
+
+/* Hide header before preloader completes */
+body:not(.loaded) #header {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Show header after preloader completes */
+body.loaded #header {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
