@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | Entering Ecosystem...</title>
+    
+    <!-- Google Fonts Deployment -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- STACKLY Premium Preloading Canvas -->
+    <div id="preloader">
+        <div class="stack-container">
+            <div class="stack-element">THE LUXURY ECOSYSTEM</div>
+            <div class="stack-element">STACKLY</div>
+            <div class="stack-line"></div>
+        </div>
+    </div>
+
+   
+
+    <!-- External JavaScript Link -->
+  <script>
+    // Execution sequence firing exactly at 2000ms
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+        
+        // Note: For live production deployment, replace the class addition with:
+        // window.location.href = "home.html";
+    }, 2000); 
+});
+
+  </script>
+
+  <!-- Main Navigation Header Elements -->
+<header id="header">
+    <!-- Brand Logo Container with Page Refresh Trigger -->
+    <a href="#" class="logo-link" id="logoButton" aria-label="Refresh Page">
+        <img src="https://placehold.co" alt="STACKLY Logo" class="brand-logo">
+    </a>
+
+    <!-- Hamburger Icon for Responsive Breakpoints -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+    </button>
+
+    <!-- Navigation Drawer Screen-Blur Overlays -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Center-Aligned Layout Navigation Drawer -->
+    <nav class="nav-container" id="navMenu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link ">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="experiences.html" class="nav-link">Experiences</a></li>
+            <li><a href="journals.html" class="nav-link">Journals</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+        </ul>
+        
+        <!-- Corner-Aligned Auth CTA Interface Container -->
+        <div class="auth-container">
+            <a href="login.html" class="btn btn-auth">Login</a>
+        </div>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. BRAND LOGO PAGE REFRESH ENGINE ---
+    const logoButton = document.getElementById('logoButton');
+    if (logoButton) {
+        logoButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Nullifies basic hashtag jumping actions
+            window.location.reload(); // Deploys explicit frame content initialization calls
+        });
+    }
+
+    // --- 2. RESPONSIVE TOOGLE MECHANISM & BLUR TOGGLE ---
+    const headerElement = document.getElementById('header');
+    const menuToggle = document.getElementById('menuToggle');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const toggleMobileMenu = () => {
+        headerElement.classList.toggle('menu-open');
+        
+        // Locks document canvas windows to block background scrolling artifact anomalies
+        if (headerElement.classList.contains('menu-open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    };
+
+    if (menuToggle && navOverlay) {
+        menuToggle.addEventListener('click', toggleMobileMenu);
+        navOverlay.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Gracefully drops the mobile layout layer panel if navigation click coordinates activate
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (headerElement.classList.contains('menu-open')) {
+                toggleMobileMenu();
+            }
+        });
+    });
+
+    // --- 3. LIVE ACTIVE DISPLAY SELECTION STATE MANAGEMENT ---
+    navLinks.forEach(clickedLink => {
+        clickedLink.addEventListener('click', function() {
+            const activeTarget = document.querySelector('.nav-link.active');
+            if (activeTarget) {
+                activeTarget.classList.remove('active');
+            }
+            this.classList.add('active');
+        });
+    });
+
+    // --- 4. SCROLL INTERFACES DEVIATION SENSOR ---
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+            headerElement.classList.add('scrolled');
+        } else {
+            headerElement.classList.remove('scrolled');
+        }
+    });
+});
+
+</script>
+
+ <section class="contact-hero-section" id="contactHero">
+        <div class="contact-hero-wrapper">
+            
+            <!-- Left Column: Word-by-Word Title, Narrative & CTA Buttons -->
+            <div class="contact-hero-narrative">
+                <div class="contact-eyebrow">
+                    <span class="contact-eyebrow-line"></span>
+                    <span>CONCIERGE &amp; INQUIRIES</span>
+                </div>
+
+                <!-- Word-by-Word Animated Title -->
+                <h1 class="contact-hero-title" id="contactHeroTitle">
+                    <span>Begin</span> 
+                    <span>Your</span> 
+                    <span>Conversation</span> 
+                    <span>With</span> 
+                    <span>STACKLY.</span>
+                </h1>
+
+                <p class="contact-hero-description contact-rise delay-c1">
+                    Whether you are planning a solo pod residency, booking a private cliffside villa, or organizing a creator collective retreat, our dedicated concierge network is available around the clock.
+                </p>
+
+                <!-- Quick Direct Contact Channels Strip -->
+                <div class="contact-quick-channels contact-rise delay-c2">
+                    <div class="channel-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span>+91 7010792745</span>
+                    </div>
+                    <div class="channel-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>Salem, Tamil Nadu • Global Hubs</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons with 404.html Page Navigation -->
+                <div class="contact-hero-actions contact-rise delay-c3">
+                    <a href="404.html" class="btn-contact btn-contact-gold">
+                        <span>Book Private Consultation</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6"/>
+                        </svg>
+                    </a>
+                    <a href="404.html" class="btn-contact btn-contact-outline">
+                        <span>View Global Hubs</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Framed Architectural Concierge Image -->
+            <div class="contact-hero-visual contact-rise delay-c2">
+                <div class="contact-image-box">
+                    <div class="contact-gold-wireframe"></div>
+                    <img src="https://unsplash.com" alt="STACKLY Resort Reception & Concierge Lounge" class="contact-hero-img">
+                    
+                    <!-- Floating Concierge Response Badge -->
+                    <div class="contact-status-badge">
+                        <span class="status-pulse-dot"></span>
+                        <span class="status-label">24/7 CONCIERGE DESK ACTIVE</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+        /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --header-clearance: 90px;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+}
+
+/* --- CONTACT HERO SECTION CONTAINER --- */
+.contact-hero-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--primary);
+    padding: calc(var(--header-clearance) + 70px) 5% 95px 5%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.contact-hero-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* --- LEFT COLUMN: NARRATIVE & WORD-BY-WORD TITLE --- */
+.contact-hero-narrative {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.contact-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.6rem;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: contactRise 0.8s var(--ease-luxury) forwards 0.1s;
+}
+
+.contact-eyebrow-line {
+    width: 36px;
+    height: 1px;
+    background-color: var(--accent);
+}
+
+/* Word-by-Word Title Animation */
+.contact-hero-title {
+    font-family: var(--font-serif);
+    font-size: 4.7rem;
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: 0.8px;
+    color: var(--text-light);
+    margin-bottom: 1.9rem;
+}
+
+.contact-hero-title span {
+    display: inline-block;
+    margin-right: 0.24em;
+    opacity: 0;
+    transform: translateY(34px);
+    animation: contactWordRise 0.75s var(--ease-luxury) forwards;
+}
+
+.contact-hero-title span:nth-child(1) { animation-delay: 0.22s; }
+.contact-hero-title span:nth-child(2) { animation-delay: 0.36s; }
+.contact-hero-title span:nth-child(3) { animation-delay: 0.50s; }
+.contact-hero-title span:nth-child(4) { animation-delay: 0.64s; }
+.contact-hero-title span:nth-child(5) { animation-delay: 0.78s; }
+
+.contact-hero-description {
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--muted);
+    max-width: 550px;
+    margin-bottom: 2rem;
+}
+
+/* Quick Direct Channels Strip */
+.contact-quick-channels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.6rem;
+}
+
+.channel-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.6rem 1.15rem;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 3px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    letter-spacing: 0.4px;
+}
+
+.channel-pill svg {
+    width: 15px;
+    height: 15px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+/* Entrance Stagger Delays */
+.contact-rise {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: contactRise 0.9s var(--ease-luxury) forwards;
+}
+
+.delay-c1 { animation-delay: 0.92s; }
+.delay-c2 { animation-delay: 1.10s; }
+.delay-c3 { animation-delay: 1.28s; }
+
+/* Action Buttons */
+.contact-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+}
+
+.btn-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.05rem 2.25rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.4s var(--ease-luxury);
+}
+
+.btn-contact svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.btn-contact-gold {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+}
+
+.btn-contact-gold:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(212, 175, 55, 0.22);
+}
+
+.btn-contact-gold:hover svg {
+    transform: translateX(5px);
+}
+
+.btn-contact-outline {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.btn-contact-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background-color: rgba(212, 175, 55, 0.05);
+    transform: translateY(-3px);
+}
+
+/* --- RIGHT COLUMN: IMAGE SHOWCASE --- */
+.contact-hero-visual {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-image-box {
+    position: relative;
+    width: 100%;
+    max-width: 490px;
+    height: 580px;
+}
+
+.contact-gold-wireframe {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 1;
+    transition: transform 0.55s var(--ease-luxury), border-color 0.4s ease;
+}
+
+.contact-hero-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    z-index: 2;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    filter: saturate(0.9) contrast(1.04);
+    transition: transform 0.85s var(--ease-luxury), filter 0.5s ease;
+}
+
+.contact-image-box:hover .contact-hero-img {
+    transform: translate(-5px, 5px);
+    filter: saturate(1.05);
+}
+
+.contact-image-box:hover .contact-gold-wireframe {
+    transform: translate(5px, -5px);
+    border-color: var(--accent);
+}
+
+/* Floating Live Status Badge */
+.contact-status-badge {
+    position: absolute;
+    bottom: 22px;
+    left: -22px;
+    z-index: 3;
+    background-color: rgba(12, 16, 13, 0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 0.8rem 1.35rem;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10b981;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.status-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-light);
+}
+
+/* --- KEYFRAMES --- */
+@keyframes contactWordRise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes contactRise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .contact-hero-title {
+        font-size: 3.8rem;
+    }
+    .contact-image-box {
+        height: 510px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-hero-section {
+        padding-top: calc(75px + 50px);
+        padding-bottom: 75px;
+    }
+    .contact-hero-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .contact-hero-visual {
+        justify-content: center;
+    }
+    .contact-image-box {
+        max-width: 100%;
+        height: 440px;
+    }
+    .contact-gold-wireframe {
+        display: none;
+    }
+    .contact-status-badge {
+        left: 16px;
+        bottom: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-hero-title {
+        font-size: 2.6rem;
+    }
+    .contact-hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    .btn-contact {
+        width: 100%;
+    }
+    .contact-image-box {
+        height: 320px;
+    }
+}
+
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const imageBox = document.querySelector('.contact-image-box');
+    const wireframe = document.querySelector('.contact-gold-wireframe');
+
+    // Subtle cursor-tracking parallax on desktop viewports
+    if (imageBox && wireframe && window.innerWidth > 992) {
+        imageBox.addEventListener('mousemove', (e) => {
+            const rect = imageBox.getBoundingClientRect();
+            const relX = (e.clientX - rect.left) / rect.width - 0.5;
+            const relY = (e.clientY - rect.top) / rect.height - 0.5;
+
+            wireframe.style.transform = `translate(${relX * 14}px, ${relY * 14}px)`;
+        });
+
+        imageBox.addEventListener('mouseleave', () => {
+            wireframe.style.transform = 'translate(0, 0)';
+        });
+    }
+});
+
+    </script>
+
+    <!-- Contact Page: Simple & Clean Form Section -->
+<section class="contact-clean-section" id="contactSection">
+    <div class="contact-clean-wrapper">
+        
+        <!-- Left Card: Clean Inquiry Form -->
+        <div class="clean-card form-card contact-reveal" data-delay="0">
+            <span class="clean-eyebrow">DIRECT INQUIRY</span>
+            <h2 class="clean-title">Send Us A Message</h2>
+            <p class="clean-subtitle">Fill in your details below and our concierge desk will respond promptly.</p>
+
+            <form class="clean-form" id="cleanContactForm" novalidate>
+                
+                <div class="clean-row-two">
+                    <!-- Name (No Numbers Allowed) -->
+                    <div class="clean-field" id="fieldName">
+                        <label for="cleanName">Full Name</label>
+                        <input type="text" id="cleanName" placeholder="Enter your name" autocomplete="name" required>
+                        <span class="clean-error">Please fill out this field</span>
+                    </div>
+
+                    <!-- Phone (No Alphabets Allowed) -->
+                    <div class="clean-field" id="fieldPhone">
+                        <label for="cleanPhone">Phone Number</label>
+                        <input type="tel" id="cleanPhone" placeholder="Enter mobile number" maxlength="15" autocomplete="tel" required>
+                        <span class="clean-error">Please fill out this field</span>
+                    </div>
+                </div>
+
+                <div class="clean-row-two">
+                    <!-- Email -->
+                    <div class="clean-field" id="fieldEmail">
+                        <label for="cleanEmail">Email Address</label>
+                        <input type="email" id="cleanEmail" placeholder="you@example.com" autocomplete="email" required>
+                        <span class="clean-error">Please fill out this field</span>
+                    </div>
+
+                    <!-- Guests (No Alphabets Allowed) -->
+                    <div class="clean-field" id="fieldGuests">
+                        <label for="cleanGuests">Number of Guests</label>
+                        <input type="text" id="cleanGuests" placeholder="e.g. 2" maxlength="3" required>
+                        <span class="clean-error">Please fill out this field</span>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="clean-field" id="fieldMessage">
+                    <label for="cleanMessage">Message</label>
+                    <textarea id="cleanMessage" rows="4" placeholder="Tell us about your preferred dates or stay requirements..." required></textarea>
+                    <span class="clean-error">Please fill out this field</span>
+                </div>
+
+                <button type="submit" class="btn-clean-submit">
+                    <span>Send Message</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                </button>
+
+            </form>
+        </div>
+
+        <!-- Right Card: Clean Concierge Details -->
+        <div class="clean-card info-card contact-reveal" data-delay="150">
+            <span class="clean-eyebrow">CONCIERGE DESK</span>
+            <h2 class="clean-title">Get In Touch</h2>
+            <p class="clean-subtitle">Reach out directly via phone, email, or visit our flagship hub.</p>
+
+            <div class="clean-info-list">
+                
+                <!-- Location -->
+                <div class="clean-info-item">
+                    <div class="clean-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Resort Hub</h3>
+                        <p>MMR Complex, Periyakollapatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="clean-info-item">
+                    <div class="clean-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.79 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 7010792745</p>
+                    </div>
+                </div>
+
+                <!-- Email (Opens Outlook / Default Mail Client with "To" pre-filled) -->
+                <a href="mailto:concierge@stacklyspaces.com" class="clean-info-item clean-mail-link">
+                    <div class="clean-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p class="gold-mail">concierge@stacklyspaces.com</p>
+                    </div>
+                </a>
+
+                <!-- Hours -->
+                <div class="clean-info-item">
+                    <div class="clean-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>Concierge Hours</h3>
+                        <p>Mon – Sun: 9:00 AM – 9:00 PM IST</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --input-bg: #161d19;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --error: #f87171;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-clean-section {
+    background-color: var(--primary);
+    padding: 110px 5%;
+    width: 100%;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.contact-clean-wrapper {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Cards & Scroll Reveal */
+.clean-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 8px;
+    padding: 2.6rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease), border-color 0.3s ease;
+}
+
+.clean-card.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.clean-card:hover {
+    border-color: rgba(212, 175, 55, 0.35);
+}
+
+.clean-eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+}
+
+.clean-title {
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.clean-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-bottom: 2rem;
+}
+
+/* Form Layout */
+.clean-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.clean-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+}
+
+.clean-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.clean-field label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.clean-field input,
+.clean-field textarea {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    border-radius: 5px;
+    padding: 0.85rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    color: var(--text-light);
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.clean-field input::placeholder,
+.clean-field textarea::placeholder {
+    color: rgba(138, 146, 142, 0.55);
+}
+
+.clean-field input:focus,
+.clean-field textarea:focus {
+    border-color: var(--accent);
+    background-color: #1a221d;
+}
+
+.clean-field textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Validation Prompt */
+.clean-error {
+    display: none;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    color: var(--error);
+    margin-top: 0.35rem;
+}
+
+.clean-field.is-invalid input,
+.clean-field.is-invalid textarea {
+    border-color: var(--error);
+}
+
+.clean-field.is-invalid .clean-error {
+    display: block;
+}
+
+/* Submit Button */
+.btn-clean-submit {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0.4rem;
+    padding: 0.95rem 2.2rem;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.35s var(--ease);
+}
+
+.btn-clean-submit svg {
+    width: 15px;
+    height: 15px;
+    transition: transform 0.3s ease;
+}
+
+.btn-clean-submit:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+.btn-clean-submit:hover svg {
+    transform: translateX(4px);
+}
+
+/* Right Info Stack */
+.clean-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.clean-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1.3rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    text-decoration: none;
+}
+
+.clean-info-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.clean-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.clean-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.clean-info-item h3 {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+}
+
+.clean-info-item p {
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.clean-mail-link .gold-mail {
+    color: var(--accent);
+    transition: opacity 0.25s ease;
+}
+
+.clean-mail-link:hover .gold-mail {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+    .contact-clean-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-clean-section {
+        padding: 80px 5%;
+    }
+    .clean-card {
+        padding: 1.8rem 1.4rem;
+    }
+    .clean-row-two {
+        grid-template-columns: 1fr;
+    }
+    .btn-clean-submit {
+        width: 100%;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. Scroll Reveal for Cards
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.getAttribute('data-delay') || '0', 10);
+                setTimeout(() => entry.target.classList.add('reveal-active'), delay);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.contact-reveal').forEach(el => observer.observe(el));
+
+    // 2. Input Filtering (No numbers in Name; No letters in Phone/Guests)
+    const form = document.getElementById('cleanContactForm');
+    const nameInput = document.getElementById('cleanName');
+    const phoneInput = document.getElementById('cleanPhone');
+    const emailInput = document.getElementById('cleanEmail');
+    const guestsInput = document.getElementById('cleanGuests');
+    const msgInput = document.getElementById('cleanMessage');
+
+    const fields = {
+        name: document.getElementById('fieldName'),
+        phone: document.getElementById('fieldPhone'),
+        email: document.getElementById('fieldEmail'),
+        guests: document.getElementById('fieldGuests'),
+        message: document.getElementById('fieldMessage')
+    };
+
+    nameInput.addEventListener('input', () => {
+        nameInput.value = nameInput.value.replace(/[0-9]/g, '');
+        if (nameInput.value.trim()) fields.name.classList.remove('is-invalid');
+    });
+
+    phoneInput.addEventListener('input', () => {
+        phoneInput.value = phoneInput.value.replace(/[^0-9+\-\s()]/g, '');
+        if (phoneInput.value.trim()) fields.phone.classList.remove('is-invalid');
+    });
+
+    guestsInput.addEventListener('input', () => {
+        guestsInput.value = guestsInput.value.replace(/[^0-9]/g, '');
+        if (guestsInput.value.trim()) fields.guests.classList.remove('is-invalid');
+    });
+
+    emailInput.addEventListener('input', () => {
+        if (emailInput.value.trim()) fields.email.classList.remove('is-invalid');
+    });
+
+    msgInput.addEventListener('input', () => {
+        if (msgInput.value.trim()) fields.message.classList.remove('is-invalid');
+    });
+
+    // 3. Form Submit Check -> Prompt if empty, Navigate to 404.html if filled
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let valid = true;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!nameInput.value.trim()) {
+            fields.name.classList.add('is-invalid');
+            valid = false;
+        }
+        if (phoneInput.value.replace(/\D/g, '').length < 7) {
+            fields.phone.classList.add('is-invalid');
+            valid = false;
+        }
+        if (!emailRegex.test(emailInput.value.trim())) {
+            fields.email.classList.add('is-invalid');
+            valid = false;
+        }
+        if (!guestsInput.value.trim()) {
+            fields.guests.classList.add('is-invalid');
+            valid = false;
+        }
+        if (!msgInput.value.trim()) {
+            fields.message.classList.add('is-invalid');
+            valid = false;
+        }
+
+        if (valid) {
+            window.location.href = '404.html';
+        }
+    });
+});
+
+</script>
+
+<!-- Contact Page: Interactive Sanctuary Map Section -->
+<section class="contact-map-section" id="contactMap">
+    <div class="map-max-wrapper">
+        
+        <!-- Centered Header with Word-by-Word Scroll Title -->
+        <div class="map-header">
+            <div class="map-eyebrow">
+                <span class="map-dash"></span>
+                <span>COORDINATES &amp; ACCESS</span>
+                <span class="map-dash"></span>
+            </div>
+
+            <h2 class="map-title" id="mapScrollTitle">
+                <span>Locate</span> 
+                <span>Our</span> 
+                <span>Flagship</span> 
+                <span>Sanctuary.</span>
+            </h2>
+
+            <p class="map-subtitle map-fade">
+                MMR Complex, Periyakollapatty, Chinna Thirupathi, Salem, Tamil Nadu 636008 • 11.6815° N, 78.1587° E
+            </p>
+        </div>
+
+        <!-- Architectural Map Showcase Frame -->
+        <div class="map-canvas-frame map-fade">
+            
+            <!-- Precision Corner Crosshairs -->
+            <span class="map-corner tl"></span>
+            <span class="map-corner tr"></span>
+            <span class="map-corner bl"></span>
+            <span class="map-corner br"></span>
+
+            <!-- Map Image Tag -->
+            <img src="https://unsplash.com" alt="STACKLY Flagship Sanctuary Location Map - Salem, Tamil Nadu" class="map-visual-img">
+            
+            <!-- Dark Luxury Tint Overlay -->
+            <div class="map-tint-overlay"></div>
+
+            <!-- Pulsing Pin Beacon & Floating Action Dock -->
+            <div class="map-center-pin">
+                <div class="pin-pulse-ring"></div>
+                <div class="pin-core-dot"></div>
+            </div>
+
+            <!-- Bottom Floating Location Card with Google Maps Button -->
+            <div class="map-dock-bar">
+                <div class="map-dock-info">
+                    <span class="dock-label">FLAGSHIP RESORT HUB</span>
+                    <h3>STACKLY Salem Sanctuary</h3>
+                    <p>MMR Complex, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+                </div>
+
+                <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn-open-map">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <span>Open Location</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- SECTION CONTAINER --- */
+.contact-map-section {
+    background-color: var(--primary);
+    padding: 110px 5% 130px 5%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.map-max-wrapper {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+/* --- CENTERED HEADER & WORD-BY-WORD TITLE --- */
+.map-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.map-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.map-dash {
+    width: 28px;
+    height: 1px;
+    background-color: var(--accent);
+}
+
+.map-title {
+    font-family: var(--font-serif);
+    font-size: 3.6rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.map-title span {
+    display: inline-block;
+    margin: 0 0.16em;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s var(--ease-luxury), transform 0.75s var(--ease-luxury);
+}
+
+.map-title.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-title.reveal-active span:nth-child(1) { transition-delay: 0.05s; }
+.map-title.reveal-active span:nth-child(2) { transition-delay: 0.18s; }
+.map-title.reveal-active span:nth-child(3) { transition-delay: 0.30s; }
+.map-title.reveal-active span:nth-child(4) { transition-delay: 0.42s; }
+
+.map-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.map-fade {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.85s var(--ease-luxury) 0.4s, transform 0.85s var(--ease-luxury) 0.4s;
+}
+
+.map-fade.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ARCHITECTURAL MAP SHOWCASE FRAME --- */
+.map-canvas-frame {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65);
+    transition: border-color 0.4s ease;
+}
+
+.map-canvas-frame:hover {
+    border-color: rgba(212, 175, 55, 0.55);
+}
+
+/* Architectural Corner Crosshairs */
+.map-corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: var(--accent);
+    border-style: solid;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0.75;
+}
+
+.map-corner.tl { top: 14px; left: 14px; border-width: 2px 0 0 2px; }
+.map-corner.tr { top: 14px; right: 14px; border-width: 2px 2px 0 0; }
+.map-corner.bl { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; }
+.map-corner.br { bottom: 14px; right: 14px; border-width: 0 2px 2px 0; }
+
+/* Map Image */
+.map-visual-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(85%) invert(90%) contrast(1.12) brightness(0.75);
+    transition: transform 1s var(--ease-luxury), filter 0.6s ease;
+}
+
+.map-canvas-frame:hover .map-visual-img {
+    transform: scale(1.03);
+    filter: grayscale(70%) invert(88%) contrast(1.15) brightness(0.82);
+}
+
+.map-tint-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(12, 16, 13, 0.15) 0%, rgba(12, 16, 13, 0.85) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Center Radar Beacon */
+.map-center-pin {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.pin-core-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 18px var(--accent);
+}
+
+.pin-pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 1.5px solid var(--accent);
+    transform: translate(-50%, -50%);
+    animation: radarPulse 2.4s ease-out infinite;
+}
+
+@keyframes radarPulse {
+    0% {
+        width: 16px;
+        height: 16px;
+        opacity: 0.9;
+    }
+    100% {
+        width: 76px;
+        height: 76px;
+        opacity: 0;
+    }
+}
+
+/* Bottom Floating Action Bar */
+.map-dock-bar {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    z-index: 4;
+    background-color: rgba(12, 16, 13, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 8px;
+    padding: 1.4rem 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.dock-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+}
+
+.map-dock-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-bottom: 0.2rem;
+}
+
+.map-dock-info p {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* Open Location Button */
+.btn-open-map {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.95rem 2rem;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.35s var(--ease-luxury);
+}
+
+.btn-open-map svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.btn-open-map:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(212, 175, 55, 0.24);
+}
+
+.btn-open-map:hover svg {
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 768px) {
+    .contact-map-section {
+        padding: 80px 5% 100px 5%;
+    }
+    .map-title {
+        font-size: 2.7rem;
+    }
+    .map-canvas-frame {
+        height: 440px;
+    }
+    .map-center-pin {
+        top: 32%;
+    }
+    .map-dock-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        padding: 1.2rem 1.3rem;
+    }
+    .btn-open-map {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-title {
+        font-size: 2.2rem;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const mapObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.14
+    });
+
+    const titleEl = document.getElementById('mapScrollTitle');
+    const fadeEls = document.querySelectorAll('.map-fade');
+
+    if (titleEl) mapObserver.observe(titleEl);
+    fadeEls.forEach(el => mapObserver.observe(el));
+});
+
+</script>
+
+<!-- Immersive Verified Subscription CTA Banner Section -->
+<section class="ledger-subscribe-banner">
+    
+    <!-- Cinematic Panoramic Background Canvas Layer -->
+    <div class="ledger-parallax-bg">
+        <img src="https://unsplash.com" alt="STACKLY Panoramic Horizon Backdrop" class="ledger-bg-img">
+        <div class="ledger-dark-overlay"></div>
+    </div>
+
+    <!-- Core Form Layout Container -->
+    <div class="ledger-content-container">
+        <div class="ledger-header scroll-fade-in-id">
+            <p class="ledger-tag">The STACKLY Journal</p>
+            <h2 class="ledger-title">Subscribe to the Collective Manifest</h2>
+            <p class="ledger-subtitle">Join our network of global computational creators and claim early sequence drop access keys.</p>
+        </div>
+
+        <!-- Interactive Validation Form Core -->
+        <form class="ledger-form-wrapper scroll-fade-in-id" id="ledgerSubscribeForm" novalidate>
+            <div class="ledger-input-group" id="inputGroupContainer">
+                <div class="input-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                </div>
+                <input type="email" id="subscriberEmailField" placeholder="Enter your digital address vectors..." autocomplete="off" required>
+                
+                <!-- Dynamic Localized Client Error Prompt Label Container -->
+                <span class="ledger-error-prompt" id="clientErrorPrompt">Please fill out this field with a valid address.</span>
+            </div>
+
+            <button type="submit" class="btn btn-ledger-cta" id="submitLedgerBtn">
+                <span>Join Manifest</span> <i class="ri-arrow-right-line"></i>
+            </button>
+        </form>
+    </div>
+
+</section>
+
+<style>
+    /* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-ledger: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-snappy: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- BANNER CANVAS STRUCTURE --- */
+.ledger-subscribe-banner {
+    position: relative;
+    width: 100%;
+    padding: 100px 5%;
+    overflow: hidden;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(214, 175, 55, 0.05);
+}
+
+/* --- CINEMATIC PARALLAX BACKDROP LAYER --- */
+.ledger-parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ledger-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.5) contrast(1.1) brightness(0.35);
+    transform: scale(1.04);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ledger-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(12, 16, 13, 0.95) 0%, rgba(12, 16, 13, 0.6) 50%, rgba(12, 16, 13, 0.95) 100%);
+}
+
+.ledger-subscribe-banner:hover .ledger-bg-img {
+    transform: scale(1.01);
+}
+
+/* --- CONTENT ROW MATRIX DRAWERS --- */
+.ledger-content-container {
+    position: relative;
+    z-index: 5;
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.ledger-tag {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+.ledger-title {
+    font-family: var(--font-serif);
+    font-size: 3.8rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.2rem;
+}
+
+.ledger-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* --- INTERACTIVE VALIDATION FORM COMPONENT --- */
+.ledger-form-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.ledger-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(17, 22, 18, 0.6);
+    border: 1px solid rgba(214, 175, 55, 0.15);
+    border-radius: 4px;
+    padding: 0 1.5rem;
+    flex-grow: 1;
+    height: 60px;
+    transition: var(--transition-snappy);
+}
+
+.ledger-input-group:focus-within {
+    border-color: var(--accent);
+    background: rgba(17, 22, 18, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.input-icon-box {
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.2rem;
+    opacity: 0.8;
+}
+
+.input-icon-box svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ledger-input-group input {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-light);
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+
+.ledger-input-group input::placeholder {
+    color: rgba(138, 146, 142, 0.6);
+}
+
+/* Localized Premium Error Notification Tag */
+.ledger-error-prompt {
+    position: absolute;
+    bottom: -28px;
+    left: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--accent); /* Custom Golden error accent */
+    letter-spacing: 0.5px;
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+    transition: var(--transition-snappy);
+}
+
+/* Active UI Mutation Class Overrides for Field Validation Errors */
+.ledger-input-group.field-invalid {
+    border-color: #ef4444; /* Dynamic warning red indicator line */
+    animation: structuralShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.ledger-input-group.field-invalid .ledger-error-prompt {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Premium Verification Action Button */
+.btn-ledger-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 60px;
+    padding: 0 2.5rem;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    color: var(--primary);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-snappy);
+}
+
+.btn-ledger-cta i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-ledger-cta:hover {
+    background: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--primary);
+}
+
+.btn-ledger-cta:hover i {
+    transform: translateX(5px);
+}
+
+/* --- HARD-CODED SHAKE KEYFRAMES PHYSICS --- */
+@keyframes structuralShake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Intersection Scroll Placeholders */
+.scroll-fade-in-id {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: var(--transition-ledger);
+}
+.scroll-fade-in-id.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVE ADAPTABILITY MATRIX GRIDS --- */
+@media (max-width: 992px) {
+    .ledger-subscribe-banner { padding: 120px 5%; }
+    .ledger-title { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .ledger-form-wrapper { flex-direction: column; width: 100%; gap: 2.2rem; }
+    .ledger-input-group { width: 100%; }
+    .btn-ledger-cta { width: 100%; }
+    .ledger-error-prompt { bottom: -24px; }
+}
+
+@media (max-width: 480px) {
+    .ledger-subscribe-banner { padding: 90px 5%; }
+    .ledger-title { font-size: 2.3rem; }
+    .ledger-subtitle { font-size: 0.85rem; }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. HIGH-PERFORMANCE INTERSECTION OBSERVER FOR TRANSITION LOOPS ---
+    const ledgerOptions = {
+        root: null,
+        threshold: 0.15,
+        rootMargin: "0px"
+    };
+
+    const ledgerScrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, ledgerOptions);
+
+    const scrollTargets = document.querySelectorAll('.scroll-fade-in-id');
+    scrollTargets.forEach(target => ledgerScrollObserver.observe(target));
+
+    // --- 2. ACTIVE VERIFICATION & REDIRECTION ROUTING ENGINE ---
+    const subscribeForm = document.getElementById('ledgerSubscribeForm');
+    const emailField = document.getElementById('subscriberEmailField');
+    const inputGroup = document.getElementById('inputGroupContainer');
+
+    if (subscribeForm && emailField && inputGroup) {
+        
+        subscribeForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Intercept default unverified forms dispatch actions
+
+            const stringValue = emailField.value.trim();
+            // Basic structural matrix regex validation check for email vectors
+            const emailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (stringValue === "" || !emailRegexPattern.test(stringValue)) {
+                // Clear any existing active class cycles to allow animation refresh triggers
+                inputGroup.classList.remove('field-invalid');
+                void inputGroup.offsetWidth; // Force a hardware reflow layout cycle reload execution
+                
+                // Inject structural error status classes instantly
+                inputGroup.classList.add('field-invalid');
+            } else {
+                // Scrub validation error status classes cleanly on success parameters verification
+                inputGroup.classList.remove('field-invalid');
+                
+                // Perform clean production framework client navigation redirection
+                window.location.href = "404.html";
+            }
+        });
+
+        // Scrub layout warning states immediately when client edits tracking parameters
+        emailField.addEventListener('input', () => {
+            if (inputGroup.classList.contains('field-invalid')) {
+                inputGroup.classList.remove('field-invalid');
+            }
+        });
+    }
+});
+
+</script>
+
+<!-- Immersive Brand Infrastructure Footer Component -->
+<footer class="ecosystem-footer">
+    <div class="footer-max-wrapper">
+        
+        
+        <div class="footer-column brand-summary-box">
+            <!-- Brand Logo Image Tag serving as Smooth Back-To-Top Trigger -->
+           <a href="#" class="footer-logo-trigger" id="backToTopLogo" aria-label="Scroll Back to Top">
+    <img src="./assests/stackly-logo.png" alt="STACKLY Logo" class="footer-brand-logo">
+</a>
+            <p class="footer-bio-text">
+                A premium structural sanctuary and cooperative digital nomad network engineered explicitly to foster high-impact creation and deep natural alignment.
+            </p>
+            <div class="footer-social-row">
+                <!-- Inline SVG Vector Social Anchors Routing safely to 404.html -->
+                <a href="404.html" class="social-vector-link" aria-label="Instagram Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="Facebook Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="X Studio Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z M4 20l6.768 -6.768M20 4l-6.768 6.768"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="LinkedIn Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="YouTube Cinema Channel">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="15" x="2" y="4" rx="2.18" ry="2.18"/><path d="m10 15 5-3-5-3z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Column 2: Discover Spaces Tree -->
+        <div class="footer-column">
+            <h3 class="footer-tree-title">Curated Spaces</h3>
+            <ul class="footer-links-tree">
+                <li><a href="404.html">Oasis Pod Clusters</a></li>
+                <li><a href="404.html">Panoramic Oasis Suites</a></li>
+                <li><a href="404.html">Nirvana Private Villas</a></li>
+                <li><a href="404.html">Zen Female Custom Pavilions</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Corporate Blueprint Ecosystem Links -->
+        <div class="footer-column">
+            <h3 class="footer-tree-title">Ecosystem Support</h3>
+            <ul class="footer-links-tree">
+                <li><a href="404.html">Ecosystem Ledger</a></li>
+                <li><a href="404.html">Redirection Nodes</a></li>
+                <li><a href="404.html">Nomad Concierge Desk</a></li>
+                <li><a href="404.html">Bespoke Enterprise Accreditations</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Geographic Address Vector & Channels Map -->
+        <div class="footer-column contact-info-box">
+            <h3 class="footer-tree-title">Resort Hub</h3>
+            <div class="contact-channel-row">
+                <div class="contact-vector-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <p>MMR Complex, Periyakollapatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+            </div>
+            <div class="contact-channel-row">
+                <div class="contact-vector-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.79 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <p>+91 7010792745</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Structural Sub-Baseline Copyright Row -->
+    <div class="footer-sub-baseline">
+        <div class="baseline-max-wrapper">
+            <p class="copyright-label">&copy; 2026 STACKLY Spaces Inc. All architectural rights reserved.</p>
+            <div class="baseline-privacy-tree">
+                <a href="404.html">Privacy Matrix</a>
+                <a href="404.html">Terms of Sequence</a>
+                <a href="404.html">Data Management</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+
+    .footer-logo-trigger {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer-brand-logo {
+    display: block;
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+}
+    /* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-footer: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- FOOTER CANVAS ARCHITECTURE --- */
+.ecosystem-footer {
+    background-color: #080c09;
+    padding: 100px 5% 0 5%;
+    border-top: 1px solid rgba(214, 175, 55, 0.1);
+    font-family: var(--font-sans);
+    position: relative;
+    width: 100%;
+}
+
+.footer-max-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr 1fr 1.1fr; 
+    gap: 4.5rem;
+    padding-bottom: 80px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* --- IDENTITY DETAILS & LOGO TRIGGER --- */
+.footer-logo-trigger {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1.8rem;
+    transition: var(--transition-footer);
+}
+
+.footer-logo-trigger:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.footer-brand-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-bio-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    max-width: 325px;
+}
+
+.footer-social-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-vector-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(214, 175, 55, 0.04);
+    border: 1px solid rgba(214, 175, 55, 0.15);
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition-footer);
+}
+
+.social-vector-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.social-vector-link:hover {
+    color: var(--primary);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(214, 175, 55, 0.15);
+}
+
+/* --- COLUMNS 2 & 3: LINKS TREES --- */
+.footer-tree-title {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-tree-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.footer-links-tree {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-links-tree a {
+    font-size: 0.95rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: var(--transition-footer);
+    display: inline-block;
+}
+
+.footer-links-tree a:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+/* --- COLUMN 4: CHANNELS & LABELS --- */
+.contact-info-box {
+    gap: 1.6rem;
+}
+
+.contact-channel-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+
+.contact-vector-icon {
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.contact-vector-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-channel-row p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+/* --- BOTTOM SUB-BASELINE --- */
+.footer-sub-baseline {
+    width: 100%;
+    border-top: 1px solid rgba(214, 175, 55, 0.08);
+    padding: 35px 0;
+}
+
+.baseline-max-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.copyright-label {
+    font-size: 0.85rem;
+    color: rgba(138, 146, 142, 0.7);
+}
+
+.baseline-privacy-tree {
+    display: flex;
+    gap: 2rem;
+}
+
+.baseline-privacy-tree a {
+    font-size: 0.85rem;
+    color: rgba(138, 146, 142, 0.7);
+    text-decoration: none;
+    transition: var(--transition-footer);
+}
+
+.baseline-privacy-tree a:hover {
+    color: var(--accent);
+}
+
+/* --- RESPONSIVE GRIDS BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .footer-max-wrapper { grid-template-columns: repeat(2, 1fr); gap: 4rem; }
+}
+
+@media (max-width: 768px) {
+    .ecosystem-footer { padding-top: 60px; }
+    .footer-max-wrapper { grid-template-columns: 1fr; gap: 3.5rem; padding-bottom: 60px; }
+    .footer-tree-title { margin-bottom: 1.5rem; }
+    .baseline-max-wrapper { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .baseline-privacy-tree { justify-content: center; gap: 1.5rem; }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- AUTOMATED BACK-TO-TOP SCROLL ANIMATION FUNCTION ---
+    const backToTopLogo = document.getElementById('backToTopLogo');
+    
+    if (backToTopLogo) {
+        backToTopLogo.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            
+            // Execute smooth hardware scroll back to top apex coordinates
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// Footer Logo - Smooth Scroll to Top
+document.getElementById("backToTopLogo").addEventListener("click", function (event) {
+    event.preventDefault();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+</script>
+</body>
+</html>

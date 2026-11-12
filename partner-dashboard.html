@@ -1,0 +1,1910 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Portal | STACKLY Luxury Hostel & Resort</title>
+    
+    <!-- Brand Typography -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="partner-dashboard.css">
+</head>
+<body>
+
+    <!-- Mobile Backdrop Blur Overlay (Active when Hamburger Menu opens) -->
+    <div class="sidebar-blur-backdrop" id="sidebarBackdrop"></div>
+
+    <div class="dashboard-shell">
+        
+        <!-- Left Navigation Sidebar -->
+        <aside class="dashboard-sidebar" id="dashboardSidebar">
+            
+            <!-- Sidebar Top Brand & Mobile Close -->
+            <div class="sidebar-top-bar">
+                <span class="portal-badge">PARTNER CONSOLE</span>
+                <button class="sidebar-close-btn" id="closeSidebarBtn" aria-label="Close Navigation Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 5 Section-Wise Navigation Menus with Professional Vector Icons -->
+            <nav class="sidebar-nav" aria-label="Partner Dashboard Sections">
+                
+                <button class="nav-menu-item active" data-section="overview">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                    <span>Overview</span>
+                </button>
+
+                <button class="nav-menu-item" data-section="inventory">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <span>Pod Inventory</span>
+                </button>
+
+                <button class="nav-menu-item" data-section="reservations">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <span>Reservations</span>
+                </button>
+
+                <button class="nav-menu-item" data-section="revenue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <span>Revenue &amp; Payouts</span>
+                </button>
+
+                <button class="nav-menu-item" data-section="settings">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                    <span>Sanctuary Settings</span>
+                </button>
+
+            </nav>
+
+            <!-- Bottom Logout Trigger (Navigates back to login.html) -->
+            <div class="sidebar-footer">
+                <button class="btn-logout" id="partnerLogoutBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- Right Main Workspace Area -->
+        <div class="dashboard-main-column">
+            
+            <!-- Top Header Bar -->
+            <header class="dashboard-header">
+                
+                <div class="header-left-group">
+                    <!-- Responsive Hamburger Button -->
+                    <button class="hamburger-btn" id="hamburgerToggleBtn" aria-label="Open Navigation Menu">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+
+                    <!-- Brand Logo Image Tag (Refreshes Dashboard on Click) -->
+                    <a href="#" class="header-brand-refresh" id="brandRefreshTrigger" title="Refresh Partner Dashboard">
+                        <img src="https://placehold.co" alt="STACKLY Brand Logo" class="header-logo-img">
+                    </a>
+                </div>
+
+                <!-- Right Header: Notification Bell & Partner Profile Name -->
+                <div class="header-right-group">
+                    
+                    <!-- Notification Bell Icon -->
+                    <button class="header-bell-btn" id="bellNotifyBtn" aria-label="Notifications">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                        <span class="bell-unread-dot"></span>
+                    </button>
+
+                    <!-- Profile Pill Displaying Extracted Email First Name -->
+                    <div class="header-profile-pill">
+                        <div class="profile-avatar-circle" id="headerAvatarInitial">J</div>
+                        <div class="profile-meta">
+                            <span class="profile-username" id="headerPartnerName">jeevi</span>
+                            <span class="profile-role-tag">Partner</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Individual Section Views (Switchable via Sidebar Menus) -->
+            <main class="dashboard-content-canvas">
+                
+                <!-- SECTION 1: OVERVIEW -->
+             <!-- SECTION 1: OVERVIEW (SIMPLE & CLEAN) -->
+<section class="dashboard-view active-view" id="view-overview">
+    
+    <!-- Header -->
+    <div class="view-header-box">
+        <span class="view-eyebrow">PARTNER WORKSPACE</span>
+        <h1 class="view-main-title">Overview</h1>
+    </div>
+
+    <!-- 3 Clean KPI Summary Cards -->
+    <div class="clean-kpi-grid">
+        <div class="clean-kpi-card">
+            <span class="kpi-title">MONTHLY REVENUE</span>
+            <strong class="kpi-num">₹14,82,500</strong>
+            <span class="kpi-note">+18% from last month</span>
+        </div>
+
+        <div class="clean-kpi-card">
+            <span class="kpi-title">POD OCCUPANCY</span>
+            <strong class="kpi-num">91%</strong>
+            <span class="kpi-note">88 of 96 pods active</span>
+        </div>
+
+        <div class="clean-kpi-card">
+            <span class="kpi-title">GUEST RATING</span>
+            <strong class="kpi-num">4.94 / 5</strong>
+            <span class="kpi-note">312 verified stays</span>
+        </div>
+    </div>
+
+    <!-- Simple Recent Check-Ins Table -->
+    <div class="clean-panel-box">
+        <div class="clean-panel-top">
+            <h2>Recent Check-Ins</h2>
+            <span class="panel-tag">TODAY</span>
+        </div>
+
+        <div class="clean-table-wrap">
+            <table class="clean-table">
+                <thead>
+                    <tr>
+                        <th>Resident</th>
+                        <th>Pod Tier</th>
+                        <th>Dates</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Elena Rostova</strong></td>
+                        <td>Panoramic Cliff Suite</td>
+                        <td>12 Nov – 19 Nov</td>
+                        <td>₹58,800</td>
+                        <td><span class="pill-green">Checked In</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marcus Vance</strong></td>
+                        <td>Acoustic Oasis Pod</td>
+                        <td>12 Nov – 26 Nov</td>
+                        <td>₹44,800</td>
+                        <td><span class="pill-green">Checked In</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rohan Das</strong></td>
+                        <td>Nirvana Private Villa</td>
+                        <td>13 Nov – 17 Nov</td>
+                        <td>₹76,000</td>
+                        <td><span class="pill-gold">Confirmed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    /* --- SIMPLE & CLEAN OVERVIEW STYLES --- */
+.clean-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.clean-kpi-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 8px;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.kpi-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    color: var(--muted);
+}
+
+.kpi-num {
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: var(--text-light);
+    line-height: 1.15;
+}
+
+.kpi-note {
+    font-size: 0.76rem;
+    color: var(--accent);
+}
+
+/* Table Panel */
+.clean-panel-box {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 8px;
+    padding: 1.6rem;
+}
+
+.clean-panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+
+.clean-panel-top h2 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.panel-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    background-color: rgba(212, 175, 55, 0.1);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+}
+
+.clean-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.clean-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+.clean-table th {
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.8rem 0.9rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+.clean-table td {
+    padding: 0.95rem 0.9rem;
+    font-size: 0.84rem;
+    color: var(--text-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.clean-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pill-green,
+.pill-gold {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.pill-green {
+    background-color: rgba(16, 185, 129, 0.14);
+    color: #10b981;
+}
+
+.pill-gold {
+    background-color: rgba(212, 175, 55, 0.14);
+    color: var(--accent);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+    .clean-kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+</style>
+
+                <!-- SECTION 2: POD INVENTORY -->
+              <!-- SECTION 2: POD INVENTORY (SIMPLE, CLEAN & RESPONSIVE) -->
+<section class="dashboard-view" id="view-inventory">
+    
+    <!-- Header with Filter Pills -->
+    <div class="view-header-box inv-header-flex">
+        <div>
+            <span class="view-eyebrow">SANCTUARY ASSETS</span>
+            <h1 class="view-main-title">Pod Inventory</h1>
+        </div>
+
+        <!-- Live Filter Pills -->
+        <div class="inv-filter-pills" role="tablist" aria-label="Filter Pod Inventory">
+            <button type="button" class="inv-pill active" data-inv-filter="all">All (6)</button>
+            <button type="button" class="inv-pill" data-inv-filter="available">Available</button>
+            <button type="button" class="inv-pill" data-inv-filter="occupied">Occupied</button>
+            <button type="button" class="inv-pill" data-inv-filter="maintenance">Maintenance</button>
+        </div>
+    </div>
+
+    <!-- Responsive Pod Inventory Cards Grid -->
+    <div class="inv-pods-grid" id="invPodsGrid">
+        
+        <!-- Pod 01 -->
+        <article class="inv-pod-card" data-status="occupied">
+            <div class="pod-card-top">
+                <span class="pod-unit-code">POD-A01</span>
+                <span class="pod-status-badge status-occ">Occupied</span>
+            </div>
+            <h3>Acoustic Oasis Pod</h3>
+            <p class="pod-specs">East Cliff Wing • 1 Guest • Fiber 1Gbps</p>
+            <div class="pod-card-bottom">
+                <span class="pod-rate">₹3,200 <small>/ night</small></span>
+                <button type="button" class="btn-pod-toggle">Switch Status</button>
+            </div>
+        </article>
+
+        <!-- Pod 02 -->
+        <article class="inv-pod-card" data-status="available">
+            <div class="pod-card-top">
+                <span class="pod-unit-code">POD-A04</span>
+                <span class="pod-status-badge status-avail">Available</span>
+            </div>
+            <h3>Acoustic Oasis Pod</h3>
+            <p class="pod-specs">East Cliff Wing • 1 Guest • Fiber 1Gbps</p>
+            <div class="pod-card-bottom">
+                <span class="pod-rate">₹3,200 <small>/ night</small></span>
+                <button type="button" class="btn-pod-toggle">Switch Status</button>
+            </div>
+        </article>
+
+        <!-- Pod 03 -->
+        <article class="inv-pod-card" data-status="occupied">
+            <div class="pod-card-top">
+                <span class="pod-unit-code">STE-B02</span>
+                <span class="pod-status-badge status-occ">Occupied</span>
+            </div>
+            <h3>Panoramic Cliff Suite</h3>
+            <p class="pod-specs">Ocean Horizon Deck • 2 Guests • Private Balcony</p>
+            <div class="pod-card-bottom">
+                <span class="pod-rate">₹8,400 <small>/ night</small></span>
+                <button type="button" class="btn-pod-toggle">Switch Status</button>
+            </div>
+        </article>
+
+        <!-- Pod 04 -->
+        <article class="inv-pod-card" data-status="available">
+            <div class="pod-card-top">
+                <span class="pod-unit-code">VLA-C01</span>
+                <span class="pod-status-badge status-avail">Available</span>
+            </div>
+            <h3>Nirvana Private Villa</h3>
+            <p class="pod-specs">Lagoon Sanctuary • 4 Guests • Plunge Pool</p>
+            <div class="pod-card-bottom">
+                <span class="pod-rate">₹19,000 <small>/ night</small></span>
+                <button type="button" class="btn-pod-toggle">Switch Status</button>
+            </div>
+        </article>
+
+        <!-- Pod 05 -->
+        <article class="inv-pod-card" data-status="maintenance">
+            <div class="pod-card-top">
+                <span class="pod-unit-code">ZEN-D03</span>
+                <span class="pod-status-badge status-maint">Maintenance</span>
+            </div>
+            <h3>Zen Female Pavilion</h3>
+            <p class="pod-specs">Botanical Courtyard • 1 Guest • Thermal Access</p>
+            <div class="pod-card-bottom">
+                <span class="pod-rate">₹4,200 <small>/ night</small></span>
+                <button type="button" class="btn-pod-toggle">Switch Status</button>
+            </div>
+        </article>
+
+        <!-- Pod 06 -->
+        <article class="inv-pod-card" data-status="available">
+            <div class="pod-card-top">
+                <span class="pod-unit-code">STE-B05</span>
+                <span class="pod-status-badge status-avail">Available</span>
+            </div>
+            <h3>Panoramic Cliff Suite</h3>
+            <p class="pod-specs">Sunset Ridge • 2 Guests • Acoustic Studio</p>
+            <div class="pod-card-bottom">
+                <span class="pod-rate">₹8,400 <small>/ night</small></span>
+                <button type="button" class="btn-pod-toggle">Switch Status</button>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<style>
+    /* --- POD INVENTORY SECTION STYLES --- */
+.inv-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.inv-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.inv-pill {
+    padding: 0.5rem 1.1rem;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.inv-pill:hover {
+    border-color: var(--accent);
+    color: var(--text-light);
+}
+
+.inv-pill.active {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Inventory Cards Grid */
+.inv-pods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.inv-pod-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, transform 0.3s var(--ease-luxury);
+}
+
+.inv-pod-card:hover {
+    border-color: rgba(212, 175, 55, 0.45);
+    transform: translateY(-3px);
+}
+
+.inv-pod-card.is-hidden {
+    display: none;
+}
+
+.pod-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.9rem;
+}
+
+.pod-unit-code {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+}
+
+.pod-status-badge {
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.status-avail {
+    background-color: rgba(16, 185, 129, 0.14);
+    color: #10b981;
+}
+
+.status-occ {
+    background-color: rgba(212, 175, 55, 0.14);
+    color: var(--accent);
+}
+
+.status-maint {
+    background-color: rgba(248, 113, 113, 0.14);
+    color: #f87171;
+}
+
+.inv-pod-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+}
+
+.pod-specs {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.pod-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.pod-rate {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.pod-rate small {
+    font-size: 0.74rem;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.btn-pod-toggle {
+    padding: 0.45rem 0.85rem;
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 5px;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-pod-toggle:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+    .inv-pods-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .inv-pods-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+<script>
+    // Append inside your DOMContentLoaded listener in partner-dashboard.js:
+
+const invPills = document.querySelectorAll('.inv-pill');
+const podCards = document.querySelectorAll('.inv-pod-card');
+
+// Filter Pod Inventory Cards
+invPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+        invPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const filter = pill.getAttribute('data-inv-filter');
+        podCards.forEach(card => {
+            const status = card.getAttribute('data-status');
+            if (filter === 'all' || status === filter) {
+                card.classList.remove('is-hidden');
+            } else {
+                card.classList.add('is-hidden');
+            }
+        });
+    });
+});
+
+// Interactive Status Switcher on Each Pod Card
+const statusCycle = [
+    { key: 'available', label: 'Available', cls: 'status-avail' },
+    { key: 'occupied', label: 'Occupied', cls: 'status-occ' },
+    { key: 'maintenance', label: 'Maintenance', cls: 'status-maint' }
+];
+
+document.querySelectorAll('.btn-pod-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const card = btn.closest('.inv-pod-card');
+        const badge = card.querySelector('.pod-status-badge');
+        const currentKey = card.getAttribute('data-status');
+        const nextIdx = (statusCycle.findIndex(s => s.key === currentKey) + 1) % statusCycle.length;
+        const next = statusCycle[nextIdx];
+
+        card.setAttribute('data-status', next.key);
+        badge.textContent = next.label;
+        badge.className = `pod-status-badge ${next.cls}`;
+    });
+});
+
+</script>
+
+                <!-- SECTION 3: RESERVATIONS -->
+              <!-- SECTION 3: RESERVATIONS (SIMPLE, CLEAN & RESPONSIVE) -->
+<section class="dashboard-view" id="view-reservations">
+    
+    <!-- Header with Search & Status Filter -->
+    <div class="view-header-box res-header-flex">
+        <div>
+            <span class="view-eyebrow">GUEST LEDGER</span>
+            <h1 class="view-main-title">Reservations</h1>
+        </div>
+
+        <div class="res-controls-group">
+            <div class="res-search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input type="text" id="resSearchInput" placeholder="Search resident or ID..." aria-label="Search Reservations">
+            </div>
+
+            <select class="res-status-select" id="resStatusFilter" aria-label="Filter Reservations by Status">
+                <option value="all" selected>All Statuses</option>
+                <option value="checked-in">Checked In</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="pending">Pending</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Clean Reservations Ledger Table -->
+    <div class="clean-panel-box">
+        <div class="clean-table-wrap">
+            <table class="clean-table" id="reservationsTable">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Resident</th>
+                        <th>Pod Tier</th>
+                        <th>Check-In / Out</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-res-status="checked-in">
+                        <td class="res-id">#STK-8941</td>
+                        <td>
+                            <strong>Elena Rostova</strong>
+                            <span class="res-sub">elena@studio-berlin.de</span>
+                        </td>
+                        <td>Panoramic Cliff Suite</td>
+                        <td>12 Nov – 19 Nov (7N)</td>
+                        <td><strong>₹58,800</strong></td>
+                        <td><span class="pill-green res-badge">Checked In</span></td>
+                        <td><span class="res-done-label">Active Stay</span></td>
+                    </tr>
+                    <tr data-res-status="checked-in">
+                        <td class="res-id">#STK-8940</td>
+                        <td>
+                            <strong>Marcus Vance</strong>
+                            <span class="res-sub">mvance@ioscraft.io</span>
+                        </td>
+                        <td>Acoustic Oasis Pod</td>
+                        <td>12 Nov – 26 Nov (14N)</td>
+                        <td><strong>₹44,800</strong></td>
+                        <td><span class="pill-green res-badge">Checked In</span></td>
+                        <td><span class="res-done-label">Active Stay</span></td>
+                    </tr>
+                    <tr data-res-status="confirmed">
+                        <td class="res-id">#STK-8939</td>
+                        <td>
+                            <strong>Rohan Das</strong>
+                            <span class="res-sub">rohan.das@cutframe.in</span>
+                        </td>
+                        <td>Nirvana Private Villa</td>
+                        <td>13 Nov – 17 Nov (4N)</td>
+                        <td><strong>₹76,000</strong></td>
+                        <td><span class="pill-gold res-badge">Confirmed</span></td>
+                        <td><button type="button" class="btn-res-checkin">Check In</button></td>
+                    </tr>
+                    <tr data-res-status="pending">
+                        <td class="res-id">#STK-8938</td>
+                        <td>
+                            <strong>Clara Lindqvist</strong>
+                            <span class="res-sub">clara@nordicform.se</span>
+                        </td>
+                        <td>Zen Female Pavilion</td>
+                        <td>14 Nov – 21 Nov (7N)</td>
+                        <td><strong>₹29,400</strong></td>
+                        <td><span class="pill-muted res-badge">Pending</span></td>
+                        <td><button type="button" class="btn-res-checkin">Check In</button></td>
+                    </tr>
+                    <tr data-res-status="confirmed">
+                        <td class="res-id">#STK-8937</td>
+                        <td>
+                            <strong>Kenji Takahashi</strong>
+                            <span class="res-sub">kenji@soundfield.jp</span>
+                        </td>
+                        <td>Acoustic Oasis Pod</td>
+                        <td>15 Nov – 22 Nov (7N)</td>
+                        <td><strong>₹22,400</strong></td>
+                        <td><span class="pill-gold res-badge">Confirmed</span></td>
+                        <td><button type="button" class="btn-res-checkin">Check In</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    /* --- RESERVATIONS SECTION STYLES --- */
+.res-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.res-controls-group {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.res-search-box {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    height: 42px;
+    padding: 0 0.95rem;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 6px;
+    min-width: 240px;
+}
+
+.res-search-box:focus-within {
+    border-color: var(--accent);
+}
+
+.res-search-box svg {
+    width: 15px;
+    height: 15px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.res-search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    width: 100%;
+}
+
+.res-search-box input::placeholder {
+    color: var(--muted);
+}
+
+.res-status-select {
+    height: 42px;
+    padding: 0 0.95rem;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 6px;
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.res-status-select:focus {
+    border-color: var(--accent);
+}
+
+.res-id {
+    font-weight: 600;
+    color: var(--accent) !important;
+}
+
+.res-sub {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+.pill-muted {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background-color: rgba(148, 163, 184, 0.14);
+    color: #cbd5e1;
+}
+
+.btn-res-checkin {
+    padding: 0.42rem 0.85rem;
+    background-color: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 5px;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-res-checkin:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+.res-done-label {
+    font-size: 0.74rem;
+    color: var(--muted);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 640px) {
+    .res-controls-group {
+        width: 100%;
+    }
+    .res-search-box,
+    .res-status-select {
+        flex: 1;
+        min-width: unset;
+    }
+}
+
+</style>
+
+<script>
+    // Append inside your DOMContentLoaded listener in partner-dashboard.js:
+
+const resSearchInput = document.getElementById('resSearchInput');
+const resStatusFilter = document.getElementById('resStatusFilter');
+const resRows = document.querySelectorAll('#reservationsTable tbody tr');
+
+function filterReservations() {
+    const query = (resSearchInput?.value || '').toLowerCase().trim();
+    const statusVal = resStatusFilter?.value || 'all';
+
+    resRows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const rowStatus = row.getAttribute('data-res-status');
+        const matchesQuery = text.includes(query);
+        const matchesStatus = statusVal === 'all' || rowStatus === statusVal;
+
+        row.style.display = matchesQuery && matchesStatus ? '' : 'none';
+    });
+}
+
+if (resSearchInput) resSearchInput.addEventListener('input', filterReservations);
+if (resStatusFilter) resStatusFilter.addEventListener('change', filterReservations);
+
+// Live Check-In Action Button
+document.querySelectorAll('.btn-res-checkin').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const row = btn.closest('tr');
+        const badge = row.querySelector('.res-badge');
+
+        row.setAttribute('data-res-status', 'checked-in');
+        badge.textContent = 'Checked In';
+        badge.className = 'pill-green res-badge';
+
+        btn.replaceWith(Object.assign(document.createElement('span'), {
+            className: 'res-done-label',
+            textContent: 'Active Stay'
+        }));
+    });
+});
+
+</script>
+
+                <!-- SECTION 4: REVENUE & PAYOUTS -->
+             <!-- SECTION 4: REVENUE & PAYOUTS (SIMPLE, CLEAN & RESPONSIVE) -->
+<section class="dashboard-view" id="view-revenue">
+    
+    <!-- Header with Quick Payout Action -->
+    <div class="view-header-box rev-header-flex">
+        <div>
+            <span class="view-eyebrow">FINANCIAL DISBURSEMENTS</span>
+            <h1 class="view-main-title">Revenue &amp; Payouts</h1>
+        </div>
+
+        <button type="button" class="btn-gold-action" id="requestPayoutBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            <span>Request Payout</span>
+        </button>
+    </div>
+
+    <!-- Payout Confirmation Banner (Hidden until triggered) -->
+    <div class="rev-toast-banner" id="payoutToastBanner" role="status">
+        <span>Disbursement of <strong>₹3,42,000</strong> initiated to HDFC Bank •••• 4821.</span>
+    </div>
+
+    <!-- 3 Clean Financial Summary Cards -->
+    <div class="clean-kpi-grid">
+        <div class="clean-kpi-card">
+            <span class="kpi-title">AVAILABLE BALANCE</span>
+            <strong class="kpi-num" id="availableBalanceVal">₹3,42,000</strong>
+            <span class="kpi-note">Ready for instant bank transfer</span>
+        </div>
+
+        <div class="clean-kpi-card">
+            <span class="kpi-title">SETTLED IN NOVEMBER</span>
+            <strong class="kpi-num" id="settledMonthVal">₹11,40,500</strong>
+            <span class="kpi-note">After 8% platform service fee</span>
+        </div>
+
+        <div class="clean-kpi-card">
+            <span class="kpi-title">NEXT AUTO-PAYOUT</span>
+            <strong class="kpi-num">15 Nov 2026</strong>
+            <span class="kpi-note">HDFC Corporate •••• 4821</span>
+        </div>
+    </div>
+
+    <!-- Clean Disbursement History Table -->
+    <div class="clean-panel-box">
+        <div class="clean-panel-top">
+            <h2>Payout History</h2>
+            <span class="panel-tag">INR LEDGER</span>
+        </div>
+
+        <div class="clean-table-wrap">
+            <table class="clean-table" id="payoutHistoryTable">
+                <thead>
+                    <tr>
+                        <th>Transfer ID</th>
+                        <th>Date</th>
+                        <th>Destination Account</th>
+                        <th>Net Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="res-id">#PAY-4092</td>
+                        <td>01 Nov 2026</td>
+                        <td>HDFC Bank •••• 4821</td>
+                        <td><strong>₹5,80,500</strong></td>
+                        <td><span class="pill-green">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="res-id">#PAY-4061</td>
+                        <td>15 Oct 2026</td>
+                        <td>HDFC Bank •••• 4821</td>
+                        <td><strong>₹5,60,000</strong></td>
+                        <td><span class="pill-green">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="res-id">#PAY-4028</td>
+                        <td>01 Oct 2026</td>
+                        <td>HDFC Bank •••• 4821</td>
+                        <td><strong>₹6,12,400</strong></td>
+                        <td><span class="pill-green">Completed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    /* --- REVENUE & PAYOUTS SECTION STYLES --- */
+.rev-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.rev-toast-banner {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.2rem;
+    background-color: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 6px;
+    font-size: 0.84rem;
+    color: #10b981;
+}
+
+.rev-toast-banner.is-visible {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .rev-header-flex .btn-gold-action {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+</style>
+
+<script>
+    // Append inside your DOMContentLoaded listener in partner-dashboard.js:
+
+const requestPayoutBtn = document.getElementById('requestPayoutBtn');
+const payoutToastBanner = document.getElementById('payoutToastBanner');
+const availableBalanceVal = document.getElementById('availableBalanceVal');
+const settledMonthVal = document.getElementById('settledMonthVal');
+const payoutTableBody = document.querySelector('#payoutHistoryTable tbody');
+
+if (requestPayoutBtn && availableBalanceVal && payoutTableBody) {
+    requestPayoutBtn.addEventListener('click', () => {
+        if (availableBalanceVal.textContent === '₹0') return;
+
+        // Update KPI numbers
+        availableBalanceVal.textContent = '₹0';
+        if (settledMonthVal) settledMonthVal.textContent = '₹14,82,500';
+
+        // Prepend new payout row to ledger
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td class="res-id">#PAY-4105</td>
+            <td>12 Nov 2026</td>
+            <td>HDFC Bank •••• 4821</td>
+            <td><strong>₹3,42,000</strong></td>
+            <td><span class="pill-gold">Processing</span></td>
+        `;
+        payoutTableBody.prepend(newRow);
+
+        // Show confirmation banner & disable button
+        if (payoutToastBanner) payoutToastBanner.classList.add('is-visible');
+        requestPayoutBtn.disabled = true;
+        requestPayoutBtn.style.opacity = '0.6';
+    });
+}
+
+</script>
+
+                <!-- SECTION 5: SANCTUARY SETTINGS -->
+           <!-- SECTION 5: SANCTUARY SETTINGS (SIMPLE, CLEAN & RESPONSIVE) -->
+<section class="dashboard-view" id="view-settings">
+    
+    <!-- Header -->
+    <div class="view-header-box">
+        <span class="view-eyebrow">HUB CONFIGURATION</span>
+        <h1 class="view-main-title">Sanctuary Settings</h1>
+    </div>
+
+    <!-- Save Confirmation Banner -->
+    <div class="set-toast-banner" id="settingsToastBanner" role="status">
+        Sanctuary configuration updated successfully.
+    </div>
+
+    <!-- 2-Column Clean Settings Layout -->
+    <form class="set-grid-layout" id="sanctuarySettingsForm">
+        
+        <!-- Left Card: Property & Contact Configuration -->
+        <div class="clean-panel-box">
+            <div class="clean-panel-top">
+                <h2>Hub Profile</h2>
+                <span class="panel-tag">GENERAL</span>
+            </div>
+
+            <div class="set-fields-stack">
+                <div class="set-field">
+                    <label for="setHubName">Sanctuary Hub Name</label>
+                    <input type="text" id="setHubName" value="STACKLY Salem Sanctuary" required>
+                </div>
+
+                <div class="set-row-two">
+                    <div class="set-field">
+                        <label for="setContactPhone">Concierge Hotline</label>
+                        <input type="tel" id="setContactPhone" value="+91 7010792745" required>
+                    </div>
+
+                    <div class="set-field">
+                        <label for="setPayoutEmail">Settlement Email</label>
+                        <input type="email" id="setPayoutEmail" value="jeevi@gmail.com" required>
+                    </div>
+                </div>
+
+                <div class="set-row-two">
+                    <div class="set-field">
+                        <label for="setCheckIn">Standard Check-In</label>
+                        <input type="text" id="setCheckIn" value="02:00 PM IST" required>
+                    </div>
+
+                    <div class="set-field">
+                        <label for="setCheckOut">Standard Check-Out</label>
+                        <input type="text" id="setCheckOut" value="11:00 AM IST" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Card: Operational Preferences & Save Action -->
+        <div class="clean-panel-box set-right-card">
+            <div>
+                <div class="clean-panel-top">
+                    <h2>Preferences</h2>
+                    <span class="panel-tag">CONTROLS</span>
+                </div>
+
+                <div class="set-toggle-list">
+                    <label class="set-toggle-row">
+                        <div>
+                            <strong>Instant Pod Confirmation</strong>
+                            <span>Allow verified creators to book available pods immediately.</span>
+                        </div>
+                        <input type="checkbox" checked>
+                    </label>
+
+                    <label class="set-toggle-row">
+                        <div>
+                            <strong>Bi-Weekly Auto Payouts</strong>
+                            <span>Automatically settle balances on the 1st and 15th.</span>
+                        </div>
+                        <input type="checkbox" checked>
+                    </label>
+
+                    <label class="set-toggle-row">
+                        <div>
+                            <strong>Arrival SMS &amp; Email Alerts</strong>
+                            <span>Notify concierge desk 24 hours before resident check-in.</span>
+                        </div>
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-gold-action set-save-btn">
+                <span>Save Changes</span>
+            </button>
+        </div>
+
+    </form>
+
+</section>
+
+<style>
+    /* --- SANCTUARY SETTINGS SECTION STYLES --- */
+.set-toast-banner {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 0.85rem 1.2rem;
+    background-color: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 6px;
+    font-size: 0.84rem;
+    color: #10b981;
+}
+
+.set-toast-banner.is-visible {
+    display: block;
+}
+
+.set-grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.6rem;
+    margin-top: 2rem;
+}
+
+.set-fields-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.set-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.set-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.set-field label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.set-field input {
+    width: 100%;
+    height: 44px;
+    padding: 0 0.95rem;
+    background-color: #1b221e;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 6px;
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.25s ease;
+}
+
+.set-field input:focus {
+    border-color: var(--accent);
+}
+
+/* Right Card & Toggle Rows */
+.set-right-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.8rem;
+}
+
+.set-toggle-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.set-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    cursor: pointer;
+}
+
+.set-toggle-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.set-toggle-row strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+
+.set-toggle-row span {
+    font-size: 0.76rem;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+.set-toggle-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.set-save-btn {
+    align-self: flex-start;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1050px) {
+    .set-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .set-row-two {
+        grid-template-columns: 1fr;
+    }
+    .set-save-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+</style>
+
+<script>
+    // Append inside your DOMContentLoaded listener in partner-dashboard.js:
+
+const settingsForm = document.getElementById('sanctuarySettingsForm');
+const settingsToast = document.getElementById('settingsToastBanner');
+
+if (settingsForm && settingsToast) {
+    settingsForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        settingsToast.classList.add('is-visible');
+        setTimeout(() => {
+            settingsToast.classList.remove('is-visible');
+        }, 3200);
+    });
+}
+
+</script>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- External Script -->
+  <style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --sidebar-bg: #101512;
+    --header-bg: #111613;
+    --surface: #151b18;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --danger: #f87171;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --sidebar-width: 265px;
+    --header-height: 76px;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- LAYOUT SHELL --- */
+.dashboard-shell {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* --- LEFT SIDEBAR --- */
+.dashboard-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid rgba(212, 175, 55, 0.14);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.6rem 1.2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    transition: transform 0.4s var(--ease-luxury);
+}
+
+.sidebar-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0.6rem 1.6rem 0.6rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    margin-bottom: 1.4rem;
+}
+
+.portal-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+}
+
+.sidebar-close-btn {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: var(--text-light);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sidebar-close-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Navigation Menu List */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    flex-grow: 1;
+}
+
+.nav-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.95rem;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-luxury);
+}
+
+.nav-menu-item svg {
+    width: 18px;
+    height: 18px;
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+.nav-menu-item:hover {
+    background-color: rgba(212, 175, 55, 0.06);
+    color: var(--text-light);
+}
+
+.nav-menu-item:hover svg {
+    color: var(--accent);
+}
+
+.nav-menu-item.active {
+    background-color: rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.32);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.nav-menu-item.active svg {
+    color: var(--accent);
+}
+
+/* Sidebar Footer Logout Button */
+.sidebar-footer {
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    width: 100%;
+    padding: 0.88rem 1rem;
+    background-color: rgba(248, 113, 113, 0.08);
+    border: 1px solid rgba(248, 113, 113, 0.25);
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--danger);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-logout svg {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-logout:hover {
+    background-color: var(--danger);
+    color: var(--primary);
+}
+
+/* --- RIGHT MAIN COLUMN --- */
+.dashboard-main-column {
+    flex-grow: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: calc(100% - var(--sidebar-width));
+}
+
+/* --- TOP HEADER --- */
+.dashboard-header {
+    height: var(--header-height);
+    background-color: var(--header-bg);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+    padding: 0 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 80;
+}
+
+.header-left-group {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.hamburger-btn {
+    display: none;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: var(--accent);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.hamburger-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.hamburger-btn:hover {
+    background-color: rgba(212, 175, 55, 0.12);
+}
+
+.header-brand-refresh {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.header-brand-refresh:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.header-logo-img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Header Right Group (Bell + Profile) */
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.header-bell-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.header-bell-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.header-bell-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.bell-unread-dot {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+/* Profile Pill */
+.header-profile-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.35rem 0.95rem 0.35rem 0.4rem;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 999px;
+}
+
+.profile-avatar-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.profile-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-username {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--text-light);
+    line-height: 1.2;
+}
+
+.profile-role-tag {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+/* --- MAIN SECTION CANVAS --- */
+.dashboard-content-canvas {
+    padding: 2.6rem 2.4rem;
+    flex-grow: 1;
+}
+
+.dashboard-view {
+    display: none;
+    animation: viewFadeIn 0.35s var(--ease-luxury);
+}
+
+.dashboard-view.active-view {
+    display: block;
+}
+
+@keyframes viewFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.view-header-box {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.view-eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 0.45rem;
+}
+
+.view-main-title {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+/* --- BACKDROP BLUR OVERLAY FOR MOBILE DRAWER --- */
+.sidebar-blur-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(12, 16, 13, 0.58);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.sidebar-blur-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 960px) {
+    .dashboard-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .dashboard-sidebar.is-open {
+        transform: translateX(0);
+        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .sidebar-close-btn {
+        display: inline-flex;
+    }
+
+    .hamburger-btn {
+        display: inline-flex;
+    }
+
+    .dashboard-main-column {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-header {
+        padding: 0 1.2rem;
+    }
+    .header-logo-img {
+        height: 30px;
+    }
+    .dashboard-content-canvas {
+        padding: 1.8rem 1.2rem;
+    }
+    .view-main-title {
+        font-size: 2.2rem;
+    }
+}
+
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. Extract First Name from Stored Email in localStorage (e.g., jeevi@gmail.com -> jeevi)
+    const storedEmail = localStorage.getItem('stackly_user_email') || 'jeevi@gmail.com';
+    const firstName = storedEmail.split('@')[0].trim() || 'Partner';
+
+    const nameEl = document.getElementById('headerPartnerName');
+    const avatarEl = document.getElementById('headerAvatarInitial');
+
+    if (nameEl) nameEl.textContent = firstName;
+    if (avatarEl) avatarEl.textContent = firstName.charAt(0).toUpperCase();
+
+    // 2. Brand Logo Click -> Refresh Partner Dashboard
+    const brandRefreshBtn = document.getElementById('brandRefreshTrigger');
+    if (brandRefreshBtn) {
+        brandRefreshBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.reload();
+        });
+    }
+
+    // 3. Responsive Hamburger Drawer & Backdrop Blur Controls
+    const sidebar = document.getElementById('dashboardSidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    const hamburgerBtn = document.getElementById('hamburgerToggleBtn');
+    const closeBtn = document.getElementById('closeSidebarBtn');
+
+    function openMobileSidebar() {
+        sidebar.classList.add('is-open');
+        backdrop.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar() {
+        sidebar.classList.remove('is-open');
+        backdrop.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileSidebar);
+    if (closeBtn) closeBtn.addEventListener('click', closeMobileSidebar);
+    if (backdrop) backdrop.addEventListener('click', closeMobileSidebar);
+
+    // 4. Section-Wise Menu Switching
+    const menuItems = document.querySelectorAll('.nav-menu-item');
+    const viewSections = document.querySelectorAll('.dashboard-view');
+
+    menuItems.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetKey = btn.getAttribute('data-section');
+
+            menuItems.forEach(item => item.classList.remove('active'));
+            btn.classList.add('active');
+
+            viewSections.forEach(sec => {
+                sec.classList.remove('active-view');
+                if (sec.id === `view-${targetKey}`) {
+                    sec.classList.add('active-view');
+                }
+            });
+
+            // Auto-close drawer on mobile after selecting a section
+            closeMobileSidebar();
+        });
+    });
+
+    // 5. Logout Button -> Clear Session & Navigate Back to login.html
+    const logoutBtn = document.getElementById('partnerLogoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('stackly_user_email');
+            localStorage.removeItem('stackly_user_name');
+            localStorage.removeItem('stackly_user_role');
+            window.location.href = 'login.html';
+        });
+    }
+});
+
+  </script>
+</body>
+</html>

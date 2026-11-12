@@ -1,0 +1,2327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Portal | STACKLY Luxury Hostel & Resort</title>
+    
+    <!-- Brand Typography -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="client-dashboard.css">
+</head>
+<body>
+
+    <!-- Mobile Backdrop Blur Overlay (Active when Hamburger Menu opens) -->
+    <div class="client-blur-backdrop" id="clientBackdrop"></div>
+
+    <div class="client-shell">
+        
+        <!-- Left Navigation Sidebar -->
+        <aside class="client-sidebar" id="clientSidebar">
+            
+            <!-- Sidebar Top Label & Mobile Close -->
+            <div class="client-sidebar-top">
+                <span class="client-portal-badge">RESIDENT PORTAL</span>
+                <button class="client-close-btn" id="clientCloseBtn" aria-label="Close Navigation Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 5 Section-Wise Navigation Menus with Professional Vector Icons -->
+            <nav class="client-nav" aria-label="Client Dashboard Sections">
+                
+                <button class="client-menu-item active" data-section="residency">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <span>My Residency</span>
+                </button>
+
+                <button class="client-menu-item" data-section="experiences">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                    </svg>
+                    <span>Curated Experiences</span>
+                </button>
+
+                <button class="client-menu-item" data-section="wellness">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3c-2.5 3-3.5 5.5-3.5 8a3.5 3.5 0 0 0 7 0c0-2.5-1-5-3.5-8Z"/>
+                        <path d="M7.5 10.5C5 11.5 3.5 13.5 3.5 15.5A4.5 4.5 0 0 0 8 20h8a4.5 4.5 0 0 0 4.5-4.5c0-2-1.5-4-4-5"/>
+                    </svg>
+                    <span>Wellness &amp; Spa</span>
+                </button>
+
+                <button class="client-menu-item" data-section="concierge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <span>Concierge Requests</span>
+                </button>
+
+                <button class="client-menu-item" data-section="billing">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+                    </svg>
+                    <span>Billing &amp; Invoices</span>
+                </button>
+
+            </nav>
+
+            <!-- Bottom Logout Button (Navigates back to login.html) -->
+            <div class="client-sidebar-footer">
+                <button class="btn-client-logout" id="clientLogoutBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- Right Main Workspace Area -->
+        <div class="client-main-column">
+            
+            <!-- Top Header Bar -->
+            <header class="client-header">
+                
+                <div class="client-header-left">
+                    <!-- Responsive Hamburger Button -->
+                    <button class="client-hamburger-btn" id="clientHamburgerBtn" aria-label="Open Navigation Menu">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+
+                    <!-- Brand Logo Image Tag (Refreshes Dashboard on Click) -->
+                    <a href="#" class="client-brand-refresh" id="clientBrandRefresh" title="Refresh Resident Dashboard">
+                        <img src="https://placehold.co" alt="STACKLY Brand Logo" class="client-logo-img">
+                    </a>
+                </div>
+
+                <!-- Right Header: Notification Bell & Client Profile Name -->
+                <div class="client-header-right">
+                    
+                    <!-- Notification Bell Icon -->
+                    <button class="client-bell-btn" id="clientBellBtn" aria-label="Notifications">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                        <span class="client-bell-dot"></span>
+                    </button>
+
+                    <!-- Profile Pill Displaying Extracted Email First Name -->
+                    <div class="client-profile-pill">
+                        <div class="client-avatar-circle" id="clientAvatarInitial">J</div>
+                        <div class="client-profile-meta">
+                            <span class="client-username" id="clientHeaderName">jeevi</span>
+                            <span class="client-role-tag">Resident</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Individual Section Views (Switchable via Sidebar Menus) -->
+            <main class="client-content-canvas">
+                
+                <!-- SECTION 1: MY RESIDENCY -->
+             <!-- SECTION 1: MY RESIDENCY (SIMPLE, CLEAN & RESPONSIVE) -->
+<section class="client-view active-view" id="view-residency">
+    
+    <!-- Header -->
+    <div class="client-view-header res-top-flex">
+        <div>
+            <span class="client-view-eyebrow">ACCOMMODATION &amp; ACCESS</span>
+            <h1 class="client-view-title">My Residency</h1>
+        </div>
+        <span class="res-active-pill">ACTIVE STAY • CHECKED IN</span>
+    </div>
+
+    <!-- Main 2-Column Residency Grid -->
+    <div class="residency-grid">
+        
+        <!-- Left Card: Assigned Suite Details -->
+        <div class="c-panel-card suite-overview-card">
+            <div class="suite-img-banner">
+                <img src="https://unsplash.com" alt="Panoramic Cliff Suite STE-B02" class="suite-banner-img">
+                <span class="suite-unit-badge">UNIT STE-B02 • OCEAN WING</span>
+            </div>
+
+            <div class="suite-details-body">
+                <h2>Panoramic Cliff Suite</h2>
+                <p class="suite-desc">Private ocean-facing balcony, acoustic cedar workspace, and direct access to the east cliff thermal pools.</p>
+
+                <div class="suite-dates-grid">
+                    <div class="date-box">
+                        <span>CHECK-IN</span>
+                        <strong>12 Nov 2026</strong>
+                        <small>From 02:00 PM IST</small>
+                    </div>
+                    <div class="date-box">
+                        <span>CHECK-OUT</span>
+                        <strong>19 Nov 2026</strong>
+                        <small>Until 11:00 AM IST</small>
+                    </div>
+                    <div class="date-box">
+                        <span>DURATION</span>
+                        <strong>7 Nights</strong>
+                        <small>1 Resident • Paid</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Card: Digital Key & Fiber Access -->
+        <div class="c-panel-card access-key-card">
+            <div>
+                <span class="c-card-tag">SMART SANCTUARY ACCESS</span>
+                <h3>Digital Pod Key</h3>
+                <p class="access-sub">Tap below to unlock your suite door or copy your private symmetric fiber credentials.</p>
+
+                <!-- Interactive Smart Lock Trigger -->
+                <div class="smart-lock-box" id="smartLockBox">
+                    <div class="lock-status-row">
+                        <span class="lock-dot" id="lockDot"></span>
+                        <span id="lockStatusText">Suite Door Locked</span>
+                    </div>
+                    <button type="button" class="btn-c-gold" id="unlockPodBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+                        </svg>
+                        <span>Unlock Suite Door</span>
+                    </button>
+                </div>
+
+                <!-- Fiber Wi-Fi Credentials -->
+                <div class="wifi-cred-box">
+                    <div class="wifi-row">
+                        <span>NETWORK SSID</span>
+                        <strong>STACKLY_CLIFF_5G</strong>
+                    </div>
+                    <div class="wifi-row">
+                        <span>ACCESS PASSKEY</span>
+                        <div class="wifi-copy-group">
+                            <strong id="wifiPassText">STK-8941-GOLD</strong>
+                            <button type="button" class="btn-copy-wifi" id="copyWifiBtn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Included Perks -->
+            <div class="included-perks-bar">
+                <span>• Thermal Spa Access</span>
+                <span>• 24/7 Co-Work Lab</span>
+                <span>• Daily Breakfast</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* --- MY RESIDENCY SECTION STYLES --- */
+.res-top-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.res-active-pill {
+    padding: 0.4rem 0.9rem;
+    background-color: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #10b981;
+}
+
+.residency-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 1.6rem;
+}
+
+.c-panel-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Left Suite Card */
+.suite-img-banner {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: #080a09;
+}
+
+.suite-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.suite-unit-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background-color: rgba(12, 16, 13, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    padding: 0.35rem 0.8rem;
+    border-radius: 4px;
+}
+
+.suite-details-body {
+    padding: 1.7rem;
+}
+
+.suite-details-body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.85rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.45rem;
+}
+
+.suite-desc {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+}
+
+.suite-dates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.date-box {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.date-box span {
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+}
+
+.date-box strong {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.date-box small {
+    font-size: 0.74rem;
+    color: var(--muted);
+}
+
+/* Right Smart Key Card */
+.access-key-card {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.c-card-tag {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 0.45rem;
+}
+
+.access-key-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+}
+
+.access-sub {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 1.4rem;
+}
+
+.smart-lock-box {
+    background-color: #1b221e;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    padding: 1.15rem;
+    margin-bottom: 1.2rem;
+}
+
+.lock-status-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 0.9rem;
+}
+
+.lock-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+.lock-dot.is-unlocked {
+    background-color: #10b981;
+}
+
+.btn-c-gold {
+    width: 100%;
+    height: 44px;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-c-gold svg {
+    width: 15px;
+    height: 15px;
+}
+
+.btn-c-gold:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+}
+
+/* Wi-Fi Box */
+.wifi-cred-box {
+    background-color: #1b221e;
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 8px;
+    padding: 1rem 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.wifi-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+}
+
+.wifi-row span {
+    color: var(--muted);
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+}
+
+.wifi-row strong {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.wifi-copy-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-copy-wifi {
+    padding: 0.25rem 0.6rem;
+    background-color: rgba(212, 175, 55, 0.14);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 4px;
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-copy-wifi:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+.included-perks-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+    font-size: 0.74rem;
+    color: var(--accent);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1050px) {
+    .residency-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .suite-dates-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+}
+
+</style>
+
+<script>
+    // Append inside your DOMContentLoaded listener in client-dashboard.js:
+
+const unlockBtn = document.getElementById('unlockPodBtn');
+const lockStatusText = document.getElementById('lockStatusText');
+const lockDot = document.getElementById('lockDot');
+
+if (unlockBtn && lockStatusText && lockDot) {
+    unlockBtn.addEventListener('click', () => {
+        lockDot.classList.add('is-unlocked');
+        lockStatusText.textContent = 'Suite Door Unlocked (10s)';
+        unlockBtn.querySelector('span').textContent = 'Unlocked';
+
+        setTimeout(() => {
+            lockDot.classList.remove('is-unlocked');
+            lockStatusText.textContent = 'Suite Door Locked';
+            unlockBtn.querySelector('span').textContent = 'Unlock Suite Door';
+        }, 4000);
+    });
+}
+
+const copyWifiBtn = document.getElementById('copyWifiBtn');
+const wifiPassText = document.getElementById('wifiPassText');
+
+if (copyWifiBtn && wifiPassText) {
+    copyWifiBtn.addEventListener('click', () => {
+        navigator.clipboard?.writeText(wifiPassText.textContent.trim());
+        copyWifiBtn.textContent = 'Copied';
+        setTimeout(() => {
+            copyWifiBtn.textContent = 'Copy';
+        }, 2000);
+    });
+}
+
+</script>
+
+                <!-- SECTION 2: CURATED EXPERIENCES -->
+               <!-- SECTION 2: CURATED EXPERIENCES (SIMPLE, CLEAN & RESPONSIVE) -->
+<section class="client-view" id="view-experiences">
+    
+    <!-- Header with Category Filter Pills -->
+    <div class="client-view-header exp-c-header-flex">
+        <div>
+            <span class="client-view-eyebrow">EXPEDITIONS &amp; RITUALS</span>
+            <h1 class="client-view-title">Curated Experiences</h1>
+        </div>
+
+        <div class="exp-c-pills" role="tablist" aria-label="Filter Client Experiences">
+            <button type="button" class="exp-c-pill active" data-exp-cat="all">All</button>
+            <button type="button" class="exp-c-pill" data-exp-cat="adventure">Adventures</button>
+            <button type="button" class="exp-c-pill" data-exp-cat="ritual">Nightly Rituals</button>
+            <button type="button" class="exp-c-pill" data-exp-cat="creative">Creative Labs</button>
+        </div>
+    </div>
+
+    <!-- Responsive 3-Column Experience Pass Grid -->
+    <div class="exp-c-grid">
+        
+        <!-- Experience 01 -->
+        <article class="exp-c-card" data-category="adventure">
+            <div class="exp-c-img-wrap">
+                <span class="exp-c-time">TOMORROW • 06:00 AM</span>
+                <img src="https://unsplash.com" alt="Coastal Ridge Sunrise Trek" class="exp-c-img">
+            </div>
+            <div class="exp-c-body">
+                <h3>Coastal Ridge Sunrise Trek</h3>
+                <p>Guided cliffside expedition with private cove kayak access and organic trail breakfast.</p>
+                <div class="exp-c-footer">
+                    <span class="exp-c-price">₹2,499 <small>/ pass</small></span>
+                    <button type="button" class="btn-exp-reserve">Reserve Pass</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Experience 02 -->
+        <article class="exp-c-card" data-category="ritual">
+            <div class="exp-c-img-wrap">
+                <span class="exp-c-time">TONIGHT • 09:00 PM</span>
+                <img src="https://unsplash.com" alt="Vinyl & Botanical Mixology Session" class="exp-c-img">
+            </div>
+            <div class="exp-c-body">
+                <h3>Vinyl &amp; Botanical Mixology</h3>
+                <p>Intimate analog listening session paired with smoked herbal elixirs on the sky terrace.</p>
+                <div class="exp-c-footer">
+                    <span class="exp-c-price">Complimentary</span>
+                    <button type="button" class="btn-exp-reserve is-reserved">Reserved ✓</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Experience 03 -->
+        <article class="exp-c-card" data-category="creative">
+            <div class="exp-c-img-wrap">
+                <span class="exp-c-time">FRIDAY • 04:30 PM</span>
+                <img src="https://unsplash.com" alt="Founder Espresso Roundtable" class="exp-c-img">
+            </div>
+            <div class="exp-c-body">
+                <h3>Founder Espresso Roundtable</h3>
+                <p>Single-origin pour-over tasting and architecture critique with resident creators.</p>
+                <div class="exp-c-footer">
+                    <span class="exp-c-price">₹950 <small>/ pass</small></span>
+                    <button type="button" class="btn-exp-reserve">Reserve Pass</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<style>
+    /* --- CURATED EXPERIENCES SECTION STYLES --- */
+.exp-c-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.exp-c-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.exp-c-pill {
+    padding: 0.48rem 1.1rem;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.exp-c-pill:hover {
+    border-color: var(--accent);
+    color: var(--text-light);
+}
+
+.exp-c-pill.active {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* 3-Column Experience Grid */
+.exp-c-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.exp-c-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, transform 0.3s var(--ease-luxury);
+}
+
+.exp-c-card:hover {
+    border-color: rgba(212, 175, 55, 0.45);
+    transform: translateY(-4px);
+}
+
+.exp-c-card.is-hidden {
+    display: none;
+}
+
+.exp-c-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    background-color: #080a09;
+    overflow: hidden;
+}
+
+.exp-c-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease-luxury);
+}
+
+.exp-c-card:hover .exp-c-img {
+    transform: scale(1.06);
+}
+
+.exp-c-time {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(12, 16, 13, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--accent);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+}
+
+.exp-c-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.exp-c-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.exp-c-body p {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-bottom: 1.4rem;
+    flex-grow: 1;
+}
+
+.exp-c-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.exp-c-price {
+    font-size: 0.96rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.exp-c-price small {
+    font-size: 0.74rem;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.btn-exp-reserve {
+    padding: 0.48rem 0.95rem;
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-exp-reserve:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+}
+
+.btn-exp-reserve.is-reserved {
+    background-color: rgba(16, 185, 129, 0.14);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #10b981;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+    .exp-c-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .exp-c-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+<script>
+    // Append inside your DOMContentLoaded listener in client-dashboard.js:
+
+const expPills = document.querySelectorAll('.exp-c-pill');
+const expCards = document.querySelectorAll('.exp-c-card');
+
+expPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+        expPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const cat = pill.getAttribute('data-exp-cat');
+        expCards.forEach(card => {
+            if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                card.classList.remove('is-hidden');
+            } else {
+                card.classList.add('is-hidden');
+            }
+        });
+    });
+});
+
+document.querySelectorAll('.btn-exp-reserve').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const reserved = btn.classList.toggle('is-reserved');
+        btn.textContent = reserved ? 'Reserved ✓' : 'Reserve Pass';
+    });
+});
+
+</script>
+
+                <!-- SECTION 3: WELLNESS & SPA -->
+              <!-- SECTION 3: WELLNESS & SPA (SIMPLE, CLEAN & RESPONSIVE) -->
+<section class="client-view" id="view-wellness">
+    
+    <!-- Header -->
+    <div class="client-view-header wel-top-flex">
+        <div>
+            <span class="client-view-eyebrow">THERMAL &amp; RECOVERY</span>
+            <h1 class="client-view-title">Wellness &amp; Spa</h1>
+        </div>
+        <span class="wel-pass-badge">UNLIMITED THERMAL PASS ACTIVE</span>
+    </div>
+
+    <!-- 3-Column Clean Wellness Rituals Grid -->
+    <div class="wel-cards-grid">
+        
+        <!-- Ritual 01 -->
+        <article class="wel-card">
+            <div class="wel-img-box">
+                <span class="wel-dur-tag">60 MIN • INCLUDED</span>
+                <img src="https://unsplash.com" alt="Volcanic Thermal Hydrotherapy" class="wel-img">
+            </div>
+            <div class="wel-card-body">
+                <h3>Volcanic Thermal Baths</h3>
+                <p>Contrast mineral pools heated by natural geothermal stone, paired with eucalyptus steam.</p>
+                <div class="wel-card-footer">
+                    <span class="wel-slot">07:00 AM – 10:00 PM</span>
+                    <button type="button" class="btn-wel-book is-booked">Scheduled ✓</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Ritual 02 -->
+        <article class="wel-card">
+            <div class="wel-img-box">
+                <span class="wel-dur-tag">45 MIN • INCLUDED</span>
+                <img src="https://unsplash.com" alt="Sunrise Breathwork and Cold Plunge" class="wel-img">
+            </div>
+            <div class="wel-card-body">
+                <h3>Breathwork &amp; Cold Plunge</h3>
+                <p>Guided oceanfront pranayama followed by 4°C cedar cold-plunge recovery cycles.</p>
+                <div class="wel-card-footer">
+                    <span class="wel-slot">Daily • 06:30 AM</span>
+                    <button type="button" class="btn-wel-book">Book Session</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Ritual 03 -->
+        <article class="wel-card">
+            <div class="wel-img-box">
+                <span class="wel-dur-tag">90 MIN • ₹3,800</span>
+                <img src="https://unsplash.com" alt="Botanical Deep Tissue Therapy" class="wel-img">
+            </div>
+            <div class="wel-card-body">
+                <h3>Botanical Deep Tissue</h3>
+                <p>Restorative warm herbal oil massage designed to release posture tension after deep work.</p>
+                <div class="wel-card-footer">
+                    <span class="wel-slot">By Appointment</span>
+                    <button type="button" class="btn-wel-book">Book Session</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Clean Upcoming Wellness Schedule Box -->
+    <div class="wel-schedule-panel">
+        <div class="wel-sched-header">
+            <h2>My Scheduled Sessions</h2>
+            <span class="wel-sched-count" id="welSessionCount">1 Active Booking</span>
+        </div>
+
+        <div class="wel-sched-list" id="welScheduleList">
+            <div class="wel-sched-row">
+                <div>
+                    <strong>Volcanic Thermal Baths</strong>
+                    <span>East Cliff Sanctuary • Included in Residency</span>
+                </div>
+                <span class="wel-sched-time">Tomorrow, 08:00 AM</span>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    /* --- WELLNESS & SPA SECTION STYLES --- */
+.wel-top-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.wel-pass-badge {
+    padding: 0.4rem 0.9rem;
+    background-color: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+}
+
+.wel-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.8rem;
+}
+
+.wel-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, transform 0.3s var(--ease-luxury);
+}
+
+.wel-card:hover {
+    border-color: rgba(212, 175, 55, 0.45);
+    transform: translateY(-4px);
+}
+
+.wel-img-box {
+    position: relative;
+    width: 100%;
+    height: 185px;
+    background-color: #080a09;
+    overflow: hidden;
+}
+
+.wel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease-luxury);
+}
+
+.wel-card:hover .wel-img {
+    transform: scale(1.06);
+}
+
+.wel-dur-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(12, 16, 13, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--accent);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+}
+
+.wel-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.wel-card-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.wel-card-body p {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-bottom: 1.4rem;
+    flex-grow: 1;
+}
+
+.wel-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.wel-slot {
+    font-size: 0.76rem;
+    color: var(--muted);
+}
+
+.btn-wel-book {
+    padding: 0.46rem 0.95rem;
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-wel-book:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+}
+
+.btn-wel-book.is-booked {
+    background-color: rgba(16, 185, 129, 0.14);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #10b981;
+}
+
+/* Bottom Scheduled List */
+.wel-schedule-panel {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 10px;
+    padding: 1.6rem;
+}
+
+.wel-sched-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+
+.wel-sched-header h2 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.wel-sched-count {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.wel-sched-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.wel-sched-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 0.95rem 1.1rem;
+    background-color: #1b221e;
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    border-radius: 8px;
+}
+
+.wel-sched-row strong {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+
+.wel-sched-row span {
+    font-size: 0.76rem;
+    color: var(--muted);
+}
+
+.wel-sched-time {
+    font-size: 0.78rem !important;
+    font-weight: 600;
+    color: var(--accent) !important;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+    .wel-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .wel-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+<script>
+    // Append inside your DOMContentLoaded listener in client-dashboard.js:
+
+const welButtons = document.querySelectorAll('.btn-wel-book');
+const welScheduleList = document.getElementById('welScheduleList');
+const welSessionCount = document.getElementById('welSessionCount');
+
+function updateSessionCount() {
+    if (!welScheduleList || !welSessionCount) return;
+    const total = welScheduleList.querySelectorAll('.wel-sched-row').length;
+    welSessionCount.textContent = `${total} Active ${total === 1 ? 'Booking' : 'Bookings'}`;
+}
+
+welButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const card = btn.closest('.wel-card');
+        const title = card.querySelector('h3').textContent;
+        const slot = card.querySelector('.wel-slot').textContent;
+        const isBooked = btn.classList.toggle('is-booked');
+
+        btn.textContent = isBooked ? 'Scheduled ✓' : 'Book Session';
+
+        if (isBooked && welScheduleList) {
+            const row = document.createElement('div');
+            row.className = 'wel-sched-row';
+            row.setAttribute('data-ritual-title', title);
+            row.innerHTML = `
+                <div>
+                    <strong>${title}</strong>
+                    <span>Sanctuary Wellness Wing • Confirmed</span>
+                </div>
+                <span class="wel-sched-time">${slot}</span>
+            `;
+            welScheduleList.appendChild(row);
+        } else if (!isBooked && welScheduleList) {
+            const existing = welScheduleList.querySelector(`[data-ritual-title="${title}"]`);
+            if (existing) existing.remove();
+        }
+
+        updateSessionCount();
+    });
+});
+
+</script>
+
+                <!-- SECTION 4: CONCIERGE REQUESTS -->
+             <!-- SECTION 4: CONCIERGE REQUESTS (SIMPLE, CLEAN & RESPONSIVE) -->
+<section class="client-view" id="view-concierge">
+    
+    <!-- Header -->
+    <div class="client-view-header con-top-flex">
+        <div>
+            <span class="client-view-eyebrow">DIRECT ASSISTANCE</span>
+            <h1 class="client-view-title">Concierge Requests</h1>
+        </div>
+        <span class="con-desk-status">24/7 DESK • AVG RESPONSE 4 MIN</span>
+    </div>
+
+    <!-- 2-Column Clean Layout -->
+    <div class="concierge-grid">
+        
+        <!-- Left Card: Submit New Concierge Request -->
+        <div class="c-panel-card con-form-card">
+            <span class="c-card-tag">NEW DISPATCH</span>
+            <h2>Request Assistance</h2>
+            <p class="con-sub">Select a sanctuary service below and our hospitality desk will fulfill it promptly.</p>
+
+            <form class="con-request-form" id="clientConciergeForm" novalidate>
+                <div class="con-field">
+                    <label for="conCategory">Service Category</label>
+                    <select id="conCategory" required>
+                        <option value="In-Suite Dining & Mixology">In-Suite Dining &amp; Mixology</option>
+                        <option value="Private Airport Chauffeur">Private Airport Chauffeur</option>
+                        <option value="Fresh Linen & Pod Refresh">Fresh Linen &amp; Pod Refresh</option>
+                        <option value="Co-Work Studio Monitor Setup">Co-Work Studio Monitor Setup</option>
+                    </select>
+                </div>
+
+                <div class="con-field">
+                    <label for="conTime">Preferred Delivery Window</label>
+                    <select id="conTime" required>
+                        <option value="Immediate (Within 20 mins)">Immediate (Within 20 mins)</option>
+                        <option value="Today • 07:30 PM">Today • 07:30 PM</option>
+                        <option value="Tomorrow • 08:30 AM">Tomorrow • 08:30 AM</option>
+                    </select>
+                </div>
+
+                <div class="con-field" id="conNotesGroup">
+                    <label for="conNotes">Special Instructions</label>
+                    <textarea id="conNotes" rows="3" placeholder="e.g. Two cold-pressed espressos and sparkling water to Suite STE-B02..." required></textarea>
+                    <span class="con-error-msg">Please enter your request details</span>
+                </div>
+
+                <button type="submit" class="btn-c-gold">
+                    <span>Submit Request</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Card: Live Active Requests Tracker -->
+        <div class="c-panel-card con-tracker-card">
+            <div class="con-tracker-top">
+                <div>
+                    <span class="c-card-tag">LIVE LEDGER</span>
+                    <h2>Active Requests</h2>
+                </div>
+                <span class="con-count-pill" id="conRequestCount">2 Active</span>
+            </div>
+
+            <div class="con-ticket-list" id="conTicketList">
+                
+                <!-- Ticket 01 -->
+                <div class="con-ticket-item">
+                    <div class="ticket-main">
+                        <div class="ticket-title-row">
+                            <strong>Co-Work Studio Monitor Setup</strong>
+                            <span class="ticket-pill pill-progress">In Progress</span>
+                        </div>
+                        <p>Dual 4K USB-C display calibrated at Pod STE-B02 desk.</p>
+                        <small>Requested Today • 03:45 PM</small>
+                    </div>
+                </div>
+
+                <!-- Ticket 02 -->
+                <div class="con-ticket-item">
+                    <div class="ticket-main">
+                        <div class="ticket-title-row">
+                            <strong>In-Suite Dining &amp; Mixology</strong>
+                            <span class="ticket-pill pill-done">Delivered</span>
+                        </div>
+                        <p>Artisan sourdough platter and botanical iced matcha.</p>
+                        <small>Requested Today • 01:15 PM</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* --- CONCIERGE REQUESTS SECTION STYLES --- */
+.con-top-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.con-desk-status {
+    padding: 0.4rem 0.9rem;
+    background-color: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #10b981;
+}
+
+.concierge-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 1.6rem;
+    align-items: start;
+}
+
+.con-form-card,
+.con-tracker-card {
+    padding: 1.75rem;
+}
+
+.con-form-card h2,
+.con-tracker-top h2 {
+    font-family: var(--font-serif);
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+}
+
+.con-sub {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 1.4rem;
+}
+
+.con-request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.con-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.con-field label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.con-field select,
+.con-field textarea {
+    width: 100%;
+    background-color: #1b221e;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 6px;
+    padding: 0.75rem 0.95rem;
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    color: var(--text-light);
+    outline: none;
+    transition: border-color 0.25s ease;
+}
+
+.con-field select:focus,
+.con-field textarea:focus {
+    border-color: var(--accent);
+}
+
+.con-field select option {
+    background-color: #151b18;
+    color: var(--text-light);
+}
+
+.con-field textarea {
+    resize: vertical;
+    min-height: 92px;
+}
+
+.con-error-msg {
+    display: none;
+    font-size: 0.72rem;
+    color: var(--danger);
+}
+
+.con-field.is-invalid textarea {
+    border-color: var(--danger);
+}
+
+.con-field.is-invalid .con-error-msg {
+    display: block;
+}
+
+/* Right Tracker Card */
+.con-tracker-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+}
+
+.con-count-pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    background-color: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+}
+
+.con-ticket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.con-ticket-item {
+    background-color: #1b221e;
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 8px;
+    padding: 1.15rem 1.25rem;
+}
+
+.ticket-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+}
+
+.ticket-title-row strong {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.ticket-pill {
+    padding: 0.22rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+.pill-progress {
+    background-color: rgba(212, 175, 55, 0.15);
+    color: var(--accent);
+}
+
+.pill-done {
+    background-color: rgba(16, 185, 129, 0.14);
+    color: #10b981;
+}
+
+.ticket-main p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.ticket-main small {
+    font-size: 0.72rem;
+    color: rgba(138, 146, 142, 0.75);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1050px) {
+    .concierge-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+<script>
+    // Append inside your DOMContentLoaded listener in client-dashboard.js:
+
+const conForm = document.getElementById('clientConciergeForm');
+const conCategory = document.getElementById('conCategory');
+const conTime = document.getElementById('conTime');
+const conNotes = document.getElementById('conNotes');
+const conNotesGroup = document.getElementById('conNotesGroup');
+const conTicketList = document.getElementById('conTicketList');
+const conRequestCount = document.getElementById('conRequestCount');
+
+if (conNotes) {
+    conNotes.addEventListener('input', () => {
+        if (conNotes.value.trim()) conNotesGroup.classList.remove('is-invalid');
+    });
+}
+
+if (conForm && conTicketList) {
+    conForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (!conNotes.value.trim()) {
+            conNotesGroup.classList.add('is-invalid');
+            return;
+        }
+
+        const newTicket = document.createElement('div');
+        newTicket.className = 'con-ticket-item';
+        newTicket.innerHTML = `
+            <div class="ticket-main">
+                <div class="ticket-title-row">
+                    <strong>${conCategory.value}</strong>
+                    <span class="ticket-pill pill-progress">Dispatched</span>
+                </div>
+                <p>${conNotes.value.trim()}</p>
+                <small>Scheduled: ${conTime.value}</small>
+            </div>
+        `;
+        conTicketList.prepend(newTicket);
+
+        conNotes.value = '';
+        const total = conTicketList.querySelectorAll('.con-ticket-item').length;
+        if (conRequestCount) conRequestCount.textContent = `${total} Active`;
+    });
+}
+
+</script>
+
+                <!-- SECTION 5: BILLING & INVOICES -->
+            <!-- SECTION 5: BILLING & INVOICES (SIMPLE, CLEAN & RESPONSIVE) -->
+<section class="client-view" id="view-billing">
+    
+    <!-- Header -->
+    <div class="client-view-header bill-top-flex">
+        <div>
+            <span class="client-view-eyebrow">LEDGER &amp; RECEIPTS</span>
+            <h1 class="client-view-title">Billing &amp; Invoices</h1>
+        </div>
+        <span class="bill-status-pill">ALL RESIDENCY DUES SETTLED</span>
+    </div>
+
+    <!-- 3 Clean Financial Summary Cards -->
+    <div class="bill-summary-grid">
+        <div class="bill-stat-card">
+            <span class="bill-stat-label">CURRENT RESIDENCY TOTAL</span>
+            <strong class="bill-stat-value">₹58,800</strong>
+            <span class="bill-stat-note">7 Nights • Panoramic Cliff Suite</span>
+        </div>
+
+        <div class="bill-stat-card">
+            <span class="bill-stat-label">PENDING INCIDENTALS</span>
+            <strong class="bill-stat-value">₹0</strong>
+            <span class="bill-stat-note">Zero outstanding balance</span>
+        </div>
+
+        <div class="bill-stat-card">
+            <span class="bill-stat-label">PAYMENT METHOD</span>
+            <strong class="bill-stat-value">Visa •••• 9042</strong>
+            <span class="bill-stat-note">Auto-receipt enabled</span>
+        </div>
+    </div>
+
+    <!-- Clean Invoices & Receipts Table -->
+    <div class="c-panel-card bill-table-panel">
+        <div class="bill-table-top">
+            <h2>Invoices &amp; Receipts</h2>
+            <span class="bill-currency-tag">INR (₹)</span>
+        </div>
+
+        <div class="bill-table-scroll">
+            <table class="bill-ledger-table">
+                <thead>
+                    <tr>
+                        <th>Invoice ID</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Receipt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bill-id">#INV-2026-894</td>
+                        <td><strong>Panoramic Cliff Suite (7 Nights)</strong></td>
+                        <td>12 Nov 2026</td>
+                        <td><strong>₹58,800</strong></td>
+                        <td><span class="bill-pill-paid">Paid</span></td>
+                        <td><button type="button" class="btn-bill-dl" data-inv="INV-2026-894">Download PDF</button></td>
+                    </tr>
+                    <tr>
+                        <td class="bill-id">#INV-2026-872</td>
+                        <td><strong>Founder Espresso Roundtable Pass</strong></td>
+                        <td>10 Nov 2026</td>
+                        <td><strong>₹950</strong></td>
+                        <td><span class="bill-pill-paid">Paid</span></td>
+                        <td><button type="button" class="btn-bill-dl" data-inv="INV-2026-872">Download PDF</button></td>
+                    </tr>
+                    <tr>
+                        <td class="bill-id">#INV-2026-819</td>
+                        <td><strong>Acoustic Oasis Pod (3 Nights)</strong></td>
+                        <td>18 Oct 2026</td>
+                        <td><strong>₹9,600</strong></td>
+                        <td><span class="bill-pill-paid">Paid</span></td>
+                        <td><button type="button" class="btn-bill-dl" data-inv="INV-2026-819">Download PDF</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    /* --- BILLING & INVOICES SECTION STYLES --- */
+.bill-top-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.bill-status-pill {
+    padding: 0.4rem 0.9rem;
+    background-color: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #10b981;
+}
+
+.bill-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.8rem;
+}
+
+.bill-stat-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 10px;
+    padding: 1.55rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.bill-stat-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    color: var(--muted);
+}
+
+.bill-stat-value {
+    font-family: var(--font-serif);
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    line-height: 1.15;
+}
+
+.bill-stat-note {
+    font-size: 0.76rem;
+    color: var(--accent);
+}
+
+/* Invoices Table */
+.bill-table-panel {
+    padding: 1.65rem;
+}
+
+.bill-table-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.bill-table-top h2 {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.bill-currency-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    background-color: rgba(212, 175, 55, 0.1);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+}
+
+.bill-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.bill-ledger-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 620px;
+}
+
+.bill-ledger-table th {
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.85rem 0.9rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+.bill-ledger-table td {
+    padding: 1rem 0.9rem;
+    font-size: 0.84rem;
+    color: var(--text-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bill-ledger-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.bill-id {
+    font-weight: 600;
+    color: var(--accent) !important;
+}
+
+.bill-pill-paid {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background-color: rgba(16, 185, 129, 0.14);
+    color: #10b981;
+}
+
+.btn-bill-dl {
+    padding: 0.42rem 0.85rem;
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.32);
+    border-radius: 5px;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-bill-dl:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+    .bill-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+</style>
+
+<script>
+    // Append inside your DOMContentLoaded listener in client-dashboard.js:
+
+document.querySelectorAll('.btn-bill-dl').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const originalText = btn.textContent;
+        btn.textContent = 'Downloaded ✓';
+        btn.style.borderColor = '#10b981';
+        btn.style.color = '#10b981';
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.borderColor = '';
+            btn.style.color = '';
+        }, 2200);
+    });
+});
+
+</script>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- External Script -->
+   
+    <style>
+        /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --sidebar-bg: #101512;
+    --header-bg: #111613;
+    --surface: #151b18;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --danger: #f87171;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --sidebar-width: 265px;
+    --header-height: 76px;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- LAYOUT SHELL --- */
+.client-shell {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* --- LEFT SIDEBAR --- */
+.client-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid rgba(212, 175, 55, 0.14);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.6rem 1.2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    transition: transform 0.4s var(--ease-luxury);
+}
+
+.client-sidebar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0.6rem 1.6rem 0.6rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    margin-bottom: 1.4rem;
+}
+
+.client-portal-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+}
+
+.client-close-btn {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: var(--text-light);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.client-close-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Navigation Menu List */
+.client-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    flex-grow: 1;
+}
+
+.client-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.95rem;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-luxury);
+}
+
+.client-menu-item svg {
+    width: 18px;
+    height: 18px;
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+.client-menu-item:hover {
+    background-color: rgba(212, 175, 55, 0.06);
+    color: var(--text-light);
+}
+
+.client-menu-item:hover svg {
+    color: var(--accent);
+}
+
+.client-menu-item.active {
+    background-color: rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.32);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.client-menu-item.active svg {
+    color: var(--accent);
+}
+
+/* Sidebar Footer Logout Button */
+.client-sidebar-footer {
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.btn-client-logout {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    width: 100%;
+    padding: 0.88rem 1rem;
+    background-color: rgba(248, 113, 113, 0.08);
+    border: 1px solid rgba(248, 113, 113, 0.25);
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--danger);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-client-logout svg {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-client-logout:hover {
+    background-color: var(--danger);
+    color: var(--primary);
+}
+
+/* --- RIGHT MAIN COLUMN --- */
+.client-main-column {
+    flex-grow: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: calc(100% - var(--sidebar-width));
+}
+
+/* --- TOP HEADER --- */
+.client-header {
+    height: var(--header-height);
+    background-color: var(--header-bg);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+    padding: 0 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 80;
+}
+
+.client-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.client-hamburger-btn {
+    display: none;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: var(--accent);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.client-hamburger-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.client-hamburger-btn:hover {
+    background-color: rgba(212, 175, 55, 0.12);
+}
+
+.client-brand-refresh {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.client-brand-refresh:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.client-logo-img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Header Right Group (Bell + Profile) */
+.client-header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.client-bell-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.client-bell-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.client-bell-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.client-bell-dot {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+/* Profile Pill */
+.client-profile-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.35rem 0.95rem 0.35rem 0.4rem;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 999px;
+}
+
+.client-avatar-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.client-profile-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-username {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--text-light);
+    line-height: 1.2;
+}
+
+.client-role-tag {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+/* --- MAIN SECTION CANVAS --- */
+.client-content-canvas {
+    padding: 2.6rem 2.4rem;
+    flex-grow: 1;
+}
+
+.client-view {
+    display: none;
+    animation: clientViewFade 0.35s var(--ease-luxury);
+}
+
+.client-view.active-view {
+    display: block;
+}
+
+@keyframes clientViewFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.client-view-header {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.client-view-eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 0.45rem;
+}
+
+.client-view-title {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+/* --- BACKDROP BLUR OVERLAY FOR MOBILE DRAWER --- */
+.client-blur-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(12, 16, 13, 0.58);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.client-blur-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 960px) {
+    .client-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .client-sidebar.is-open {
+        transform: translateX(0);
+        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .client-close-btn {
+        display: inline-flex;
+    }
+
+    .client-hamburger-btn {
+        display: inline-flex;
+    }
+
+    .client-main-column {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .client-header {
+        padding: 0 1.2rem;
+    }
+    .client-logo-img {
+        height: 30px;
+    }
+    .client-content-canvas {
+        padding: 1.8rem 1.2rem;
+    }
+    .client-view-title {
+        font-size: 2.2rem;
+    }
+}
+
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // 1. Extract First Name from Stored Email in localStorage (e.g., jeevi@gmail.com -> jeevi)
+    const storedEmail = localStorage.getItem('stackly_user_email') || 'jeevi@gmail.com';
+    const firstName = storedEmail.split('@')[0].trim() || 'Resident';
+
+    const nameEl = document.getElementById('clientHeaderName');
+    const avatarEl = document.getElementById('clientAvatarInitial');
+
+    if (nameEl) nameEl.textContent = firstName;
+    if (avatarEl) avatarEl.textContent = firstName.charAt(0).toUpperCase();
+
+    // 2. Brand Logo Click -> Refresh Client Dashboard
+    const brandRefreshBtn = document.getElementById('clientBrandRefresh');
+    if (brandRefreshBtn) {
+        brandRefreshBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.reload();
+        });
+    }
+
+    // 3. Responsive Hamburger Drawer & Backdrop Blur Controls
+    const sidebar = document.getElementById('clientSidebar');
+    const backdrop = document.getElementById('clientBackdrop');
+    const hamburgerBtn = document.getElementById('clientHamburgerBtn');
+    const closeBtn = document.getElementById('clientCloseBtn');
+
+    function openClientSidebar() {
+        sidebar.classList.add('is-open');
+        backdrop.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeClientSidebar() {
+        sidebar.classList.remove('is-open');
+        backdrop.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openClientSidebar);
+    if (closeBtn) closeBtn.addEventListener('click', closeClientSidebar);
+    if (backdrop) backdrop.addEventListener('click', closeClientSidebar);
+
+    // 4. Section-Wise Menu Switching
+    const menuItems = document.querySelectorAll('.client-menu-item');
+    const viewSections = document.querySelectorAll('.client-view');
+
+    menuItems.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetKey = btn.getAttribute('data-section');
+
+            menuItems.forEach(item => item.classList.remove('active'));
+            btn.classList.add('active');
+
+            viewSections.forEach(sec => {
+                sec.classList.remove('active-view');
+                if (sec.id === `view-${targetKey}`) {
+                    sec.classList.add('active-view');
+                }
+            });
+
+            // Auto-close drawer on mobile after selecting a section
+            closeClientSidebar();
+        });
+    });
+
+    // 5. Logout Button -> Clear Session & Navigate Back to login.html
+    const logoutBtn = document.getElementById('clientLogoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('stackly_user_email');
+            localStorage.removeItem('stackly_user_name');
+            localStorage.removeItem('stackly_user_role');
+            window.location.href = 'login.html';
+        });
+    }
+});
+
+    </script>
+</body>
+</html>

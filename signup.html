@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | STACKLY Luxury Hostel & Resort</title>
+    
+    <!-- Brand Typography -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <main class="signup-viewport">
+        <div class="signup-split-container">
+            
+            <!-- Left Column: Brand Story, Architectural Image & Bottom Checklist (Matching Reference) -->
+            <div class="signup-brand-panel">
+                <!-- Subtle Floating Vector Watermarks -->
+                <svg class="s-watermark wm-tl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                </svg>
+                <svg class="s-watermark wm-mr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+
+                <div class="s-brand-inner">
+                    <div class="s-brand-pill">
+                        <span class="s-pill-dot"></span>
+                        <span>STACKLY COLLECTIVE</span>
+                    </div>
+
+                    <h1 class="s-brand-headline">
+                        Begin Your<br>
+                        <span class="gold-highlight">Nomad<br>Sanctuary.</span>
+                    </h1>
+
+                    <p class="s-brand-desc">
+                        Join our global community of remote creators, architects, and explorers with seamless access to acoustic pods, thermal rituals, and coastal retreats.
+                    </p>
+
+                    <!-- Centered Architectural Showcase Image -->
+                    <div class="s-showcase-box">
+                        <img src="https://unsplash.com" alt="STACKLY Cliffside Pool & Acoustic Pods" class="s-showcase-img">
+                    </div>
+
+                    <!-- Bottom 3-Pillar Vector Checklist (Matching Reference Bottom Strip) -->
+                    <div class="s-bottom-pillars">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Acoustic Pods
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Thermal Spa
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Global Hubs
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Registration Form Card -->
+            <div class="signup-form-panel">
+                <div class="s-form-inner">
+                    
+                    <!-- Back to Login Navigation -->
+                    <a href="login.html" class="s-back-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        <span>Back to Login</span>
+                    </a>
+
+                    <div class="s-form-header">
+                        <h2>Create <span class="gold-accent">Account</span></h2>
+                        <p>Register your profile to reserve private pods, wellness rituals, and collective residencies.</p>
+                    </div>
+
+                    <!-- Success Banner (Revealed Upon Valid Submission) -->
+                    <div class="signup-success-banner" id="signupSuccessBanner" role="status" aria-live="polite">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <div>
+                            <strong>Successfully Signed Up!</strong>
+                            <span>Redirecting you to the login portal...</span>
+                        </div>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <form class="stackly-signup-form" id="stacklySignupForm" novalidate>
+                        
+                        <!-- Field 1: Full Name (Blocks Numbers) -->
+                        <div class="s-field-group" id="sGroupName">
+                            <label for="signupName">YOUR FULL NAME</label>
+                            <div class="s-input-shell">
+                                <input type="text" id="signupName" placeholder="Enter your full name..." autocomplete="name" required>
+                            </div>
+                            <span class="s-error-msg">Please fill out this field (letters only)</span>
+                        </div>
+
+                        <!-- Field 2: Email Address -->
+                        <div class="s-field-group" id="sGroupEmail">
+                            <label for="signupEmail">EMAIL ADDRESS</label>
+                            <div class="s-input-shell">
+                                <input type="email" id="signupEmail" placeholder="you@example.com" autocomplete="email" required>
+                            </div>
+                            <span class="s-error-msg">Please fill out a valid email address</span>
+                        </div>
+
+                        <!-- Field 3: 10-Digit Mobile Number (Blocks Alphabets) -->
+                        <div class="s-field-group" id="sGroupPhone">
+                            <label for="signupPhone">10-DIGIT MOBILE NUMBER</label>
+                            <div class="s-input-shell">
+                                <input type="tel" id="signupPhone" placeholder="10 digit mobile number" maxlength="10" autocomplete="tel" required>
+                            </div>
+                            <span class="s-error-msg" id="phoneErrText">Please fill out this field (10 digits required)</span>
+                        </div>
+
+                        <!-- Field 4: Password Key -->
+                        <div class="s-field-group" id="sGroupPass">
+                            <label for="signupPass">PASSWORD KEY</label>
+                            <div class="s-input-shell">
+                                <input type="password" id="signupPass" placeholder="Create a password" autocomplete="new-password" required>
+                                <button type="button" class="s-eye-btn" data-target="signupPass" aria-label="Toggle Password Visibility">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="s-error-msg">Please fill out this field</span>
+                        </div>
+
+                        <!-- Field 5: Confirm Password Key -->
+                        <div class="s-field-group" id="sGroupConfirm">
+                            <label for="signupConfirm">CONFIRM PASSWORD KEY</label>
+                            <div class="s-input-shell">
+                                <input type="password" id="signupConfirm" placeholder="Confirm your password" autocomplete="new-password" required>
+                                <button type="button" class="s-eye-btn" data-target="signupConfirm" aria-label="Toggle Confirm Password Visibility">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="s-error-msg" id="confirmErrText">Please fill out this field</span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-signup-submit" id="btnSignupSubmit">
+                            <span>SIGN UP</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 6l6 6-6 6"/>
+                            </svg>
+                        </button>
+
+                    </form>
+
+                    <!-- Footer Links -->
+                    <div class="s-footer-links">
+                        <p>Already have an account? <a href="login.html">Log In</a></p>
+                        <a href="index.html" class="s-return-home">Return to Home</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+   
+    <style>
+        :root {
+    --primary: #0c100d;
+    --panel-left: #111613;
+    --panel-right: #151b18;
+    --input-bg: #1b221e;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --error-red: #f87171;
+    --success-emerald: #10b981;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- OUTER VIEWPORT --- */
+.signup-viewport {
+    min-height: 100vh;
+    width: 100%;
+    padding: 2.5rem 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.06), transparent 55%), var(--primary);
+}
+
+.signup-split-container {
+    max-width: 1180px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75);
+}
+
+/* --- LEFT PANEL: BRAND STORY & IMAGE --- */
+.signup-brand-panel {
+    position: relative;
+    background: linear-gradient(160deg, #131915 0%, #0d120f 100%);
+    padding: 3.4rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(212, 175, 55, 0.1);
+    overflow: hidden;
+}
+
+.s-watermark {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    color: rgba(212, 175, 55, 0.12);
+    pointer-events: none;
+}
+
+.wm-tl { top: 28px; left: 28px; }
+.wm-mr { top: 44%; right: 28px; }
+
+.s-brand-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.s-brand-pill {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 0.4rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.s-pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+.s-brand-headline {
+    font-family: var(--font-serif);
+    font-size: 3.35rem;
+    font-weight: 600;
+    line-height: 1.08;
+    color: var(--text-light);
+    margin-bottom: 1.25rem;
+}
+
+.s-brand-headline .gold-highlight {
+    color: var(--accent);
+}
+
+.s-brand-desc {
+    font-size: 0.86rem;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    max-width: 400px;
+}
+
+/* Vertical Showcase Image (Matching Reference Card Proportions) */
+.s-showcase-box {
+    width: 245px;
+    height: 275px;
+    margin: 0 auto 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.24);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.65);
+}
+
+.s-showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.92) contrast(1.04);
+    transition: transform 0.8s var(--ease-luxury);
+}
+
+.s-showcase-box:hover .s-showcase-img {
+    transform: scale(1.06);
+}
+
+/* Bottom 3-Pillar Vector Checklist */
+.s-bottom-pillars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+    margin-top: auto;
+}
+
+.s-bottom-pillars span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: #c2c9c5;
+}
+
+.s-bottom-pillars svg {
+    width: 14px;
+    height: 14px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+/* --- RIGHT PANEL: REGISTRATION FORM --- */
+.signup-form-panel {
+    background-color: var(--panel-right);
+    padding: 3rem 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-form-inner {
+    width: 100%;
+    max-width: 430px;
+}
+
+.s-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.42rem 0.9rem;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 6px;
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-decoration: none;
+    margin-bottom: 1.4rem;
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.s-back-link svg {
+    width: 13px;
+    height: 13px;
+    color: var(--accent);
+}
+
+.s-back-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateX(-3px);
+}
+
+.s-form-header {
+    margin-bottom: 1.5rem;
+}
+
+.s-form-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.35rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+}
+
+.s-form-header h2 .gold-accent {
+    color: var(--accent);
+}
+
+.s-form-header p {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* Success Banner */
+.signup-success-banner {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    padding: 0.95rem 1.1rem;
+    margin-bottom: 1.3rem;
+    background-color: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 8px;
+    color: var(--text-light);
+}
+
+.signup-success-banner.is-visible {
+    display: flex;
+    animation: fadeSlideIn 0.4s var(--ease-luxury);
+}
+
+.signup-success-banner svg {
+    width: 22px;
+    height: 22px;
+    color: var(--success-emerald);
+    flex-shrink: 0;
+}
+
+.signup-success-banner strong {
+    display: block;
+    font-size: 0.84rem;
+    color: var(--success-emerald);
+    margin-bottom: 2px;
+}
+
+.signup-success-banner span {
+    font-size: 0.76rem;
+    color: #c6cdc9;
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Fields */
+.stackly-signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.05rem;
+}
+
+.s-field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.s-field-group label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+}
+
+.s-input-shell {
+    display: flex;
+    align-items: center;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    border-radius: 8px;
+    height: 46px;
+    padding: 0 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.s-input-shell:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+.s-input-shell input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    color: var(--text-light);
+}
+
+.s-input-shell input::placeholder {
+    color: rgba(138, 146, 142, 0.55);
+}
+
+.s-eye-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: color 0.25s ease;
+}
+
+.s-eye-btn:hover {
+    color: var(--accent);
+}
+
+.s-eye-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Validation Prompt */
+.s-error-msg {
+    display: none;
+    font-size: 0.71rem;
+    color: var(--error-red);
+    margin-top: 0.32rem;
+}
+
+.s-field-group.is-invalid .s-input-shell {
+    border-color: var(--error-red);
+}
+
+.s-field-group.is-invalid .s-error-msg {
+    display: block;
+}
+
+/* Sign Up Pill CTA Button (Matching Reference Shape) */
+.btn-signup-submit {
+    width: 100%;
+    height: 48px;
+    margin-top: 0.45rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.35s var(--ease-luxury);
+}
+
+.btn-signup-submit svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.btn-signup-submit:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(212, 175, 55, 0.24);
+}
+
+.btn-signup-submit:hover svg {
+    transform: translateX(4px);
+}
+
+/* Footer Links */
+.s-footer-links {
+    margin-top: 1.4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.s-footer-links p {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.s-footer-links p a {
+    color: var(--text-light);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.s-footer-links p a:hover {
+    color: var(--accent);
+}
+
+.s-return-home {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.25s ease;
+}
+
+.s-return-home:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 960px) {
+    .signup-split-container {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+    }
+    .signup-brand-panel {
+        display: none;
+    }
+    .signup-form-panel {
+        padding: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-viewport {
+        padding: 1.2rem;
+    }
+    .signup-form-panel {
+        padding: 2rem 1.4rem;
+    }
+}
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const signupForm = document.getElementById('stacklySignupForm');
+    const nameInput = document.getElementById('signupName');
+    const emailInput = document.getElementById('signupEmail');
+    const phoneInput = document.getElementById('signupPhone');
+    const passInput = document.getElementById('signupPass');
+    const confirmInput = document.getElementById('signupConfirm');
+    const successBanner = document.getElementById('signupSuccessBanner');
+    const submitBtn = document.getElementById('btnSignupSubmit');
+
+    const groupName = document.getElementById('sGroupName');
+    const groupEmail = document.getElementById('sGroupEmail');
+    const groupPhone = document.getElementById('sGroupPhone');
+    const groupPass = document.getElementById('sGroupPass');
+    const groupConfirm = document.getElementById('sGroupConfirm');
+    const phoneErrText = document.getElementById('phoneErrText');
+    const confirmErrText = document.getElementById('confirmErrText');
+
+    // 1. Toggle Password Visibility for Both Password Fields
+    document.querySelectorAll('.s-eye-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            const targetInput = document.getElementById(targetId);
+            if (targetInput) {
+                targetInput.type = targetInput.type === 'password' ? 'text' : 'password';
+            }
+        });
+    });
+
+    // 2. Strict Real-Time Input Filtering
+    // Full Name won't allow numbers
+    nameInput.addEventListener('input', () => {
+        nameInput.value = nameInput.value.replace(/[0-9]/g, '');
+        if (nameInput.value.trim()) groupName.classList.remove('is-invalid');
+    });
+
+    // Mobile Number won't allow alphabets (digits only, max 10)
+    phoneInput.addEventListener('input', () => {
+        phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '').slice(0, 10);
+        if (phoneInput.value.length === 10) groupPhone.classList.remove('is-invalid');
+    });
+
+    emailInput.addEventListener('input', () => {
+        if (emailInput.value.trim()) groupEmail.classList.remove('is-invalid');
+    });
+
+    passInput.addEventListener('input', () => {
+        if (passInput.value.trim()) groupPass.classList.remove('is-invalid');
+    });
+
+    confirmInput.addEventListener('input', () => {
+        if (confirmInput.value.trim()) groupConfirm.classList.remove('is-invalid');
+    });
+
+    // 3. Validate All Fields -> Show "Successfully Signed Up!" -> Navigate to login.html
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!nameInput.value.trim()) {
+            groupName.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (!emailRegex.test(emailInput.value.trim())) {
+            groupEmail.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (phoneInput.value.length !== 10) {
+            phoneErrText.textContent = phoneInput.value.length === 0
+                ? 'Please fill out this field'
+                : 'Please enter a valid 10-digit mobile number';
+            groupPhone.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (!passInput.value.trim()) {
+            groupPass.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (!confirmInput.value.trim()) {
+            confirmErrText.textContent = 'Please fill out this field';
+            groupConfirm.classList.add('is-invalid');
+            isValid = false;
+        } else if (passInput.value !== confirmInput.value) {
+            confirmErrText.textContent = 'Passwords do not match';
+            groupConfirm.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Store registered user details so login & dashboard can reference them
+        localStorage.setItem('stackly_registered_name', nameInput.value.trim());
+        localStorage.setItem('stackly_registered_email', emailInput.value.trim());
+
+        // Show "Successfully Signed Up!" message & redirect to login.html
+        successBanner.classList.add('is-visible');
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1600);
+    });
+});
+
+    </script>

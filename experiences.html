@@ -1,0 +1,3735 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | Entering Ecosystem...</title>
+    
+    <!-- Google Fonts Deployment -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- STACKLY Premium Preloading Canvas -->
+    <div id="preloader">
+        <div class="stack-container">
+            <div class="stack-element">THE LUXURY ECOSYSTEM</div>
+            <div class="stack-element">STACKLY</div>
+            <div class="stack-line"></div>
+        </div>
+    </div>
+
+   
+
+    <!-- External JavaScript Link -->
+  <script>
+    // Execution sequence firing exactly at 2000ms
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+        
+        // Note: For live production deployment, replace the class addition with:
+        // window.location.href = "home.html";
+    }, 2000); 
+});
+
+  </script>
+
+  <!-- Main Navigation Header Elements -->
+<header id="header">
+    <!-- Brand Logo Container with Page Refresh Trigger -->
+    <a href="#" class="logo-link" id="logoButton" aria-label="Refresh Page">
+        <img src="https://placehold.co" alt="STACKLY Logo" class="brand-logo">
+    </a>
+
+    <!-- Hamburger Icon for Responsive Breakpoints -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+    </button>
+
+    <!-- Navigation Drawer Screen-Blur Overlays -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Center-Aligned Layout Navigation Drawer -->
+    <nav class="nav-container" id="navMenu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link ">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="experiences.html" class="nav-link active">Experiences</a></li>
+            <li><a href="journals.html" class="nav-link">Journals</a></li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        
+        <!-- Corner-Aligned Auth CTA Interface Container -->
+        <div class="auth-container">
+            <a href="login.html" class="btn btn-auth">Login</a>
+        </div>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. BRAND LOGO PAGE REFRESH ENGINE ---
+    const logoButton = document.getElementById('logoButton');
+    if (logoButton) {
+        logoButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Nullifies basic hashtag jumping actions
+            window.location.reload(); // Deploys explicit frame content initialization calls
+        });
+    }
+
+    // --- 2. RESPONSIVE TOOGLE MECHANISM & BLUR TOGGLE ---
+    const headerElement = document.getElementById('header');
+    const menuToggle = document.getElementById('menuToggle');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const toggleMobileMenu = () => {
+        headerElement.classList.toggle('menu-open');
+        
+        // Locks document canvas windows to block background scrolling artifact anomalies
+        if (headerElement.classList.contains('menu-open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    };
+
+    if (menuToggle && navOverlay) {
+        menuToggle.addEventListener('click', toggleMobileMenu);
+        navOverlay.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Gracefully drops the mobile layout layer panel if navigation click coordinates activate
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (headerElement.classList.contains('menu-open')) {
+                toggleMobileMenu();
+            }
+        });
+    });
+
+    // --- 3. LIVE ACTIVE DISPLAY SELECTION STATE MANAGEMENT ---
+    navLinks.forEach(clickedLink => {
+        clickedLink.addEventListener('click', function() {
+            const activeTarget = document.querySelector('.nav-link.active');
+            if (activeTarget) {
+                activeTarget.classList.remove('active');
+            }
+            this.classList.add('active');
+        });
+    });
+
+    // --- 4. SCROLL INTERFACES DEVIATION SENSOR ---
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+            headerElement.classList.add('scrolled');
+        } else {
+            headerElement.classList.remove('scrolled');
+        }
+    });
+});
+
+</script>
+
+<section class="exp-hero-section" id="experiencesHero">
+        <div class="exp-hero-wrapper">
+            
+            <!-- Left Column: Narrative & Interactive Buttons -->
+            <div class="exp-hero-narrative">
+                <div class="exp-eyebrow">
+                    <span class="exp-eyebrow-line"></span>
+                    <span>Curated Adventures &amp; Rituals</span>
+                </div>
+
+                <!-- Scroll-Triggered Word-by-Word Title -->
+                <h1 class="exp-hero-title" id="expHeroScrollTitle">
+                    <span>Moments</span> 
+                    <span>Crafted</span> 
+                    <span>Beyond</span> 
+                    <span>The</span> 
+                    <span>Ordinary.</span>
+                </h1>
+
+                <p class="exp-hero-description exp-fade-up">
+                    From sunrise volcanic ridge treks and private yacht expeditions to intimate vinyl listening sessions and artisan mixology labs, every STACKLY experience is designed to spark connection and wonder.
+                </p>
+
+                <!-- Buttons with Creative Hover Effects & 404.html Navigation -->
+                <div class="exp-hero-actions exp-fade-up">
+                    <a href="404.html" class="btn-exp btn-exp-primary">
+                        <span class="btn-bg-slide"></span>
+                        <span class="btn-label">Explore Expeditions</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6"/>
+                        </svg>
+                    </a>
+
+                    <a href="404.html" class="btn-exp btn-exp-secondary">
+                        <span class="btn-border-glow"></span>
+                        <span class="btn-label">Weekly Rituals</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Dual Staggered Architectural & Adventure Images -->
+            <div class="exp-hero-gallery" id="expHeroGallery">
+                
+                <!-- Primary Tall Image Frame -->
+                <div class="exp-frame-primary exp-fade-up">
+                    <img src="https://unsplash.com" alt="STACKLY Coastal Cove Expedition" class="exp-img-main">
+                    <div class="exp-frame-badge">01 / OCEAN EXPEDITIONS</div>
+                </div>
+
+                <!-- Overlapping Secondary Detail Frame -->
+                <div class="exp-frame-secondary exp-fade-up">
+                    <div class="secondary-gold-outline"></div>
+                    <img src="https://unsplash.com" alt="STACKLY Nightly Mixology & Vinyl Sessions" class="exp-img-sub">
+                    <div class="exp-frame-badge">02 / NIGHTLY ALCHEMY</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+        /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --header-clearance: 90px;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+}
+
+/* --- HERO SECTION CONTAINER --- */
+.exp-hero-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--primary);
+    padding: calc(var(--header-clearance) + 75px) 5% 100px 5%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.exp-hero-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* --- LEFT COLUMN: NARRATIVE --- */
+.exp-hero-narrative {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 3;
+}
+
+.exp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+}
+
+.exp-eyebrow-line {
+    width: 36px;
+    height: 1px;
+    background-color: var(--accent);
+}
+
+/* Scroll-Triggered Word-by-Word Title */
+.exp-hero-title {
+    font-family: var(--font-serif);
+    font-size: 4.8rem;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.exp-hero-title span {
+    display: inline-block;
+    margin-right: 0.24em;
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.75s var(--ease-luxury), transform 0.75s var(--ease-luxury);
+}
+
+.exp-hero-title.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.exp-hero-title.reveal-active span:nth-child(1) { transition-delay: 0.08s; }
+.exp-hero-title.reveal-active span:nth-child(2) { transition-delay: 0.22s; }
+.exp-hero-title.reveal-active span:nth-child(3) { transition-delay: 0.36s; }
+.exp-hero-title.reveal-active span:nth-child(4) { transition-delay: 0.50s; }
+.exp-hero-title.reveal-active span:nth-child(5) { transition-delay: 0.64s; }
+
+.exp-hero-description {
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--muted);
+    max-width: 540px;
+    margin-bottom: 3rem;
+}
+
+.exp-fade-up {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.85s var(--ease-luxury), transform 0.85s var(--ease-luxury);
+}
+
+.exp-fade-up.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- CREATIVE INTERACTIVE BUTTONS --- */
+.exp-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    transition-delay: 0.35s;
+}
+
+.btn-exp {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.05rem 2.3rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s var(--ease-luxury), box-shadow 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.btn-exp .btn-label,
+.btn-exp svg {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-exp svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+/* Primary Button: Liquid Curtain Sweep Hover Effect */
+.btn-exp-primary {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+}
+
+.btn-exp-primary .btn-bg-slide {
+    position: absolute;
+    inset: 0;
+    background-color: var(--text-light);
+    transform: translateX(-101%);
+    transition: transform 0.45s var(--ease-luxury);
+    z-index: 1;
+}
+
+.btn-exp-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(212, 175, 55, 0.22);
+    border-color: var(--text-light);
+}
+
+.btn-exp-primary:hover .btn-bg-slide {
+    transform: translateX(0);
+}
+
+.btn-exp-primary:hover svg {
+    transform: translateX(6px);
+}
+
+/* Secondary Button: Corner-Expanding Gold Frame Hover Effect */
+.btn-exp-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.btn-exp-secondary .btn-border-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.16), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.65s var(--ease-luxury);
+    z-index: 1;
+}
+
+.btn-exp-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.btn-exp-secondary:hover .btn-border-glow {
+    transform: translateX(100%);
+}
+
+/* --- RIGHT COLUMN: DUAL STAGGERED IMAGE GALLERY --- */
+.exp-hero-gallery {
+    position: relative;
+    width: 100%;
+    height: 580px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* Primary Tall Frame */
+.exp-frame-primary {
+    position: relative;
+    width: 78%;
+    height: 500px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    background-color: var(--surface);
+    z-index: 1;
+    transition-delay: 0.2s;
+}
+
+.exp-img-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.04);
+    transition: transform 0.9s var(--ease-luxury), filter 0.5s ease;
+}
+
+.exp-frame-primary:hover .exp-img-main {
+    transform: scale(1.06);
+    filter: saturate(1.05);
+}
+
+/* Secondary Overlapping Frame */
+.exp-frame-secondary {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48%;
+    height: 270px;
+    border-radius: 3px;
+    z-index: 2;
+    transition-delay: 0.4s;
+}
+
+.secondary-gold-outline {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 3px;
+    pointer-events: none;
+    transition: transform 0.5s var(--ease-luxury);
+}
+
+.exp-img-sub {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.75);
+    transition: transform 0.75s var(--ease-luxury);
+}
+
+.exp-frame-secondary:hover .exp-img-sub {
+    transform: scale(1.04);
+}
+
+.exp-frame-secondary:hover .secondary-gold-outline {
+    transform: translate(-5px, -5px);
+}
+
+/* Architectural Caption Tags */
+.exp-frame-badge {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background-color: rgba(12, 16, 13, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--accent);
+    font-size: 0.66rem;
+    letter-spacing: 2px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 2px;
+    z-index: 3;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .exp-hero-title {
+        font-size: 3.8rem;
+    }
+    .exp-hero-gallery {
+        height: 500px;
+    }
+    .exp-frame-primary {
+        height: 430px;
+    }
+    .exp-frame-secondary {
+        height: 230px;
+    }
+}
+
+@media (max-width: 992px) {
+    .exp-hero-section {
+        padding-top: calc(75px + 50px);
+        padding-bottom: 80px;
+    }
+    .exp-hero-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4.5rem;
+    }
+    .exp-hero-gallery {
+        height: 480px;
+    }
+    .exp-frame-primary {
+        width: 82%;
+        height: 410px;
+    }
+    .exp-frame-secondary {
+        width: 46%;
+        height: 230px;
+    }
+}
+
+@media (max-width: 576px) {
+    .exp-hero-title {
+        font-size: 2.6rem;
+    }
+    .exp-hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    .btn-exp {
+        width: 100%;
+    }
+    .exp-hero-gallery {
+        height: auto;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .exp-frame-primary,
+    .exp-frame-secondary {
+        position: relative;
+        width: 100%;
+        height: 280px;
+    }
+    .secondary-gold-outline {
+        display: none;
+    }
+}
+
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const heroObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.12
+    });
+
+    const titleEl = document.getElementById('expHeroScrollTitle');
+    const fadeEls = document.querySelectorAll('.exp-fade-up');
+
+    if (titleEl) heroObserver.observe(titleEl);
+    fadeEls.forEach(el => heroObserver.observe(el));
+
+    // Subtle opposing cursor parallax between the two image frames on desktop
+    const gallery = document.getElementById('expHeroGallery');
+    const primaryFrame = document.querySelector('.exp-frame-primary');
+    const secondaryFrame = document.querySelector('.exp-frame-secondary');
+
+    if (gallery && primaryFrame && secondaryFrame && window.innerWidth > 992) {
+        gallery.addEventListener('mousemove', (e) => {
+            const rect = gallery.getBoundingClientRect();
+            const relX = (e.clientX - rect.left) / rect.width - 0.5;
+            const relY = (e.clientY - rect.top) / rect.height - 0.5;
+
+            primaryFrame.style.transform = `translate(${relX * -12}px, ${relY * -12}px)`;
+            secondaryFrame.style.transform = `translate(${relX * 16}px, ${relY * 16}px)`;
+        });
+
+        gallery.addEventListener('mouseleave', () => {
+            primaryFrame.style.transform = 'translate(0, 0)';
+            secondaryFrame.style.transform = 'translate(0, 0)';
+        });
+    }
+});
+
+    </script>
+
+    <!-- Experiences Page: Curated Immersion Tiers Section -->
+<section class="exp-tiers-section" id="expTiers">
+    <div class="exp-tiers-wrapper">
+        
+        <!-- Left Column: Narrative Anchor -->
+        <div class="exp-tiers-anchor">
+            <span class="exp-tiers-eyebrow">CURATED EXPERIENCES</span>
+            
+            <!-- Scroll-Triggered Word-by-Word Heading -->
+            <h2 class="exp-tiers-title" id="expTiersTitle">
+                <span>Explore</span> 
+                <span>Deeply,</span> 
+                <span>Connect</span> 
+                <span>Effortlessly.</span>
+            </h2>
+            
+            <p class="exp-tiers-desc exp-tiers-fade">
+                Choose from our tailored experience collectives that match your rhythm — from guided coastal ridge treks to private sunset yacht expeditions.
+            </p>
+            
+            <div class="exp-tiers-cta exp-tiers-fade">
+                <a href="404.html" class="exp-tiers-link">
+                    <span>View All Experiences</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Column: 3-Card Sequential Experience Grid -->
+        <div class="exp-tiers-grid">
+            
+            <!-- Card 01 -->
+            <a href="404.html" class="exp-tier-card" data-tier-index="0">
+                <div class="tier-img-frame">
+                    <img src="https://unsplash.com" alt="Coastal Ridge Expedition" class="tier-img">
+                </div>
+                <div class="tier-card-body">
+                    <h3>Coastal Ridge Trek</h3>
+                    <p class="tier-summary">Perfect for solo wanderers and sunrise explorers.</p>
+                    
+                    <ul class="tier-specs">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>4 Hours • Morning</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+                            <span>Guided Trail &amp; Gear</span>
+                        </li>
+                    </ul>
+
+                    <div class="tier-price-row">
+                        <span class="tier-from">From</span>
+                        <span class="tier-amount">₹2,499</span>
+                        <span class="tier-unit">/ guest</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 02 -->
+            <a href="404.html" class="exp-tier-card" data-tier-index="1">
+                <div class="tier-img-frame">
+                    <img src="https://unsplash.com" alt="Thermal Spa & Breathwork Ritual" class="tier-img">
+                </div>
+                <div class="tier-card-body">
+                    <h3>Thermal Spa Ritual</h3>
+                    <p class="tier-summary">More calm, more restoration for body and mind.</p>
+                    
+                    <ul class="tier-specs">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2.5 3-3.5 5.5-3.5 8a3.5 3.5 0 0 0 7 0c0-2.5-1-5-3.5-8Z"/></svg>
+                            <span>Volcanic Mineral Pools</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+                            <span>Botanical Elixir Bar</span>
+                        </li>
+                    </ul>
+
+                    <div class="tier-price-row">
+                        <span class="tier-from">From</span>
+                        <span class="tier-amount">₹3,499</span>
+                        <span class="tier-unit">/ guest</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 03 -->
+            <a href="404.html" class="exp-tier-card" data-tier-index="2">
+                <div class="tier-img-frame">
+                    <img src="https://unsplash.com" alt="Creator Sunset Charter & Dining" class="tier-img">
+                </div>
+                <div class="tier-card-body">
+                    <h3>Sunset Yacht Charter</h3>
+                    <p class="tier-summary">Designed for private collectives and evening mixology.</p>
+                    
+                    <ul class="tier-specs">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+                            <span>Private Deck Access</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+                            <span>Chef Table &amp; Mixology</span>
+                        </li>
+                    </ul>
+
+                    <div class="tier-price-row">
+                        <span class="tier-from">From</span>
+                        <span class="tier-amount">₹4,999</span>
+                        <span class="tier-unit">/ guest</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --surface-elevated: #161c18;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- SECTION CONTAINER --- */
+.exp-tiers-section {
+    background-color: var(--primary);
+    padding: 120px 5%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.exp-tiers-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 2.15fr;
+    gap: 4.5rem;
+    align-items: center;
+}
+
+/* --- LEFT COLUMN: NARRATIVE ANCHOR --- */
+.exp-tiers-anchor {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.exp-tiers-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+}
+
+/* Scroll-Triggered Word-by-Word Title */
+.exp-tiers-title {
+    font-family: var(--font-serif);
+    font-size: 3.4rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.exp-tiers-title span {
+    display: inline-block;
+    margin-right: 0.22em;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s var(--ease-luxury), transform 0.75s var(--ease-luxury);
+}
+
+.exp-tiers-title.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.exp-tiers-title.reveal-active span:nth-child(1) { transition-delay: 0.05s; }
+.exp-tiers-title.reveal-active span:nth-child(2) { transition-delay: 0.18s; }
+.exp-tiers-title.reveal-active span:nth-child(3) { transition-delay: 0.30s; }
+.exp-tiers-title.reveal-active span:nth-child(4) { transition-delay: 0.42s; }
+
+.exp-tiers-desc {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 2.2rem;
+}
+
+.exp-tiers-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s var(--ease-luxury) 0.45s, transform 0.8s var(--ease-luxury) 0.45s;
+}
+
+.exp-tiers-fade.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gold-Underlined View All Link (Matching Reference Bottom Rule) */
+.exp-tiers-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    color: var(--text-light);
+    text-decoration: none;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    transition: color 0.3s ease;
+}
+
+.exp-tiers-link svg {
+    width: 16px;
+    height: 16px;
+    color: var(--accent);
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.exp-tiers-link:hover {
+    color: var(--accent);
+}
+
+.exp-tiers-link:hover svg {
+    transform: translateX(6px);
+}
+
+/* --- RIGHT COLUMN: 3-CARD SEQUENTIAL GRID --- */
+.exp-tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    width: 100%;
+}
+
+.exp-tier-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    
+    /* Initial State Before Scroll Reveal */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s var(--ease-luxury),
+                transform 0.8s var(--ease-luxury),
+                border-color 0.35s ease,
+                background-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.exp-tier-card.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.exp-tier-card:hover {
+    background-color: var(--surface-elevated);
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.6);
+    transform: translateY(-6px);
+}
+
+/* Card Image Frame */
+.tier-img-frame {
+    width: 100%;
+    height: 195px;
+    overflow: hidden;
+    background-color: #070908;
+}
+
+.tier-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.04);
+    transition: transform 0.8s var(--ease-luxury), filter 0.4s ease;
+}
+
+.exp-tier-card:hover .tier-img {
+    transform: scale(1.06);
+    filter: saturate(1.05);
+}
+
+/* Card Body */
+.tier-card-body {
+    padding: 1.6rem 1.5rem 1.8rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tier-card-body h3 {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.55rem;
+    transition: color 0.3s ease;
+}
+
+.exp-tier-card:hover .tier-card-body h3 {
+    color: var(--accent);
+}
+
+.tier-summary {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 1.35rem;
+}
+
+/* Vector Icon Feature List */
+.tier-specs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.6rem;
+    flex-grow: 1;
+}
+
+.tier-specs li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: #c2c9c5;
+}
+
+.tier-specs li svg {
+    width: 15px;
+    height: 15px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+/* Pricing Baseline (Matching Reference Typography Hierarchy) */
+.tier-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding-top: 0.4rem;
+}
+
+.tier-from,
+.tier-unit {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+}
+
+.tier-amount {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.3px;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .exp-tiers-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+    .exp-tiers-desc {
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 900px) {
+    .exp-tiers-section {
+        padding: 90px 5%;
+    }
+    .exp-tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .exp-tiers-title {
+        font-size: 2.5rem;
+    }
+    .exp-tiers-grid {
+        grid-template-columns: 1fr;
+    }
+    .tier-img-frame {
+        height: 220px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const tiersObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('exp-tier-card')) {
+                    const cardIndex = parseInt(entry.target.getAttribute('data-tier-index') || '0', 10);
+                    setTimeout(() => {
+                        entry.target.classList.add('reveal-active');
+                    }, cardIndex * 160);
+                } else {
+                    entry.target.classList.add('reveal-active');
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.14
+    });
+
+    const titleEl = document.getElementById('expTiersTitle');
+    const fadeEls = document.querySelectorAll('.exp-tiers-fade');
+    const tierCards = document.querySelectorAll('.exp-tier-card');
+
+    if (titleEl) tiersObserver.observe(titleEl);
+    fadeEls.forEach(el => tiersObserver.observe(el));
+    tierCards.forEach(card => tiersObserver.observe(card));
+});
+
+</script>
+
+<!-- Experiences Page: Simple & Clean Daily Rituals Section -->
+<section class="exp-rituals-section" id="expRituals">
+    <div class="rituals-max-wrapper">
+        
+        <!-- Centered Word-by-Word Scroll Header -->
+        <div class="rituals-header">
+            <span class="rituals-eyebrow">DAILY RHYTHMS</span>
+            
+            <h2 class="rituals-title" id="ritualsScrollTitle">
+                <span>Gather,</span> 
+                <span>Create</span> 
+                <span>&amp;</span> 
+                <span>Unwind.</span>
+            </h2>
+            
+            <p class="rituals-subtitle rituals-fade">
+                Intimate daily sessions curated to bring our community together from sunrise to starlight.
+            </p>
+        </div>
+
+        <!-- Clean 3-Column Sequential Card Grid -->
+        <div class="rituals-grid">
+            
+            <!-- Ritual Card 01 -->
+            <article class="ritual-card" data-ritual-index="0">
+                <div class="ritual-img-box">
+                    <span class="ritual-time-tag">06:30 AM</span>
+                    <img src="https://unsplash.com" alt="Sunrise Cliffside Breathwork" class="ritual-img">
+                </div>
+                <div class="ritual-body">
+                    <h3>Sunrise Breathwork</h3>
+                    <p>Guided oceanfront meditation and cold-plunge activation on the east terrace.</p>
+                    <a href="404.html" class="ritual-btn">
+                        <span>Reserve Spot</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Ritual Card 02 -->
+            <article class="ritual-card" data-ritual-index="1">
+                <div class="ritual-img-box">
+                    <span class="ritual-time-tag">04:00 PM</span>
+                    <img src="https://unsplash.com" alt="Creator Roundtable and Espresso Lab" class="ritual-img">
+                </div>
+                <div class="ritual-body">
+                    <h3>Creator Espresso Lab</h3>
+                    <p>Single-origin pour-overs paired with informal design and founder roundtables.</p>
+                    <a href="404.html" class="ritual-btn">
+                        <span>Reserve Spot</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Ritual Card 03 -->
+            <article class="ritual-card" data-ritual-index="2">
+                <div class="ritual-img-box">
+                    <span class="ritual-time-tag">09:00 PM</span>
+                    <img src="https://unsplash.com" alt="Midnight Vinyl and Botanical Mixology" class="ritual-img">
+                </div>
+                <div class="ritual-body">
+                    <h3>Vinyl &amp; Mixology</h3>
+                    <p>Analog acoustic listening sessions with botanical infusions around the firepit.</p>
+                    <a href="404.html" class="ritual-btn">
+                        <span>Reserve Spot</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- SECTION CONTAINER --- */
+.exp-rituals-section {
+    background-color: var(--primary);
+    padding: 120px 5%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.rituals-max-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* --- CENTERED HEADER & WORD-BY-WORD TITLE --- */
+.rituals-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.rituals-eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.rituals-title {
+    font-family: var(--font-serif);
+    font-size: 3.6rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.rituals-title span {
+    display: inline-block;
+    margin: 0 0.16em;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s var(--ease-luxury), transform 0.75s var(--ease-luxury);
+}
+
+.rituals-title.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rituals-title.reveal-active span:nth-child(1) { transition-delay: 0.05s; }
+.rituals-title.reveal-active span:nth-child(2) { transition-delay: 0.18s; }
+.rituals-title.reveal-active span:nth-child(3) { transition-delay: 0.30s; }
+.rituals-title.reveal-active span:nth-child(4) { transition-delay: 0.42s; }
+
+.rituals-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+.rituals-fade {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s var(--ease-luxury) 0.45s, transform 0.8s var(--ease-luxury) 0.45s;
+}
+
+.rituals-fade.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- CLEAN 3-COLUMN CARD GRID --- */
+.rituals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+    width: 100%;
+}
+
+.ritual-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+    /* Sequential One-by-One Scroll Entry */
+    opacity: 0;
+    transform: translateY(38px);
+    transition: opacity 0.8s var(--ease-luxury),
+                transform 0.8s var(--ease-luxury),
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.ritual-card.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ritual-card:hover {
+    border-color: rgba(212, 175, 55, 0.45);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+    transform: translateY(-5px);
+}
+
+/* Image Container */
+.ritual-img-box {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: #080a09;
+}
+
+.ritual-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.03);
+    transition: transform 0.8s var(--ease-luxury), filter 0.4s ease;
+}
+
+.ritual-card:hover .ritual-img {
+    transform: scale(1.06);
+    filter: saturate(1.04);
+}
+
+.ritual-time-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background-color: rgba(12, 16, 13, 0.86);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 3px;
+    z-index: 2;
+}
+
+/* Card Body */
+.ritual-body {
+    padding: 1.8rem 1.7rem 2rem 1.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.ritual-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.65rem;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-bottom: 0.65rem;
+    transition: color 0.3s ease;
+}
+
+.ritual-card:hover .ritual-body h3 {
+    color: var(--accent);
+}
+
+.ritual-body p {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 1.8rem;
+    flex-grow: 1;
+}
+
+/* Clean Button Link */
+.ritual-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.ritual-btn svg {
+    width: 15px;
+    height: 15px;
+    color: var(--accent);
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.ritual-btn:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.ritual-btn:hover svg {
+    transform: translateX(5px);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1024px) {
+    .rituals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .exp-rituals-section {
+        padding: 90px 5%;
+    }
+    .rituals-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .rituals-title {
+        font-size: 2.3rem;
+    }
+    .rituals-grid {
+        grid-template-columns: 1fr;
+    }
+    .ritual-img-box {
+        height: 220px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const ritualsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('ritual-card')) {
+                    const idx = parseInt(entry.target.getAttribute('data-ritual-index') || '0', 10);
+                    setTimeout(() => {
+                        entry.target.classList.add('reveal-active');
+                    }, idx * 160);
+                } else {
+                    entry.target.classList.add('reveal-active');
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.14
+    });
+
+    const titleEl = document.getElementById('ritualsScrollTitle');
+    const fadeEl = document.querySelector('.rituals-fade');
+    const cards = document.querySelectorAll('.ritual-card');
+
+    if (titleEl) ritualsObserver.observe(titleEl);
+    if (fadeEl) ritualsObserver.observe(fadeEl);
+    cards.forEach(card => ritualsObserver.observe(card));
+});
+
+</script>
+
+<section class="fusion-cta-banner">
+    
+    <!-- Cinematic Panoramic Background Canvas Layer -->
+    <div class="banner-parallax-bg">
+        <img src="https://unsplash.com" alt="STACKLY Panoramic Horizon Backdrop" class="banner-bg-img">
+        <div class="banner-dark-overlay"></div>
+    </div>
+
+    <!-- Core Narrative Content Layer -->
+    <div class="banner-content-container">
+        <div class="banner-text-track">
+            <!-- Line 1: Slades from the left grid interface boundary -->
+            <h2 class="banner-line line-left" id="bannerLineLeft">Ready to Align Your Journey?</h2>
+            <!-- Line 2: Slades from the right grid interface boundary -->
+            <p class="banner-line line-right" id="bannerLineRight">Claim your capsule pod suite or private sanctuary dwelling today.</p>
+        </div>
+
+        <!-- Central Action Link Cluster routing safely to 404.html -->
+        <div class="banner-action-box" id="bannerActionBox">
+            <a href="404.html" class="btn btn-fill">Initiate Sequence</a>
+            <a href="404.html" class="btn">Explore Blueprint</a>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    /* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-banner: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- BANNER CANVAS STRUCTURE --- */
+.fusion-cta-banner {
+    position: relative;
+    width: 100%;
+    padding: 100px 5%;
+    overflow: hidden;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- CINEMATIC PARALLAX BACKDROP LAYER --- */
+.banner-parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.banner-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.6) contrast(1.1) brightness(0.4);
+    transform: scale(1.05);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle luxury depth overlay tint loop */
+.banner-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(12, 16, 13, 0.9) 0%, rgba(12, 16, 13, 0.5) 50%, rgba(12, 16, 13, 0.9) 100%);
+}
+
+/* Trigger parallax scaling shift on image when hovering across section area bounds */
+.fusion-cta-banner:hover .banner-bg-img {
+    transform: scale(1.01);
+}
+
+/* --- CONTENT ROW MATRIX DRAWERS --- */
+.banner-content-container {
+    position: relative;
+    z-index: 5;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.banner-text-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Line 1: Main Serif Heading Token */
+.banner-line.line-left {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.15;
+    letter-spacing: 1px;
+    /* Initial state before intersection scroll trigger fires */
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: var(--transition-banner);
+}
+
+/* Line 2: Sans Serif Description Text Sub-line */
+.banner-line.line-right {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Initial state before intersection scroll trigger fires */
+    opacity: 0;
+    transform: translateX(100px);
+    transition: var(--transition-banner);
+}
+
+/* --- SCROLL ACTIVATION CLASS STATES --- */
+.banner-line.line-left.reveal-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.banner-line.line-right.reveal-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s; /* Slight staggered step delay behind heading element line */
+}
+
+/* --- ACTION BUTTON GROUPS --- */
+.banner-action-box {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    /* Scale transition upward from core layout base */
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+    transition: var(--transition-banner);
+}
+
+.banner-action-box.reveal-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition-delay: 0.5s;
+}
+
+/* Reusable Standard Button Topologies */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.btn-fill {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.btn-fill:hover {
+    background: transparent;
+    color: var(--text-light);
+}
+
+/* --- RESPONSIVE DESIGN INTERFACE GRIDS --- */
+@media (max-width: 992px) {
+    .fusion-cta-banner { padding: 120px 5%; }
+    .banner-line.line-left { font-size: 3.2rem; }
+    .banner-line.line-right { font-size: 0.95rem; }
+}
+
+@media (max-width: 576px) {
+    .fusion-cta-banner { padding: 90px 5%; }
+    .banner-line.line-left { font-size: 2.3rem; }
+    .banner-line.line-right { font-size: 0.85rem; line-height: 1.6; }
+    .banner-action-box { flex-direction: column; width: 100%; gap: 1rem; }
+    .banner-action-box .btn { width: 100%; text-align: center; }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- HIGH-PERFORMANCE INTERSECTION OBSERVER FOR SIDE-SLIDING CTA ENTRIES ---
+    const bannerObserverOptions = {
+        root: null,
+        threshold: 0.15, // Activates animations when 15% of the banner enters viewport range bounds
+        rootMargin: "0px"
+    };
+
+    const bannerScrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target); // Unbind layout tracing links to preserve memory stack cycles
+            }
+        });
+    }, bannerObserverOptions);
+
+    // Capture explicit target elements inside layout matrix channels
+    const leftLine = document.getElementById('bannerLineLeft');
+    const rightLine = document.getElementById('bannerLineRight');
+    const actionBox = document.getElementById('bannerActionBox');
+
+    if (leftLine) bannerScrollObserver.observe(leftLine);
+    if (rightLine) bannerScrollObserver.observe(rightLine);
+    if (actionBox) bannerScrollObserver.observe(actionBox);
+});
+
+</script>
+
+<!-- Experiences Page: Collective Stats & 4-Tile Staggered Mosaic Section -->
+<section class="exp-collective-section" id="expCollective">
+    <div class="collective-max-wrapper">
+        
+        <!-- Left Column: Narrative, Interactive Paragraph, Animated Stats & CTA -->
+        <div class="collective-narrative">
+            <div class="collective-eyebrow">
+                <span>EXPERIENCE COLLECTIVE</span>
+                <span class="collective-eyebrow-line"></span>
+            </div>
+
+            <!-- Scroll-Triggered Word-by-Word Title -->
+            <h2 class="collective-title" id="collectiveScrollTitle">
+                <span>Immerse</span> 
+                <span>In</span> 
+                <span class="gold-accent">STACKLY</span> 
+                <span>Rituals.</span>
+            </h2>
+
+            <!-- Interactive Paragraph with Creative Hover Effect -->
+            <div class="collective-para-box">
+                <p class="collective-description">
+                    From volcanic thermal immersions and sunrise ridge treks to intimate vinyl listening sessions and chef-led coastal tables, every STACKLY experience is designed to spark real human connection.
+                </p>
+            </div>
+
+            <!-- 3-Column Vector Stat Counters (Matching Reference Layout) -->
+            <div class="collective-stats-grid">
+                
+                <!-- Stat 01 -->
+                <div class="stat-box" data-stat-index="0">
+                    <div class="stat-vector-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number" data-target="48">0</div>
+                    <div class="stat-label">Expeditions</div>
+                </div>
+
+                <!-- Stat 02 -->
+                <div class="stat-box" data-stat-index="1">
+                    <div class="stat-vector-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number" data-target="120">0</div>
+                    <div class="stat-label">Curators</div>
+                </div>
+
+                <!-- Stat 03 -->
+                <div class="stat-box" data-stat-index="2">
+                    <div class="stat-vector-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number" data-target="3450">0</div>
+                    <div class="stat-label">Explorers</div>
+                </div>
+
+            </div>
+
+            <!-- Action Button with 404.html Navigation -->
+            <div class="collective-cta-wrapper">
+                <a href="404.html" class="btn-collective-gold">
+                    <span>Explore More</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Column: 4-Tile Staggered Image Collage (Matching Reference Proportions) -->
+        <div class="collective-mosaic-grid">
+            
+            <!-- Top-Left Medium Square -->
+            <div class="c-tile c-tile-1" data-tile-index="0">
+                <img src="https://unsplash.com" alt="STACKLY Oceanfront Infinity Lounge" class="c-tile-img">
+                <span class="c-tile-tag">Coastal Deck</span>
+            </div>
+
+            <!-- Top-Right Tall Vertical -->
+            <div class="c-tile c-tile-2" data-tile-index="1">
+                <img src="https://unsplash.com" alt="STACKLY Tropical Courtyard & Pool" class="c-tile-img">
+                <span class="c-tile-tag">Lagoon Sanctuary</span>
+            </div>
+
+            <!-- Bottom-Left Small Compact Square -->
+            <div class="c-tile c-tile-3" data-tile-index="2">
+                <img src="https://unsplash.com" alt="STACKLY Thermal Spa Pavilion" class="c-tile-img">
+                <span class="c-tile-tag">Thermal Spa</span>
+            </div>
+
+            <!-- Bottom-Right Medium Wide -->
+            <div class="c-tile c-tile-4" data-tile-index="3">
+                <img src="https://unsplash.com" alt="STACKLY Evening Lounge & Mixology" class="c-tile-img">
+                <span class="c-tile-tag">Nightly Mixology</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --surface-hover: #171e1a;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- SECTION CONTAINER --- */
+.exp-collective-section {
+    background-color: var(--primary);
+    padding: 130px 5%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.collective-max-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* --- LEFT COLUMN: NARRATIVE --- */
+.collective-narrative {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.collective-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+}
+
+.collective-eyebrow-line {
+    width: 42px;
+    height: 1.5px;
+    background-color: var(--accent);
+}
+
+/* Scroll-Triggered Word-by-Word Title */
+.collective-title {
+    font-family: var(--font-serif);
+    font-size: 3.8rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text-light);
+    margin-bottom: 1.6rem;
+}
+
+.collective-title span {
+    display: inline-block;
+    margin-right: 0.22em;
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.75s var(--ease-luxury), transform 0.75s var(--ease-luxury);
+}
+
+.collective-title span.gold-accent {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.collective-title.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.collective-title.reveal-active span:nth-child(1) { transition-delay: 0.05s; }
+.collective-title.reveal-active span:nth-child(2) { transition-delay: 0.18s; }
+.collective-title.reveal-active span:nth-child(3) { transition-delay: 0.30s; }
+.collective-title.reveal-active span:nth-child(4) { transition-delay: 0.42s; }
+
+/* --- INTERACTIVE PARAGRAPH WITH HOVER EFFECT --- */
+.collective-para-box {
+    position: relative;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 2.2rem;
+    border-left: 2px solid rgba(212, 175, 55, 0.25);
+    background-color: rgba(18, 23, 20, 0.35);
+    border-radius: 0 4px 4px 0;
+    transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.45s var(--ease-luxury), box-shadow 0.4s ease;
+    cursor: default;
+}
+
+.collective-description {
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
+    line-height: 1.8;
+    color: var(--muted);
+    transition: color 0.4s ease;
+}
+
+.collective-para-box:hover {
+    border-left-color: var(--accent);
+    background-color: rgba(212, 175, 55, 0.06);
+    transform: translateX(6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.collective-para-box:hover .collective-description {
+    color: var(--text-light);
+}
+
+/* --- 3-COLUMN VECTOR STAT COUNTERS --- */
+.collective-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    width: 100%;
+    margin-bottom: 2.6rem;
+}
+
+.stat-box {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    border-radius: 4px;
+    padding: 1.6rem 1.2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: border-color 0.35s ease, transform 0.4s var(--ease-luxury), background-color 0.35s ease;
+}
+
+/* Subtle double-outline inner accent mirroring reference card frame */
+.stat-box::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    border-radius: 2px;
+    pointer-events: none;
+    transition: border-color 0.35s ease;
+}
+
+.stat-box:hover {
+    border-color: var(--accent);
+    background-color: var(--surface-hover);
+    transform: translateY(-4px);
+}
+
+.stat-box:hover::after {
+    border-color: rgba(212, 175, 55, 0.25);
+}
+
+.stat-vector-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.stat-vector-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.stat-box:hover .stat-vector-icon {
+    transform: scale(1.12);
+}
+
+.stat-number {
+    font-family: var(--font-sans);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-light);
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+}
+
+/* --- CTA BUTTON --- */
+.btn-collective-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.05rem 2.6rem;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s var(--ease-luxury);
+}
+
+.btn-collective-gold svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.btn-collective-gold:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(212, 175, 55, 0.2);
+}
+
+.btn-collective-gold:hover svg {
+    transform: translateX(5px);
+}
+
+/* --- RIGHT COLUMN: 4-TILE STAGGERED COLLAGE (MATCHING REFERENCE) --- */
+.collective-mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 130px 150px 130px 90px;
+    gap: 1rem;
+    width: 100%;
+}
+
+.c-tile {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    background-color: var(--surface);
+    
+    /* Initial Scroll State */
+    opacity: 0;
+    transform: scale(0.92) translateY(25px);
+    transition: opacity 0.8s var(--ease-luxury),
+                transform 0.8s var(--ease-luxury),
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.c-tile.reveal-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Staggered Grid Placement Replicating Reference Image */
+.c-tile-1 {
+    grid-column: 2 / 7;
+    grid-row: 1 / 3;
+}
+
+.c-tile-2 {
+    grid-column: 7 / 13;
+    grid-row: 1 / 4;
+}
+
+.c-tile-3 {
+    grid-column: 4 / 7;
+    grid-row: 3 / 4;
+}
+
+.c-tile-4 {
+    grid-column: 7 / 11;
+    grid-row: 4 / 5;
+    min-height: 145px;
+}
+
+.c-tile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.04);
+    transition: transform 0.8s var(--ease-luxury), filter 0.4s ease;
+}
+
+.c-tile:hover {
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65);
+    z-index: 3;
+}
+
+.c-tile:hover .c-tile-img {
+    transform: scale(1.07);
+    filter: saturate(1.05);
+}
+
+.c-tile-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(12, 16, 13, 0.86);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.64rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.35s var(--ease-luxury);
+}
+
+.c-tile:hover .c-tile-tag {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1100px) {
+    .collective-max-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4.5rem;
+    }
+    .collective-mosaic-grid {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .exp-collective-section {
+        padding: 90px 5%;
+    }
+    .collective-title {
+        font-size: 2.9rem;
+    }
+    .collective-mosaic-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+    }
+    .c-tile-1,
+    .c-tile-2,
+    .c-tile-3,
+    .c-tile-4 {
+        grid-column: auto;
+        grid-row: auto;
+        height: 210px;
+        min-height: unset;
+    }
+}
+
+@media (max-width: 576px) {
+    .collective-title {
+        font-size: 2.4rem;
+    }
+    .collective-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .btn-collective-gold {
+        width: 100%;
+    }
+    .collective-mosaic-grid {
+        grid-template-columns: 1fr;
+    }
+    .c-tile-1,
+    .c-tile-2,
+    .c-tile-3,
+    .c-tile-4 {
+        height: 230px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. Scroll Reveal for Word-by-Word Title & 4-Tile Collage
+    const collectiveObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('c-tile')) {
+                    const idx = parseInt(entry.target.getAttribute('data-tile-index') || '0', 10);
+                    setTimeout(() => {
+                        entry.target.classList.add('reveal-active');
+                    }, idx * 140);
+                } else {
+                    entry.target.classList.add('reveal-active');
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.15
+    });
+
+    const titleEl = document.getElementById('collectiveScrollTitle');
+    const tiles = document.querySelectorAll('.c-tile');
+
+    if (titleEl) collectiveObserver.observe(titleEl);
+    tiles.forEach(tile => collectiveObserver.observe(tile));
+
+    // 2. Smooth Animated Number Counter on Scroll
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let countersStarted = false;
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !countersStarted) {
+                countersStarted = true;
+                statNumbers.forEach(numEl => {
+                    const target = parseInt(numEl.getAttribute('data-target') || '0', 10);
+                    const duration = 1600;
+                    const startTime = performance.now();
+
+                    const updateCounter = (now) => {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        numEl.textContent = Math.floor(eased * target).toLocaleString();
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            numEl.textContent = target.toLocaleString();
+                        }
+                    };
+                    requestAnimationFrame(updateCounter);
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const statsGrid = document.querySelector('.collective-stats-grid');
+    if (statsGrid) statsObserver.observe(statsGrid);
+});
+
+</script>
+
+<!-- STACKLY L-Cutout Architectural Showcase Section -->
+<section class="stackly-cutout-section" id="stacklyCutout">
+    <div class="cutout-max-wrapper">
+        
+        <!-- Left Column: Image Frame with Bottom-Right Architectural Cutout Badge -->
+        <div class="cutout-visual-column cutout-fade-in">
+            <div class="cutout-image-wrapper">
+                <img src="https://unsplash.com" alt="STACKLY Tropical Lagoon & Acoustic Pods" class="cutout-main-img">
+                
+                <!-- Recessed Bottom-Right Cutout Badge (Matching Reference Layout) -->
+                <div class="cutout-corner-badge">
+                    <p>
+                        <span class="gold-text">Curated</span> <span class="light-text">Modern</span><br>
+                        <span class="light-text">Nomad</span> <span class="gold-text">Sanctuary</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Word-by-Word Title, Narrative, 2x2 Checkmarks & CTA -->
+        <div class="cutout-narrative-column">
+            <div class="cutout-eyebrow">
+                <span>THE ECOSYSTEM</span>
+                <span class="cutout-eyebrow-line"></span>
+            </div>
+
+            <!-- Scroll-Triggered Word-by-Word Heading -->
+            <h2 class="cutout-title" id="cutoutScrollTitle">
+                <span>Welcome</span> 
+                <span>to</span> 
+                <span class="gold-accent">STACKLY</span>
+            </h2>
+
+            <p class="cutout-para cutout-fade-in">
+                Designed for modern creators, remote architects, and global explorers, STACKLY dissolves the boundary between five-star private seclusion and vibrant communal energy.
+            </p>
+
+            <p class="cutout-para cutout-fade-in">
+                Every acoustic sleeping capsule, cliffside thermal pool, and high-speed co-working studio is crafted to ground your focus while connecting you with an inspiring international collective.
+            </p>
+
+            <!-- 2x2 Vector Checkmark Feature Grid (Matching Reference Layout) -->
+            <ul class="cutout-checklist cutout-fade-in">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Acoustic Pods</span>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Thermal Pools</span>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Fiber Co-Work</span>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>24/7 Concierge</span>
+                </li>
+            </ul>
+
+            <!-- Action Button with 404.html Navigation -->
+            <div class="cutout-cta-box cutout-fade-in">
+                <a href="404.html" class="btn-cutout-gold">
+                    <span>Explore Ecosystem</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- SECTION CONTAINER --- */
+.stackly-cutout-section {
+    background-color: var(--primary);
+    padding: 130px 5%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.cutout-max-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* --- LEFT COLUMN: L-CUTOUT IMAGE SHOWCASE --- */
+.cutout-visual-column {
+    width: 100%;
+}
+
+.cutout-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.cutout-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.92) contrast(1.04);
+    transition: transform 0.9s var(--ease-luxury), filter 0.5s ease;
+}
+
+.cutout-image-wrapper:hover .cutout-main-img {
+    transform: scale(1.05);
+    filter: saturate(1.05);
+}
+
+/* Bottom-Right Recessed Cutout Badge (Replicating Reference L-Shape) */
+.cutout-corner-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--primary);
+    padding: 1.8rem 2.4rem 1.4rem 2.4rem;
+    border-top-left-radius: 4px;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    border-left: 1px solid rgba(212, 175, 55, 0.25);
+    z-index: 3;
+    transition: transform 0.45s var(--ease-luxury), border-color 0.35s ease;
+}
+
+.cutout-image-wrapper:hover .cutout-corner-badge {
+    border-color: var(--accent);
+}
+
+.cutout-corner-badge p {
+    font-family: var(--font-serif);
+    font-size: 1.65rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0.4px;
+}
+
+.cutout-corner-badge .gold-text {
+    color: var(--accent);
+}
+
+.cutout-corner-badge .light-text {
+    color: var(--text-light);
+}
+
+/* --- RIGHT COLUMN: NARRATIVE & CHECKLIST --- */
+.cutout-narrative-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cutout-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+}
+
+.cutout-eyebrow-line {
+    width: 44px;
+    height: 1.5px;
+    background-color: var(--accent);
+}
+
+/* Scroll-Triggered Word-by-Word Title */
+.cutout-title {
+    font-family: var(--font-serif);
+    font-size: 3.9rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text-light);
+    margin-bottom: 1.8rem;
+}
+
+.cutout-title span {
+    display: inline-block;
+    margin-right: 0.22em;
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.75s var(--ease-luxury), transform 0.75s var(--ease-luxury);
+}
+
+.cutout-title span.gold-accent {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.cutout-title.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cutout-title.reveal-active span:nth-child(1) { transition-delay: 0.05s; }
+.cutout-title.reveal-active span:nth-child(2) { transition-delay: 0.20s; }
+.cutout-title.reveal-active span:nth-child(3) { transition-delay: 0.35s; }
+
+.cutout-para {
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 1.35rem;
+}
+
+/* 2x2 Vector Checkmark Grid (Matching Reference Layout) */
+.cutout-checklist {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem 2.5rem;
+    width: 100%;
+    margin: 1rem 0 2.6rem 0;
+}
+
+.cutout-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: transform 0.3s var(--ease-luxury), color 0.3s ease;
+}
+
+.cutout-checklist li:hover {
+    transform: translateX(4px);
+    color: var(--accent);
+}
+
+.cutout-checklist li svg {
+    width: 17px;
+    height: 17px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+/* Action Button */
+.btn-cutout-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.05rem 2.6rem;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s var(--ease-luxury);
+}
+
+.btn-cutout-gold svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.btn-cutout-gold:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(212, 175, 55, 0.22);
+}
+
+.btn-cutout-gold:hover svg {
+    transform: translateX(5px);
+}
+
+/* Scroll Fade Utility */
+.cutout-fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.85s var(--ease-luxury), transform 0.85s var(--ease-luxury);
+}
+
+.cutout-fade-in.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1100px) {
+    .cutout-max-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .cutout-image-wrapper {
+        height: 460px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stackly-cutout-section {
+        padding: 90px 5%;
+    }
+    .cutout-title {
+        font-size: 3rem;
+    }
+    .cutout-image-wrapper {
+        height: 380px;
+    }
+    .cutout-corner-badge {
+        padding: 1.3rem 1.8rem 1rem 1.8rem;
+    }
+    .cutout-corner-badge p {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cutout-title {
+        font-size: 2.4rem;
+    }
+    .cutout-checklist {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+    .btn-cutout-gold {
+        width: 100%;
+    }
+    .cutout-image-wrapper {
+        height: 320px;
+    }
+    .cutout-corner-badge {
+        padding: 1rem 1.3rem 0.8rem 1.3rem;
+    }
+    .cutout-corner-badge p {
+        font-size: 1.15rem;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const cutoutObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.15
+    });
+
+    const titleEl = document.getElementById('cutoutScrollTitle');
+    const fadeEls = document.querySelectorAll('.cutout-fade-in');
+
+    if (titleEl) cutoutObserver.observe(titleEl);
+    fadeEls.forEach((el, idx) => {
+        el.style.transitionDelay = `${idx * 0.12}s`;
+        cutoutObserver.observe(el);
+    });
+});
+
+</script>
+
+
+<!-- Immersive Curated Guest Experiences Section -->
+<section class="testimonial-ecosystem">
+    <div class="testimonial-max-wrapper">
+        
+        <!-- Centered Section Header Container -->
+        <div class="testimonial-header">
+            <p class="testimonial-tag">Guest Perspectives</p>
+            <h2 class="testimonial-heading-split" id="testimonialScrollHeading">
+                <span>Verified</span> <span>Guest</span> <span>Experiences</span> <span>&</span> <span>Creative</span> <span>Success.</span>
+            </h2>
+        </div>
+
+        <!-- 3-Column Balanced Horizontal Grid Alignment -->
+        <div class="testimonial-grid-track">
+            
+            <!-- Card 01 -->
+            <div class="testimonial-slate-card" data-slate-index="0">
+                <div class="slate-author-profile">
+                    <div class="slate-avatar-frame">
+                        <img src="https://unsplash.com" alt="Elena Rostova - UI Director" class="slate-avatar-img">
+                    </div>
+                    <div class="slate-author-meta">
+                        <h3>Elena Rostova</h3>
+                        <p>Creative Director, Berlin</p>
+                    </div>
+                </div>
+                
+                <div class="slate-rating-bar">
+                    <!-- Embedded Vector Star Icons -->
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                
+                <blockquote class="slate-quote">
+                    "STACKLY completely altered how I work remotely. The sound-isolation inside the premium pods gave me absolute concentration, while the evening mixology events opened doors to spontaneous tech collaborations I couldn't engineer elsewhere."
+                </blockquote>
+                
+                <div class="verified-badge-row">
+                    <span class="verified-pill"><i class="ri-checkbox-circle-line"></i> Verified Residency</span>
+                </div>
+            </div>
+
+            <!-- Card 02 -->
+            <div class="testimonial-slate-card" data-slate-index="1">
+                <div class="slate-author-profile">
+                    <div class="slate-avatar-frame">
+                        <img src="https://unsplash.com" alt="Marcus Vance - iOS Architect" class="slate-avatar-img">
+                    </div>
+                    <div class="slate-author-meta">
+                        <h3>Marcus Vance</h3>
+                        <p>Systems Architect, SF</p>
+                    </div>
+                </div>
+                
+                <div class="slate-rating-bar">
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                
+                <blockquote class="slate-quote">
+                    "Finding a location that seamlessly balances uncompromised luxury aesthetics with a genuine, low-ego developer community is rare. STACKLY nailed the balance perfectly. The volcanic plunge pools are unmatched."
+                </blockquote>
+                
+                <div class="verified-badge-row">
+                    <span class="verified-pill"><i class="ri-checkbox-circle-line"></i> Verified Residency</span>
+                </div>
+            </div>
+
+            <!-- Card 03 -->
+            <div class="testimonial-slate-card" data-slate-index="2">
+                <div class="slate-author-profile">
+                    <div class="slate-avatar-frame">
+                        <img src="https://unsplash.com" alt="Rohan Das - Film Editor" class="slate-avatar-img">
+                    </div>
+                    <div class="slate-author-meta">
+                        <h3>Rohan Das</h3>
+                        <p>Film Editor, Mumbai</p>
+                    </div>
+                </div>
+                
+                <div class="slate-rating-bar">
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="star-vector" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                
+                <blockquote class="slate-quote">
+                    "Booked a private suite pavilion for my production team. The workflow speed here is exceptional. The quiet dedicated fiber backbone hubs helped clear out all our heavy file syncing overhead effortlessly."
+                </blockquote>
+                
+                <div class="verified-badge-row">
+                    <span class="verified-pill"><i class="ri-checkbox-circle-line"></i> Verified Residency</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-slate: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-snappy: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- STRUCTURE CANVAS SPACING --- */
+.testimonial-ecosystem {
+    background-color: var(--primary);
+    padding: 80px 5%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid rgba(214, 175, 55, 0.05);
+}
+
+.testimonial-max-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+}
+
+/* --- CENTERED BRAND HEADER --- */
+.testimonial-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-tag {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+.testimonial-heading-split {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--text-light);
+}
+
+.testimonial-heading-split span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition-slate);
+}
+
+/* Intersection Reveal Assignments */
+.testimonial-heading-split.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.testimonial-heading-split.reveal-active span:nth-child(1) { transition-delay: 0.05s; }
+.testimonial-heading-split.reveal-active span:nth-child(2) { transition-delay: 0.15s; }
+.testimonial-heading-split.reveal-active span:nth-child(3) { transition-delay: 0.25s; }
+.testimonial-heading-split.reveal-active span:nth-child(4) { transition-delay: 0.35s; }
+.testimonial-heading-split.reveal-active span:nth-child(5) { transition-delay: 0.45s; }
+
+/* --- 3-COLUMN REBUILT CARD TRACK --- */
+.testimonial-grid-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.testimonial-slate-card {
+    background: rgba(17, 22, 18, 0.4);
+    border: 1px solid rgba(214, 175, 55, 0.06);
+    border-radius: 6px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-slate-card.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Author Profiling Details Wrapper (Top Aligned) */
+.slate-author-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.slate-avatar-frame {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(214, 175, 55, 0.25);
+    background: #050706;
+}
+
+.slate-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slate-author-meta h3 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.slate-author-meta p {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 1px;
+}
+
+/* Vector Ratings Row */
+.slate-rating-bar {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 1.5rem;
+    color: #10b981; /* Precise Emerald Green from your layout reference image */
+}
+
+.star-vector {
+    width: 16px;
+    height: 16px;
+}
+
+.slate-quote {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #b3bbb6;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+/* Verified Verification Pill Row (Bottom Aligned) */
+.verified-badge-row {
+    border-top: 1px solid rgba(214, 175, 55, 0.08);
+    padding-top: 1.2rem;
+}
+
+.verified-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* --- PREMIUM CARD HOVER INTERACTION OVERRIDES --- */
+.testimonial-slate-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.testimonial-slate-card:hover .slate-author-meta h3 {
+    color: var(--accent);
+}
+
+/* --- RESPONSIVE GRIDS DISPLACEMENT BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .testimonial-grid-track { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .testimonial-heading-split { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .testimonial-grid-track { grid-template-columns: 1fr; gap: 1.5rem; }
+    .testimonial-heading-split { font-size: 2.4rem; }
+    .testimonial-slate-card { padding: 2rem; }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- HIGH-PERFORMANCE INTERSECTION OBSERVER FOR SEQUENTIAL STAGGER REVEALS ---
+    const reviewObserverOptions = {
+        root: null,
+        threshold: 0.12,
+        rootMargin: "0px"
+    };
+
+    const reviewScrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('testimonial-slate-card')) {
+                    const slateIndex = entry.target.getAttribute('data-slate-index') || 0;
+                    
+                    // Trigger sequential sequential cascade delays
+                    setTimeout(() => {
+                        entry.target.classList.add('reveal-active');
+                    }, slateIndex * 180); // 180ms staggered interval steps
+                } else {
+                    entry.target.classList.add('reveal-active');
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, reviewObserverOptions);
+
+    // Register active trackers
+    const headingTarget = document.getElementById('testimonialScrollHeading');
+    const memorySlatesList = document.querySelectorAll('.testimonial-slate-card');
+
+    if (headingTarget) reviewScrollObserver.observe(headingTarget);
+    
+    memorySlatesList.forEach(slate => {
+        reviewScrollObserver.observe(slate);
+    });
+});
+
+</script>
+
+<!-- Immersive Verified Subscription CTA Banner Section -->
+<section class="ledger-subscribe-banner">
+    
+    <!-- Cinematic Panoramic Background Canvas Layer -->
+    <div class="ledger-parallax-bg">
+        <img src="https://unsplash.com" alt="STACKLY Panoramic Horizon Backdrop" class="ledger-bg-img">
+        <div class="ledger-dark-overlay"></div>
+    </div>
+
+    <!-- Core Form Layout Container -->
+    <div class="ledger-content-container">
+        <div class="ledger-header scroll-fade-in-id">
+            <p class="ledger-tag">The STACKLY Journal</p>
+            <h2 class="ledger-title">Subscribe to the Collective Manifest</h2>
+            <p class="ledger-subtitle">Join our network of global computational creators and claim early sequence drop access keys.</p>
+        </div>
+
+        <!-- Interactive Validation Form Core -->
+        <form class="ledger-form-wrapper scroll-fade-in-id" id="ledgerSubscribeForm" novalidate>
+            <div class="ledger-input-group" id="inputGroupContainer">
+                <div class="input-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                </div>
+                <input type="email" id="subscriberEmailField" placeholder="Enter your digital address vectors..." autocomplete="off" required>
+                
+                <!-- Dynamic Localized Client Error Prompt Label Container -->
+                <span class="ledger-error-prompt" id="clientErrorPrompt">Please fill out this field with a valid address.</span>
+            </div>
+
+            <button type="submit" class="btn btn-ledger-cta" id="submitLedgerBtn">
+                <span>Join Manifest</span> <i class="ri-arrow-right-line"></i>
+            </button>
+        </form>
+    </div>
+
+</section>
+
+<style>
+    /* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-ledger: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-snappy: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- BANNER CANVAS STRUCTURE --- */
+.ledger-subscribe-banner {
+    position: relative;
+    width: 100%;
+    padding: 100px 5%;
+    overflow: hidden;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(214, 175, 55, 0.05);
+}
+
+/* --- CINEMATIC PARALLAX BACKDROP LAYER --- */
+.ledger-parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ledger-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.5) contrast(1.1) brightness(0.35);
+    transform: scale(1.04);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ledger-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(12, 16, 13, 0.95) 0%, rgba(12, 16, 13, 0.6) 50%, rgba(12, 16, 13, 0.95) 100%);
+}
+
+.ledger-subscribe-banner:hover .ledger-bg-img {
+    transform: scale(1.01);
+}
+
+/* --- CONTENT ROW MATRIX DRAWERS --- */
+.ledger-content-container {
+    position: relative;
+    z-index: 5;
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.ledger-tag {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+.ledger-title {
+    font-family: var(--font-serif);
+    font-size: 3.8rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.2rem;
+}
+
+.ledger-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* --- INTERACTIVE VALIDATION FORM COMPONENT --- */
+.ledger-form-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.ledger-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(17, 22, 18, 0.6);
+    border: 1px solid rgba(214, 175, 55, 0.15);
+    border-radius: 4px;
+    padding: 0 1.5rem;
+    flex-grow: 1;
+    height: 60px;
+    transition: var(--transition-snappy);
+}
+
+.ledger-input-group:focus-within {
+    border-color: var(--accent);
+    background: rgba(17, 22, 18, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.input-icon-box {
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.2rem;
+    opacity: 0.8;
+}
+
+.input-icon-box svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ledger-input-group input {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-light);
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+
+.ledger-input-group input::placeholder {
+    color: rgba(138, 146, 142, 0.6);
+}
+
+/* Localized Premium Error Notification Tag */
+.ledger-error-prompt {
+    position: absolute;
+    bottom: -28px;
+    left: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--accent); /* Custom Golden error accent */
+    letter-spacing: 0.5px;
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+    transition: var(--transition-snappy);
+}
+
+/* Active UI Mutation Class Overrides for Field Validation Errors */
+.ledger-input-group.field-invalid {
+    border-color: #ef4444; /* Dynamic warning red indicator line */
+    animation: structuralShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.ledger-input-group.field-invalid .ledger-error-prompt {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Premium Verification Action Button */
+.btn-ledger-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 60px;
+    padding: 0 2.5rem;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    color: var(--primary);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-snappy);
+}
+
+.btn-ledger-cta i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-ledger-cta:hover {
+    background: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--primary);
+}
+
+.btn-ledger-cta:hover i {
+    transform: translateX(5px);
+}
+
+/* --- HARD-CODED SHAKE KEYFRAMES PHYSICS --- */
+@keyframes structuralShake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Intersection Scroll Placeholders */
+.scroll-fade-in-id {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: var(--transition-ledger);
+}
+.scroll-fade-in-id.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVE ADAPTABILITY MATRIX GRIDS --- */
+@media (max-width: 992px) {
+    .ledger-subscribe-banner { padding: 120px 5%; }
+    .ledger-title { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .ledger-form-wrapper { flex-direction: column; width: 100%; gap: 2.2rem; }
+    .ledger-input-group { width: 100%; }
+    .btn-ledger-cta { width: 100%; }
+    .ledger-error-prompt { bottom: -24px; }
+}
+
+@media (max-width: 480px) {
+    .ledger-subscribe-banner { padding: 90px 5%; }
+    .ledger-title { font-size: 2.3rem; }
+    .ledger-subtitle { font-size: 0.85rem; }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. HIGH-PERFORMANCE INTERSECTION OBSERVER FOR TRANSITION LOOPS ---
+    const ledgerOptions = {
+        root: null,
+        threshold: 0.15,
+        rootMargin: "0px"
+    };
+
+    const ledgerScrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, ledgerOptions);
+
+    const scrollTargets = document.querySelectorAll('.scroll-fade-in-id');
+    scrollTargets.forEach(target => ledgerScrollObserver.observe(target));
+
+    // --- 2. ACTIVE VERIFICATION & REDIRECTION ROUTING ENGINE ---
+    const subscribeForm = document.getElementById('ledgerSubscribeForm');
+    const emailField = document.getElementById('subscriberEmailField');
+    const inputGroup = document.getElementById('inputGroupContainer');
+
+    if (subscribeForm && emailField && inputGroup) {
+        
+        subscribeForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Intercept default unverified forms dispatch actions
+
+            const stringValue = emailField.value.trim();
+            // Basic structural matrix regex validation check for email vectors
+            const emailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (stringValue === "" || !emailRegexPattern.test(stringValue)) {
+                // Clear any existing active class cycles to allow animation refresh triggers
+                inputGroup.classList.remove('field-invalid');
+                void inputGroup.offsetWidth; // Force a hardware reflow layout cycle reload execution
+                
+                // Inject structural error status classes instantly
+                inputGroup.classList.add('field-invalid');
+            } else {
+                // Scrub validation error status classes cleanly on success parameters verification
+                inputGroup.classList.remove('field-invalid');
+                
+                // Perform clean production framework client navigation redirection
+                window.location.href = "404.html";
+            }
+        });
+
+        // Scrub layout warning states immediately when client edits tracking parameters
+        emailField.addEventListener('input', () => {
+            if (inputGroup.classList.contains('field-invalid')) {
+                inputGroup.classList.remove('field-invalid');
+            }
+        });
+    }
+});
+
+</script>
+
+<!-- Immersive Brand Infrastructure Footer Component -->
+<footer class="ecosystem-footer">
+    <div class="footer-max-wrapper">
+        
+        
+        <div class="footer-column brand-summary-box">
+            <!-- Brand Logo Image Tag serving as Smooth Back-To-Top Trigger -->
+           <a href="#" class="footer-logo-trigger" id="backToTopLogo" aria-label="Scroll Back to Top">
+    <img src="./assests/stackly-logo.png" alt="STACKLY Logo" class="footer-brand-logo">
+</a>
+            <p class="footer-bio-text">
+                A premium structural sanctuary and cooperative digital nomad network engineered explicitly to foster high-impact creation and deep natural alignment.
+            </p>
+            <div class="footer-social-row">
+                <!-- Inline SVG Vector Social Anchors Routing safely to 404.html -->
+                <a href="404.html" class="social-vector-link" aria-label="Instagram Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="Facebook Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="X Studio Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z M4 20l6.768 -6.768M20 4l-6.768 6.768"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="LinkedIn Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="YouTube Cinema Channel">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="15" x="2" y="4" rx="2.18" ry="2.18"/><path d="m10 15 5-3-5-3z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Column 2: Discover Spaces Tree -->
+        <div class="footer-column">
+            <h3 class="footer-tree-title">Curated Spaces</h3>
+            <ul class="footer-links-tree">
+                <li><a href="404.html">Oasis Pod Clusters</a></li>
+                <li><a href="404.html">Panoramic Oasis Suites</a></li>
+                <li><a href="404.html">Nirvana Private Villas</a></li>
+                <li><a href="404.html">Zen Female Custom Pavilions</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Corporate Blueprint Ecosystem Links -->
+        <div class="footer-column">
+            <h3 class="footer-tree-title">Ecosystem Support</h3>
+            <ul class="footer-links-tree">
+                <li><a href="404.html">Ecosystem Ledger</a></li>
+                <li><a href="404.html">Redirection Nodes</a></li>
+                <li><a href="404.html">Nomad Concierge Desk</a></li>
+                <li><a href="404.html">Bespoke Enterprise Accreditations</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Geographic Address Vector & Channels Map -->
+        <div class="footer-column contact-info-box">
+            <h3 class="footer-tree-title">Resort Hub</h3>
+            <div class="contact-channel-row">
+                <div class="contact-vector-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <p>MMR Complex, Periyakollapatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+            </div>
+            <div class="contact-channel-row">
+                <div class="contact-vector-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.79 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <p>+91 7010792745</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Structural Sub-Baseline Copyright Row -->
+    <div class="footer-sub-baseline">
+        <div class="baseline-max-wrapper">
+            <p class="copyright-label">&copy; 2026 STACKLY Spaces Inc. All architectural rights reserved.</p>
+            <div class="baseline-privacy-tree">
+                <a href="404.html">Privacy Matrix</a>
+                <a href="404.html">Terms of Sequence</a>
+                <a href="404.html">Data Management</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+
+    .footer-logo-trigger {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer-brand-logo {
+    display: block;
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+}
+    /* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-footer: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- FOOTER CANVAS ARCHITECTURE --- */
+.ecosystem-footer {
+    background-color: #080c09;
+    padding: 100px 5% 0 5%;
+    border-top: 1px solid rgba(214, 175, 55, 0.1);
+    font-family: var(--font-sans);
+    position: relative;
+    width: 100%;
+}
+
+.footer-max-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr 1fr 1.1fr; 
+    gap: 4.5rem;
+    padding-bottom: 80px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* --- IDENTITY DETAILS & LOGO TRIGGER --- */
+.footer-logo-trigger {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1.8rem;
+    transition: var(--transition-footer);
+}
+
+.footer-logo-trigger:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.footer-brand-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-bio-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    max-width: 325px;
+}
+
+.footer-social-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-vector-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(214, 175, 55, 0.04);
+    border: 1px solid rgba(214, 175, 55, 0.15);
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition-footer);
+}
+
+.social-vector-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.social-vector-link:hover {
+    color: var(--primary);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(214, 175, 55, 0.15);
+}
+
+/* --- COLUMNS 2 & 3: LINKS TREES --- */
+.footer-tree-title {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-tree-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.footer-links-tree {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-links-tree a {
+    font-size: 0.95rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: var(--transition-footer);
+    display: inline-block;
+}
+
+.footer-links-tree a:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+/* --- COLUMN 4: CHANNELS & LABELS --- */
+.contact-info-box {
+    gap: 1.6rem;
+}
+
+.contact-channel-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+
+.contact-vector-icon {
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.contact-vector-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-channel-row p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+/* --- BOTTOM SUB-BASELINE --- */
+.footer-sub-baseline {
+    width: 100%;
+    border-top: 1px solid rgba(214, 175, 55, 0.08);
+    padding: 35px 0;
+}
+
+.baseline-max-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.copyright-label {
+    font-size: 0.85rem;
+    color: rgba(138, 146, 142, 0.7);
+}
+
+.baseline-privacy-tree {
+    display: flex;
+    gap: 2rem;
+}
+
+.baseline-privacy-tree a {
+    font-size: 0.85rem;
+    color: rgba(138, 146, 142, 0.7);
+    text-decoration: none;
+    transition: var(--transition-footer);
+}
+
+.baseline-privacy-tree a:hover {
+    color: var(--accent);
+}
+
+/* --- RESPONSIVE GRIDS BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .footer-max-wrapper { grid-template-columns: repeat(2, 1fr); gap: 4rem; }
+}
+
+@media (max-width: 768px) {
+    .ecosystem-footer { padding-top: 60px; }
+    .footer-max-wrapper { grid-template-columns: 1fr; gap: 3.5rem; padding-bottom: 60px; }
+    .footer-tree-title { margin-bottom: 1.5rem; }
+    .baseline-max-wrapper { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .baseline-privacy-tree { justify-content: center; gap: 1.5rem; }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- AUTOMATED BACK-TO-TOP SCROLL ANIMATION FUNCTION ---
+    const backToTopLogo = document.getElementById('backToTopLogo');
+    
+    if (backToTopLogo) {
+        backToTopLogo.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            
+            // Execute smooth hardware scroll back to top apex coordinates
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// Footer Logo - Smooth Scroll to Top
+document.getElementById("backToTopLogo").addEventListener("click", function (event) {
+    event.preventDefault();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+</script>
+</body>
+</html>

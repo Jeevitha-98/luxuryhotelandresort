@@ -1,0 +1,3499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | Entering Ecosystem...</title>
+    
+    <!-- Google Fonts Deployment -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- STACKLY Premium Preloading Canvas -->
+    <div id="preloader">
+        <div class="stack-container">
+            <div class="stack-element">THE LUXURY ECOSYSTEM</div>
+            <div class="stack-element">STACKLY</div>
+            <div class="stack-line"></div>
+        </div>
+    </div>
+
+   
+
+    <!-- External JavaScript Link -->
+  <script>
+    // Execution sequence firing exactly at 2000ms
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+        
+        // Note: For live production deployment, replace the class addition with:
+        // window.location.href = "home.html";
+    }, 2000); 
+});
+
+  </script>
+
+  <!-- Main Navigation Header Elements -->
+<header id="header">
+    <!-- Brand Logo Container with Page Refresh Trigger -->
+    <a href="#" class="logo-link" id="logoButton" aria-label="Refresh Page">
+        <img src="https://placehold.co" alt="STACKLY Logo" class="brand-logo">
+    </a>
+
+    <!-- Hamburger Icon for Responsive Breakpoints -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+    </button>
+
+    <!-- Navigation Drawer Screen-Blur Overlays -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Center-Aligned Layout Navigation Drawer -->
+    <nav class="nav-container" id="navMenu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link ">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="experiences.html" class="nav-link ">Experiences</a></li>
+            <li><a href="journals.html" class="nav-link active">Journals</a></li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        
+        <!-- Corner-Aligned Auth CTA Interface Container -->
+        <div class="auth-container">
+            <a href="login.html" class="btn btn-auth">Login</a>
+        </div>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. BRAND LOGO PAGE REFRESH ENGINE ---
+    const logoButton = document.getElementById('logoButton');
+    if (logoButton) {
+        logoButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Nullifies basic hashtag jumping actions
+            window.location.reload(); // Deploys explicit frame content initialization calls
+        });
+    }
+
+    // --- 2. RESPONSIVE TOOGLE MECHANISM & BLUR TOGGLE ---
+    const headerElement = document.getElementById('header');
+    const menuToggle = document.getElementById('menuToggle');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const toggleMobileMenu = () => {
+        headerElement.classList.toggle('menu-open');
+        
+        // Locks document canvas windows to block background scrolling artifact anomalies
+        if (headerElement.classList.contains('menu-open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    };
+
+    if (menuToggle && navOverlay) {
+        menuToggle.addEventListener('click', toggleMobileMenu);
+        navOverlay.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Gracefully drops the mobile layout layer panel if navigation click coordinates activate
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (headerElement.classList.contains('menu-open')) {
+                toggleMobileMenu();
+            }
+        });
+    });
+
+    // --- 3. LIVE ACTIVE DISPLAY SELECTION STATE MANAGEMENT ---
+    navLinks.forEach(clickedLink => {
+        clickedLink.addEventListener('click', function() {
+            const activeTarget = document.querySelector('.nav-link.active');
+            if (activeTarget) {
+                activeTarget.classList.remove('active');
+            }
+            this.classList.add('active');
+        });
+    });
+
+    // --- 4. SCROLL INTERFACES DEVIATION SENSOR ---
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+            headerElement.classList.add('scrolled');
+        } else {
+            headerElement.classList.remove('scrolled');
+        }
+    });
+});
+
+</script>
+
+<section class="journal-hero-section" id="journalsHero">
+        <div class="journal-hero-wrapper">
+            
+            <!-- Left Column: Word-by-Word Title, Narrative & CTA Buttons -->
+            <div class="journal-hero-narrative">
+                <div class="journal-eyebrow">
+                    <span class="journal-eyebrow-line"></span>
+                    <span>THE STACKLY DISPATCH • VOL. 04</span>
+                </div>
+
+                <!-- Word-by-Word Animated Title -->
+                <h1 class="journal-hero-title" id="journalHeroTitle">
+                    <span>Chronicles</span> 
+                    <span>Of</span> 
+                    <span>Design,</span> 
+                    <span>Travel</span> 
+                    <span>&amp;</span> 
+                    <span>Culture.</span>
+                </h1>
+
+                <p class="journal-hero-description journal-rise delay-j1">
+                    Essays, architectural blueprints, and field notes from global creators living at the intersection of serene coastal isolation and vibrant nomadic community.
+                </p>
+
+                <!-- Action Buttons with 404.html Page Navigation -->
+                <div class="journal-hero-actions journal-rise delay-j2">
+                    <a href="404.html" class="btn-journal btn-journal-gold">
+                        <span>Read Latest Issue</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6"/>
+                        </svg>
+                    </a>
+                    <a href="404.html" class="btn-journal btn-journal-outline">
+                        <span>Submit A Story</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Featured Cover Image + Interactive Hover Features Below -->
+            <div class="journal-hero-media journal-rise delay-j2">
+                
+                <!-- Architectural Cover Image Frame -->
+                <div class="journal-cover-frame">
+                    <div class="journal-issue-tag">ISSUE 04 • ARCHITECTURE &amp; STILLNESS</div>
+                    <img src="https://unsplash.com" alt="STACKLY Architectural Journal Cover Pavilion" class="journal-cover-img">
+                </div>
+
+                <!-- Interactive Hover Features Dock Directly Below Image -->
+                <div class="journal-below-features">
+                    
+                    <!-- Feature Card 01 -->
+                    <div class="j-feature-card">
+                        <div class="j-card-glow"></div>
+                        <div class="j-card-inner">
+                            <div class="j-card-header">
+                                <span class="j-card-num">01</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                </svg>
+                            </div>
+                            <h3>Architectural Essays</h3>
+                            <p>Deep dives into parametric timber pods and coastal design.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature Card 02 -->
+                    <div class="j-feature-card">
+                        <div class="j-card-glow"></div>
+                        <div class="j-card-inner">
+                            <div class="j-card-header">
+                                <span class="j-card-num">02</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                                </svg>
+                            </div>
+                            <h3>Nomad Field Notes</h3>
+                            <p>Unfiltered guides, hidden coves, and creator interviews.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+        /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --header-clearance: 90px;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+}
+
+/* --- HERO SECTION CONTAINER --- */
+.journal-hero-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--primary);
+    padding: calc(var(--header-clearance) + 70px) 5% 90px 5%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.journal-hero-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* --- LEFT COLUMN: NARRATIVE & WORD-BY-WORD TITLE --- */
+.journal-hero-narrative {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.journal-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.6rem;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: journalRise 0.8s var(--ease-luxury) forwards 0.1s;
+}
+
+.journal-eyebrow-line {
+    width: 36px;
+    height: 1px;
+    background-color: var(--accent);
+}
+
+/* Word-by-Word Title Animation */
+.journal-hero-title {
+    font-family: var(--font-serif);
+    font-size: 4.7rem;
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: 0.8px;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.journal-hero-title span {
+    display: inline-block;
+    margin-right: 0.24em;
+    opacity: 0;
+    transform: translateY(34px);
+    animation: journalWordPop 0.75s var(--ease-luxury) forwards;
+}
+
+.journal-hero-title span:nth-child(1) { animation-delay: 0.22s; }
+.journal-hero-title span:nth-child(2) { animation-delay: 0.36s; }
+.journal-hero-title span:nth-child(3) { animation-delay: 0.50s; }
+.journal-hero-title span:nth-child(4) { animation-delay: 0.64s; }
+.journal-hero-title span:nth-child(5) { animation-delay: 0.78s; }
+.journal-hero-title span:nth-child(6) { animation-delay: 0.92s; }
+
+.journal-hero-description {
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--muted);
+    max-width: 540px;
+    margin-bottom: 2.8rem;
+}
+
+.journal-rise {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: journalRise 0.9s var(--ease-luxury) forwards;
+}
+
+.delay-j1 { animation-delay: 1.05s; }
+.delay-j2 { animation-delay: 1.25s; }
+
+/* Action Buttons */
+.journal-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+}
+
+.btn-journal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1rem 2.2rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.4s var(--ease-luxury);
+}
+
+.btn-journal svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.btn-journal-gold {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+}
+
+.btn-journal-gold:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(212, 175, 55, 0.22);
+}
+
+.btn-journal-gold:hover svg {
+    transform: translateX(5px);
+}
+
+.btn-journal-outline {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.btn-journal-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background-color: rgba(212, 175, 55, 0.05);
+    transform: translateY(-3px);
+}
+
+/* --- RIGHT COLUMN: IMAGE FRAME + FEATURES BELOW --- */
+.journal-hero-media {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 100%;
+}
+
+.journal-cover-frame {
+    position: relative;
+    width: 100%;
+    height: 410px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    background-color: var(--surface);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.journal-cover-frame:hover {
+    border-color: var(--accent);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.65);
+}
+
+.journal-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.04);
+    transition: transform 0.9s var(--ease-luxury), filter 0.5s ease;
+}
+
+.journal-cover-frame:hover .journal-cover-img {
+    transform: scale(1.06);
+    filter: saturate(1.05);
+}
+
+.journal-issue-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    background-color: rgba(12, 16, 13, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0.4rem 0.85rem;
+    border-radius: 2px;
+}
+
+/* --- FEATURES BELOW IMAGE WITH HOVER EFFECTS --- */
+.journal-below-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+    width: 100%;
+}
+
+.j-feature-card {
+    position: relative;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    border-radius: 4px;
+    padding: 1.5rem 1.4rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.4s ease, transform 0.45s var(--ease-luxury), box-shadow 0.4s ease;
+}
+
+/* Bottom Gold Bar Reveal on Hover */
+.j-feature-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s var(--ease-luxury);
+}
+
+.j-feature-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* Cursor-Following Radial Spotlight */
+.j-card-glow {
+    position: absolute;
+    top: var(--j-mouse-y, 50%);
+    left: var(--j-mouse-x, 50%);
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle closest-side, rgba(212, 175, 55, 0.12), transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.j-feature-card:hover .j-card-glow {
+    opacity: 1;
+}
+
+.j-feature-card:hover {
+    border-color: rgba(212, 175, 55, 0.45);
+    transform: translateY(-5px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+}
+
+.j-card-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.j-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+}
+
+.j-card-num {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+.j-card-header svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+    transition: transform 0.4s var(--ease-luxury), color 0.3s ease;
+}
+
+.j-feature-card:hover .j-card-header svg {
+    transform: scale(1.15) rotate(-6deg);
+    color: var(--text-light);
+}
+
+.j-feature-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+    transition: color 0.3s ease;
+}
+
+.j-feature-card:hover h3 {
+    color: var(--accent);
+}
+
+.j-feature-card p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* --- KEYFRAMES --- */
+@keyframes journalWordPop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes journalRise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .journal-hero-title {
+        font-size: 3.8rem;
+    }
+    .journal-cover-frame {
+        height: 360px;
+    }
+}
+
+@media (max-width: 992px) {
+    .journal-hero-section {
+        padding-top: calc(75px + 50px);
+        padding-bottom: 70px;
+    }
+    .journal-hero-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .journal-cover-frame {
+        height: 380px;
+    }
+}
+
+@media (max-width: 576px) {
+    .journal-hero-title {
+        font-size: 2.6rem;
+    }
+    .journal-hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    .btn-journal {
+        width: 100%;
+    }
+    .journal-cover-frame {
+        height: 260px;
+    }
+    .journal-below-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Cursor-tracking radial gold spotlight on the two feature cards below the image
+    const featureCards = document.querySelectorAll('.j-feature-card');
+
+    featureCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            card.style.setProperty('--j-mouse-x', `${mouseX}px`);
+            card.style.setProperty('--j-mouse-y', `${mouseY}px`);
+        });
+    });
+});
+
+    </script>
+
+    <!-- Global Sanctuaries & Destination Dispatches Bento Section -->
+<section class="stackly-dest-section" id="stacklyDestinations">
+    <div class="dest-max-wrapper">
+        
+        <!-- Centered Header with Flanked Eyebrow & Filter Pills (Matching Reference Layout) -->
+        <div class="dest-header">
+            <div class="dest-eyebrow">
+                <span class="dest-dash"></span>
+                <span>SANCTUARIES</span>
+                <span class="dest-dash"></span>
+            </div>
+
+            <h2 class="dest-title" id="destScrollTitle">
+                <span>Featured</span> 
+                <span>Sanctuaries</span>
+            </h2>
+
+            <!-- Interactive Filter Pills -->
+            <div class="dest-filter-bar" role="tablist" aria-label="Filter STACKLY Sanctuaries">
+                <button class="dest-pill active" data-dest="all">All</button>
+                <button class="dest-pill" data-dest="bali">Bali</button>
+                <button class="dest-pill" data-dest="kyoto">Kyoto</button>
+                <button class="dest-pill" data-dest="tulum">Tulum</button>
+                <button class="dest-pill" data-dest="zermatt">Zermatt</button>
+                <button class="dest-pill" data-dest="salem">Salem</button>
+            </div>
+        </div>
+
+        <!-- 3-Column Asymmetric Bento Grid (8 Cards with Tall Right Feature Spanning 2 Rows) -->
+        <div class="dest-bento-grid" id="destBentoGrid">
+            
+            <!-- Card 01 (Row 1, Col 1) -->
+            <article class="dest-card" data-region="bali" data-dest-idx="0">
+                <img src="https://unsplash.com" alt="Uluwatu Cliffside Pods in Bali" class="dest-img">
+                <div class="dest-overlay">
+                    <span class="dest-region-tag">BALI • INDONESIA</span>
+                    <h3>Uluwatu Cliffside Pods</h3>
+                    <a href="404.html" class="dest-link">
+                        <span>Read Field Note</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 02 (Row 1, Col 2) -->
+            <article class="dest-card" data-region="tulum" data-dest-idx="1">
+                <img src="https://unsplash.com" alt="Nirvana Plunge Villas in Tulum" class="dest-img">
+                <div class="dest-overlay">
+                    <span class="dest-region-tag">TULUM • MEXICO</span>
+                    <h3>Nirvana Jungle Lagoon</h3>
+                    <a href="404.html" class="dest-link">
+                        <span>Read Field Note</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 03: Tall Right Card Spanning 2 Rows (Matching Reference Layout) -->
+            <article class="dest-card dest-tall" data-region="kyoto" data-dest-idx="2">
+                <img src="https://unsplash.com" alt="Higashiyama Timber Pavilion in Kyoto" class="dest-img">
+                <div class="dest-overlay">
+                    <span class="dest-region-tag">KYOTO • JAPAN</span>
+                    <h3>Higashiyama Cedar Pavilion</h3>
+                    <p class="dest-tall-desc">Parametric timber joinery, moss courtyards, and silent acoustic tea suites nestled in historic Kyoto.</p>
+                    <a href="404.html" class="dest-link">
+                        <span>Explore Sanctuary</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 04 (Row 2, Col 1) -->
+            <article class="dest-card" data-region="zermatt" data-dest-idx="3">
+                <img src="https://unsplash.com" alt="Alpine Thermal Micro-Stack in Zermatt" class="dest-img">
+                <div class="dest-overlay">
+                    <span class="dest-region-tag">ZERMATT • SWITZERLAND</span>
+                    <h3>Alpine Thermal Micro-Stack</h3>
+                    <a href="404.html" class="dest-link">
+                        <span>Read Field Note</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 05 (Row 2, Col 2) -->
+            <article class="dest-card" data-region="salem" data-dest-idx="4">
+                <img src="https://unsplash.com" alt="Yercaud Hills Retreat in Salem" class="dest-img">
+                <div class="dest-overlay">
+                    <span class="dest-region-tag">SALEM • INDIA</span>
+                    <h3>Shevaroy Mist Collective</h3>
+                    <a href="404.html" class="dest-link">
+                        <span>Read Field Note</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 06 (Row 3, Col 1) -->
+            <article class="dest-card" data-region="bali" data-dest-idx="5">
+                <img src="https://unsplash.com" alt="Coral Cove Surf Pods in Bali" class="dest-img">
+                <div class="dest-overlay">
+                    <span class="dest-region-tag">BALI • INDONESIA</span>
+                    <h3>Coral Cove Surf Pods</h3>
+                    <a href="404.html" class="dest-link">
+                        <span>Read Field Note</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 07 (Row 3, Col 2) -->
+            <article class="dest-card" data-region="kyoto" data-dest-idx="6">
+                <img src="https://unsplash.com" alt="Arashiyama Bamboo Loft in Kyoto" class="dest-img">
+                <div class="dest-overlay">
+                    <span class="dest-region-tag">KYOTO • JAPAN</span>
+                    <h3>Arashiyama Bamboo Loft</h3>
+                    <a href="404.html" class="dest-link">
+                        <span>Read Field Note</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 08 (Row 3, Col 3) -->
+            <article class="dest-card" data-region="tulum" data-dest-idx="7">
+                <img src="https://unsplash.com" alt="Nocturnal Cenote Lounge in Tulum" class="dest-img">
+                <div class="dest-overlay">
+                    <span class="dest-region-tag">TULUM • MEXICO</span>
+                    <h3>Nocturnal Cenote Lounge</h3>
+                    <a href="404.html" class="dest-link">
+                        <span>Read Field Note</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- SECTION CONTAINER --- */
+.stackly-dest-section {
+    background-color: var(--primary);
+    padding: 120px 5%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.dest-max-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+/* --- CENTERED HEADER (MATCHING REFERENCE IMAGE) --- */
+.dest-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dest-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+}
+
+.dest-dash {
+    width: 28px;
+    height: 1px;
+    background-color: var(--accent);
+}
+
+/* Word-by-Word Scroll Title */
+.dest-title {
+    font-family: var(--font-serif);
+    font-size: 3.7rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.dest-title span {
+    display: inline-block;
+    margin: 0 0.16em;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s var(--ease-luxury), transform 0.75s var(--ease-luxury);
+}
+
+.dest-title.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dest-title.reveal-active span:nth-child(1) { transition-delay: 0.05s; }
+.dest-title.reveal-active span:nth-child(2) { transition-delay: 0.20s; }
+
+/* --- INTERACTIVE PILL FILTERS --- */
+.dest-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
+    width: 100%;
+}
+
+.dest-pill {
+    padding: 0.6rem 1.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    background-color: var(--surface);
+    color: var(--muted);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.35s var(--ease-luxury);
+}
+
+.dest-pill:hover {
+    border-color: var(--accent);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+.dest-pill.active {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--primary);
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.22);
+}
+
+/* --- 3-COLUMN ASYMMETRIC BENTO GRID (REPLICATING REFERENCE IMAGE) --- */
+.dest-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 245px;
+    gap: 1.4rem;
+    width: 100%;
+}
+
+.dest-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    background-color: var(--surface);
+    
+    /* Initial Scroll State */
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.75s var(--ease-luxury),
+                transform 0.75s var(--ease-luxury),
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.dest-card.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dest-card.is-hidden {
+    display: none;
+}
+
+/* Tall Right-Side Feature Card Spanning 2 Rows */
+.dest-tall {
+    grid-row: span 2;
+}
+
+.dest-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.04);
+    transition: transform 0.85s var(--ease-luxury), filter 0.5s ease;
+}
+
+.dest-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.7);
+}
+
+.dest-card:hover .dest-img {
+    transform: scale(1.07);
+    filter: saturate(1.05);
+}
+
+/* Editorial Content Overlay */
+.dest-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12, 16, 13, 0.05) 30%, rgba(12, 16, 13, 0.92) 100%);
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    transition: background 0.4s ease;
+}
+
+.dest-card:hover .dest-overlay {
+    background: linear-gradient(180deg, rgba(12, 16, 13, 0.2) 10%, rgba(12, 16, 13, 0.96) 100%);
+}
+
+.dest-region-tag {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+}
+
+.dest-overlay h3 {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--text-light);
+    margin-bottom: 0.65rem;
+    transition: color 0.3s ease;
+}
+
+.dest-tall .dest-overlay h3 {
+    font-size: 1.85rem;
+}
+
+.dest-card:hover .dest-overlay h3 {
+    color: var(--accent);
+}
+
+.dest-tall-desc {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #c6cdc9;
+    margin-bottom: 1rem;
+    max-width: 320px;
+}
+
+/* Link Routing to 404.html */
+.dest-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+    opacity: 0.88;
+    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dest-link svg {
+    width: 14px;
+    height: 14px;
+    color: var(--accent);
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.dest-card:hover .dest-link {
+    opacity: 1;
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.dest-link:hover svg {
+    transform: translateX(5px);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1024px) {
+    .dest-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 250px;
+    }
+    .dest-tall {
+        grid-row: span 1;
+    }
+    .dest-tall .dest-overlay h3 {
+        font-size: 1.45rem;
+    }
+    .dest-tall-desc {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .stackly-dest-section {
+        padding: 90px 5%;
+    }
+    .dest-title {
+        font-size: 2.8rem;
+    }
+    .dest-filter-bar {
+        gap: 0.6rem;
+    }
+    .dest-pill {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.74rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .dest-title {
+        font-size: 2.3rem;
+    }
+    .dest-bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 260px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. Scroll Reveal for Word-by-Word Title & Sequential Cards
+    const destObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('dest-card')) {
+                    const idx = parseInt(entry.target.getAttribute('data-dest-idx') || '0', 10);
+                    setTimeout(() => {
+                        entry.target.classList.add('reveal-active');
+                    }, idx * 90);
+                } else {
+                    entry.target.classList.add('reveal-active');
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.12
+    });
+
+    const titleEl = document.getElementById('destScrollTitle');
+    const cards = document.querySelectorAll('.dest-card');
+
+    if (titleEl) destObserver.observe(titleEl);
+    cards.forEach(card => destObserver.observe(card));
+
+    // 2. Interactive Region Filter Pills
+    const pills = document.querySelectorAll('.dest-pill');
+
+    pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            pills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            const targetRegion = pill.getAttribute('data-dest');
+
+            cards.forEach(card => {
+                const region = card.getAttribute('data-region') || '';
+                if (targetRegion === 'all' || region.includes(targetRegion)) {
+                    card.classList.remove('is-hidden');
+                    card.classList.add('reveal-active');
+                } else {
+                    card.classList.add('is-hidden');
+                }
+            });
+        });
+    });
+});
+
+</script>
+
+<!-- Journals Page: Featured Long-Form Monograph Spotlight Section -->
+<section class="journal-monograph-section" id="journalMonograph">
+    <div class="monograph-max-wrapper">
+        
+        <!-- Left Column: Editorial Story Lead & Pull Quote -->
+        <div class="monograph-narrative">
+            <div class="monograph-eyebrow">
+                <span class="monograph-line"></span>
+                <span>EDITOR'S PICK • 12 MIN READ</span>
+            </div>
+
+            <!-- Scroll-Triggered Word-by-Word Title -->
+            <h2 class="monograph-title" id="monographScrollTitle">
+                <span>Architecture</span> 
+                <span>Of</span> 
+                <span>Silence</span> 
+                <span>&amp;</span> 
+                <span>Coastline.</span>
+            </h2>
+
+            <!-- Interactive Pull-Quote Block with Hover Effect -->
+            <blockquote class="monograph-quote-box mono-fade">
+                <p>
+                    "True luxury for the modern nomad isn't excess ornament—it is acoustic stillness, unbroken horizon lines, and spaces engineered to let deep ideas breathe."
+                </p>
+            </blockquote>
+
+            <p class="monograph-summary mono-fade">
+                In our flagship Volume 04 essay, lead spatial architect Julian Vance documents how locally harvested cedar, volcanic stone, and zero-latency fiber infrastructure come together across STACKLY's coastal sanctuaries.
+            </p>
+
+            <!-- Author & Issue Metadata -->
+            <div class="monograph-author-row mono-fade">
+                <img src="https://unsplash.com" alt="Julian Vance - Principal Architect" class="monograph-avatar">
+                <div class="monograph-author-info">
+                    <h4>Julian Vance</h4>
+                    <span>Principal Spatial Architect • Nov 2026</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons with 404.html Navigation -->
+            <div class="monograph-actions mono-fade">
+                <a href="404.html" class="btn-mono btn-mono-gold">
+                    <span>Read Full Essay</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                </a>
+                <a href="404.html" class="btn-mono btn-mono-outline">
+                    <span>Download PDF Issue</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Column: Framed Editorial Cover Image -->
+        <div class="monograph-visual mono-fade">
+            <div class="monograph-cover-box">
+                <div class="monograph-gold-border"></div>
+                <img src="https://unsplash.com" alt="STACKLY Coastal Timber Pavilion Monograph Cover" class="monograph-cover-img">
+                
+                <div class="monograph-stamp">
+                    <span class="stamp-vol">VOL. 04</span>
+                    <span class="stamp-sep">•</span>
+                    <span class="stamp-topic">SPATIAL MONOGRAPH</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- SECTION CONTAINER --- */
+.journal-monograph-section {
+    background-color: var(--primary);
+    padding: 130px 5%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.monograph-max-wrapper {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* --- LEFT COLUMN: EDITORIAL NARRATIVE --- */
+.monograph-narrative {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.monograph-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.4rem;
+}
+
+.monograph-line {
+    width: 36px;
+    height: 1.5px;
+    background-color: var(--accent);
+}
+
+/* Scroll-Triggered Word-by-Word Title */
+.monograph-title {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.monograph-title span {
+    display: inline-block;
+    margin-right: 0.22em;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s var(--ease-luxury), transform 0.75s var(--ease-luxury);
+}
+
+.monograph-title.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.monograph-title.reveal-active span:nth-child(1) { transition-delay: 0.05s; }
+.monograph-title.reveal-active span:nth-child(2) { transition-delay: 0.16s; }
+.monograph-title.reveal-active span:nth-child(3) { transition-delay: 0.27s; }
+.monograph-title.reveal-active span:nth-child(4) { transition-delay: 0.38s; }
+.monograph-title.reveal-active span:nth-child(5) { transition-delay: 0.49s; }
+
+/* Interactive Pull-Quote Box with Hover Effect */
+.monograph-quote-box {
+    padding: 1.35rem 1.6rem;
+    margin-bottom: 1.8rem;
+    border-left: 2px solid rgba(212, 175, 55, 0.35);
+    background-color: rgba(18, 23, 20, 0.45);
+    border-radius: 0 4px 4px 0;
+    transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.45s var(--ease-luxury);
+}
+
+.monograph-quote-box p {
+    font-family: var(--font-serif);
+    font-size: 1.38rem;
+    font-style: italic;
+    line-height: 1.55;
+    color: var(--text-light);
+}
+
+.monograph-quote-box:hover {
+    border-left-color: var(--accent);
+    background-color: rgba(212, 175, 55, 0.06);
+    transform: translateX(6px);
+}
+
+.monograph-summary {
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 2.2rem;
+}
+
+/* Author Bio Row */
+.monograph-author-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.6rem;
+}
+
+.monograph-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+.monograph-author-info h4 {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+
+.monograph-author-info span {
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+}
+
+/* Action Buttons */
+.monograph-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.btn-mono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1rem 2.2rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.4s var(--ease-luxury);
+}
+
+.btn-mono svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.btn-mono-gold {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+}
+
+.btn-mono-gold:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(212, 175, 55, 0.22);
+}
+
+.btn-mono-gold:hover svg {
+    transform: translateX(5px);
+}
+
+.btn-mono-outline {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.btn-mono-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background-color: rgba(212, 175, 55, 0.05);
+    transform: translateY(-3px);
+}
+
+/* --- RIGHT COLUMN: COVER VISUAL --- */
+.monograph-visual {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.monograph-cover-box {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 560px;
+}
+
+.monograph-gold-border {
+    position: absolute;
+    top: 16px;
+    right: -16px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(212, 175, 55, 0.38);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 1;
+    transition: transform 0.5s var(--ease-luxury), border-color 0.4s ease;
+}
+
+.monograph-cover-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    z-index: 2;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    filter: saturate(0.9) contrast(1.04);
+    transition: transform 0.8s var(--ease-luxury), filter 0.5s ease;
+}
+
+.monograph-cover-box:hover .monograph-cover-img {
+    transform: translate(-5px, -5px);
+    filter: saturate(1.05);
+}
+
+.monograph-cover-box:hover .monograph-gold-border {
+    transform: translate(5px, 5px);
+    border-color: var(--accent);
+}
+
+.monograph-stamp {
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+    z-index: 3;
+    background-color: rgba(12, 16, 13, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 0.7rem 1.25rem;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-light);
+}
+
+.stamp-vol,
+.stamp-sep {
+    color: var(--accent);
+}
+
+/* Scroll Reveal Utility */
+.mono-fade {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.85s var(--ease-luxury), transform 0.85s var(--ease-luxury);
+}
+
+.mono-fade.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1100px) {
+    .monograph-max-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .monograph-visual {
+        justify-content: center;
+        order: -1;
+    }
+    .monograph-cover-box {
+        max-width: 100%;
+        height: 440px;
+    }
+    .monograph-gold-border {
+        display: none;
+    }
+    .monograph-stamp {
+        left: 16px;
+        bottom: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .journal-monograph-section {
+        padding: 90px 5%;
+    }
+    .monograph-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .monograph-title {
+        font-size: 2.4rem;
+    }
+    .monograph-quote-box p {
+        font-size: 1.18rem;
+    }
+    .monograph-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-mono {
+        width: 100%;
+    }
+    .monograph-cover-box {
+        height: 320px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const monographObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.14
+    });
+
+    const titleEl = document.getElementById('monographScrollTitle');
+    const fadeEls = document.querySelectorAll('.mono-fade');
+
+    if (titleEl) monographObserver.observe(titleEl);
+    fadeEls.forEach((el, idx) => {
+        el.style.transitionDelay = `${idx * 0.12}s`;
+        monographObserver.observe(el);
+    });
+});
+ 
+</script>
+
+<section class="fusion-cta-banner">
+    
+    <!-- Cinematic Panoramic Background Canvas Layer -->
+    <div class="banner-parallax-bg">
+        <img src="https://unsplash.com" alt="STACKLY Panoramic Horizon Backdrop" class="banner-bg-img">
+        <div class="banner-dark-overlay"></div>
+    </div>
+
+    <!-- Core Narrative Content Layer -->
+    <div class="banner-content-container">
+        <div class="banner-text-track">
+            <!-- Line 1: Slades from the left grid interface boundary -->
+            <h2 class="banner-line line-left" id="bannerLineLeft">Ready to Align Your Journey?</h2>
+            <!-- Line 2: Slades from the right grid interface boundary -->
+            <p class="banner-line line-right" id="bannerLineRight">Claim your capsule pod suite or private sanctuary dwelling today.</p>
+        </div>
+
+        <!-- Central Action Link Cluster routing safely to 404.html -->
+        <div class="banner-action-box" id="bannerActionBox">
+            <a href="404.html" class="btn btn-fill">Initiate Sequence</a>
+            <a href="404.html" class="btn">Explore Blueprint</a>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    /* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-banner: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- BANNER CANVAS STRUCTURE --- */
+.fusion-cta-banner {
+    position: relative;
+    width: 100%;
+    padding: 100px 5%;
+    overflow: hidden;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- CINEMATIC PARALLAX BACKDROP LAYER --- */
+.banner-parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.banner-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.6) contrast(1.1) brightness(0.4);
+    transform: scale(1.05);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle luxury depth overlay tint loop */
+.banner-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(12, 16, 13, 0.9) 0%, rgba(12, 16, 13, 0.5) 50%, rgba(12, 16, 13, 0.9) 100%);
+}
+
+/* Trigger parallax scaling shift on image when hovering across section area bounds */
+.fusion-cta-banner:hover .banner-bg-img {
+    transform: scale(1.01);
+}
+
+/* --- CONTENT ROW MATRIX DRAWERS --- */
+.banner-content-container {
+    position: relative;
+    z-index: 5;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.banner-text-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Line 1: Main Serif Heading Token */
+.banner-line.line-left {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.15;
+    letter-spacing: 1px;
+    /* Initial state before intersection scroll trigger fires */
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: var(--transition-banner);
+}
+
+/* Line 2: Sans Serif Description Text Sub-line */
+.banner-line.line-right {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Initial state before intersection scroll trigger fires */
+    opacity: 0;
+    transform: translateX(100px);
+    transition: var(--transition-banner);
+}
+
+/* --- SCROLL ACTIVATION CLASS STATES --- */
+.banner-line.line-left.reveal-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.banner-line.line-right.reveal-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s; /* Slight staggered step delay behind heading element line */
+}
+
+/* --- ACTION BUTTON GROUPS --- */
+.banner-action-box {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    /* Scale transition upward from core layout base */
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+    transition: var(--transition-banner);
+}
+
+.banner-action-box.reveal-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition-delay: 0.5s;
+}
+
+/* Reusable Standard Button Topologies */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.btn-fill {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.btn-fill:hover {
+    background: transparent;
+    color: var(--text-light);
+}
+
+/* --- RESPONSIVE DESIGN INTERFACE GRIDS --- */
+@media (max-width: 992px) {
+    .fusion-cta-banner { padding: 120px 5%; }
+    .banner-line.line-left { font-size: 3.2rem; }
+    .banner-line.line-right { font-size: 0.95rem; }
+}
+
+@media (max-width: 576px) {
+    .fusion-cta-banner { padding: 90px 5%; }
+    .banner-line.line-left { font-size: 2.3rem; }
+    .banner-line.line-right { font-size: 0.85rem; line-height: 1.6; }
+    .banner-action-box { flex-direction: column; width: 100%; gap: 1rem; }
+    .banner-action-box .btn { width: 100%; text-align: center; }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- HIGH-PERFORMANCE INTERSECTION OBSERVER FOR SIDE-SLIDING CTA ENTRIES ---
+    const bannerObserverOptions = {
+        root: null,
+        threshold: 0.15, // Activates animations when 15% of the banner enters viewport range bounds
+        rootMargin: "0px"
+    };
+
+    const bannerScrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target); // Unbind layout tracing links to preserve memory stack cycles
+            }
+        });
+    }, bannerObserverOptions);
+
+    // Capture explicit target elements inside layout matrix channels
+    const leftLine = document.getElementById('bannerLineLeft');
+    const rightLine = document.getElementById('bannerLineRight');
+    const actionBox = document.getElementById('bannerActionBox');
+
+    if (leftLine) bannerScrollObserver.observe(leftLine);
+    if (rightLine) bannerScrollObserver.observe(rightLine);
+    if (actionBox) bannerScrollObserver.observe(actionBox);
+});
+
+</script>
+
+<!-- Journals Page: Top Sanctuaries & Destination Dispatches Grid -->
+<section class="journal-top-dest-section" id="journalTopDest">
+    <div class="top-dest-wrapper">
+        
+        <!-- Centered Header with Letter-by-Letter Scroll Animation -->
+        <div class="top-dest-header">
+            <h2 class="top-dest-title" id="topDestLetterTitle">TOP SANCTUARIES</h2>
+            <p class="top-dest-subtitle top-dest-fade">
+                Field notes, architectural monographs, and coastal dispatches from our flagship residences across the globe.
+            </p>
+        </div>
+
+        <!-- 3-Column Sequential Image Card Grid (All Linking to 404.html) -->
+        <div class="top-dest-grid">
+            
+            <!-- Card 01 -->
+            <a href="404.html" class="top-dest-card" data-dest-card="0" aria-label="Read Uluwatu Bali Dispatch">
+                <img src="https://unsplash.com" alt="Uluwatu, Bali Cliffside Pods" class="top-dest-img">
+                <div class="top-dest-scrim"></div>
+                <div class="top-dest-caption">
+                    <div class="top-dest-text">
+                        <h3>Uluwatu, Bali</h3>
+                        <span>CLIFFSIDE ACOUSTIC PODS</span>
+                    </div>
+                    <span class="top-dest-chevron">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 02 -->
+            <a href="404.html" class="top-dest-card" data-dest-card="1" aria-label="Read Higashiyama Kyoto Dispatch">
+                <img src="https://unsplash.com" alt="Higashiyama, Kyoto Cedar Pavilion" class="top-dest-img">
+                <div class="top-dest-scrim"></div>
+                <div class="top-dest-caption">
+                    <div class="top-dest-text">
+                        <h3>Higashiyama, Kyoto</h3>
+                        <span>CEDAR COURTYARD PAVILION</span>
+                    </div>
+                    <span class="top-dest-chevron">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 03 -->
+            <a href="404.html" class="top-dest-card" data-dest-card="2" aria-label="Read Tulum Mexico Dispatch">
+                <img src="https://unsplash.com" alt="Tulum, Mexico Plunge Pool Villa" class="top-dest-img">
+                <div class="top-dest-scrim"></div>
+                <div class="top-dest-caption">
+                    <div class="top-dest-text">
+                        <h3>Tulum, Mexico</h3>
+                        <span>JUNGLE PLUNGE VILLA</span>
+                    </div>
+                    <span class="top-dest-chevron">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 04 -->
+            <a href="404.html" class="top-dest-card" data-dest-card="3" aria-label="Read Zermatt Switzerland Dispatch">
+                <img src="https://unsplash.com" alt="Zermatt, Switzerland Alpine Loft" class="top-dest-img">
+                <div class="top-dest-scrim"></div>
+                <div class="top-dest-caption">
+                    <div class="top-dest-text">
+                        <h3>Zermatt, Switzerland</h3>
+                        <span>ALPINE THERMAL LOFT</span>
+                    </div>
+                    <span class="top-dest-chevron">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 05 -->
+            <a href="404.html" class="top-dest-card" data-dest-card="4" aria-label="Read Shevaroy Hills Salem Dispatch">
+                <img src="https://unsplash.com" alt="Shevaroy Hills, Salem Mist Sanctuary" class="top-dest-img">
+                <div class="top-dest-scrim"></div>
+                <div class="top-dest-caption">
+                    <div class="top-dest-text">
+                        <h3>Shevaroy Hills, Salem</h3>
+                        <span>HIGHLAND MIST SANCTUARY</span>
+                    </div>
+                    <span class="top-dest-chevron">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 06 -->
+            <a href="404.html" class="top-dest-card" data-dest-card="5" aria-label="Read Amalfi Coast Dispatch">
+                <img src="https://unsplash.com" alt="Positano, Italy Architectural Residence" class="top-dest-img">
+                <div class="top-dest-scrim"></div>
+                <div class="top-dest-caption">
+                    <div class="top-dest-text">
+                        <h3>Positano, Italy</h3>
+                        <span>LIMESTONE HORIZON SUITE</span>
+                    </div>
+                    <span class="top-dest-chevron">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- SECTION CONTAINER --- */
+.journal-top-dest-section {
+    background-color: var(--primary);
+    padding: 130px 5%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.top-dest-wrapper {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.8rem;
+}
+
+/* --- CENTERED HEADER & LETTER-BY-LETTER ANIMATION --- */
+.top-dest-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.top-dest-title {
+    font-family: var(--font-serif);
+    font-size: 2.85rem;
+    font-weight: 400;
+    letter-spacing: 3.5px;
+    color: var(--text-light);
+    margin-bottom: 1.1rem;
+    line-height: 1.2;
+}
+
+.top-dest-title .letter-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s var(--ease-luxury), transform 0.55s var(--ease-luxury), color 0.3s ease;
+}
+
+.top-dest-title.reveal-active .letter-char {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.top-dest-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+.top-dest-fade {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s var(--ease-luxury) 0.45s, transform 0.8s var(--ease-luxury) 0.45s;
+}
+
+.top-dest-fade.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 3-COLUMN IMAGE GRID (MATCHING REFERENCE LAYOUT) --- */
+.top-dest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    width: 100%;
+}
+
+.top-dest-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 275px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.14);
+    text-decoration: none;
+
+    /* Sequential One-by-One Scroll Entry */
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s var(--ease-luxury),
+                transform 0.8s var(--ease-luxury),
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.top-dest-card.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Top Gold Bar Reveal on Hover */
+.top-dest-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-luxury);
+    z-index: 4;
+}
+
+.top-dest-card:hover::before {
+    transform: scaleX(1);
+}
+
+.top-dest-card:hover {
+    border-color: rgba(212, 175, 55, 0.55);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.72);
+    transform: translateY(-5px);
+}
+
+/* Image & Smooth Zoom Hover */
+.top-dest-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.04);
+    transition: transform 0.9s var(--ease-luxury), filter 0.5s ease;
+}
+
+.top-dest-card:hover .top-dest-img {
+    transform: scale(1.08);
+    filter: saturate(1.08) contrast(1.06);
+}
+
+/* Bottom Dark Gradient Scrim */
+.top-dest-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12, 16, 13, 0.04) 35%, rgba(12, 16, 13, 0.88) 100%);
+    z-index: 2;
+    transition: background 0.4s ease;
+}
+
+.top-dest-card:hover .top-dest-scrim {
+    background: linear-gradient(180deg, rgba(12, 16, 13, 0.15) 20%, rgba(12, 16, 13, 0.94) 100%);
+}
+
+/* Caption Overlay (Italic Serif Title + Uppercase Label + Right Chevron) */
+.top-dest-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.4rem 1.6rem;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: transform 0.45s var(--ease-luxury);
+}
+
+.top-dest-card:hover .top-dest-caption {
+    transform: translateY(-3px);
+}
+
+.top-dest-text h3 {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text-light);
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+    transition: color 0.35s ease;
+}
+
+.top-dest-card:hover .top-dest-text h3 {
+    color: var(--accent);
+}
+
+.top-dest-text span {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c6cdc9;
+}
+
+.top-dest-chevron {
+    width: 24px;
+    height: 24px;
+    color: var(--text-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 0.8;
+    transition: transform 0.4s var(--ease-luxury), color 0.35s ease, opacity 0.35s ease;
+}
+
+.top-dest-chevron svg {
+    width: 100%;
+    height: 100%;
+}
+
+.top-dest-card:hover .top-dest-chevron {
+    color: var(--accent);
+    opacity: 1;
+    transform: translateX(6px);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1024px) {
+    .top-dest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .top-dest-card {
+        height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .journal-top-dest-section {
+        padding: 90px 5%;
+    }
+    .top-dest-title {
+        font-size: 2.3rem;
+        letter-spacing: 2.5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .top-dest-title {
+        font-size: 1.95rem;
+    }
+    .top-dest-grid {
+        grid-template-columns: 1fr;
+    }
+    .top-dest-card {
+        height: 245px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. Split Title into Individual Letter Spans for Letter-by-Letter Animation
+    const titleEl = document.getElementById('topDestLetterTitle');
+    if (titleEl) {
+        const rawText = titleEl.textContent.trim();
+        titleEl.textContent = '';
+
+        [...rawText].forEach((char, index) => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.classList.add('letter-char');
+            span.style.transitionDelay = `${index * 0.045}s`;
+            titleEl.appendChild(span);
+        });
+    }
+
+    // 2. Scroll Observer for Letter-by-Letter Title & One-by-One Sequential Cards
+    const destGridObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('top-dest-card')) {
+                    const idx = parseInt(entry.target.getAttribute('data-dest-card') || '0', 10);
+                    setTimeout(() => {
+                        entry.target.classList.add('reveal-active');
+                    }, idx * 130);
+                } else {
+                    entry.target.classList.add('reveal-active');
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.14
+    });
+
+    const fadeSub = document.querySelector('.top-dest-fade');
+    const cards = document.querySelectorAll('.top-dest-card');
+
+    if (titleEl) destGridObserver.observe(titleEl);
+    if (fadeSub) destGridObserver.observe(fadeSub);
+    cards.forEach(card => destGridObserver.observe(card));
+});
+
+</script>
+
+<!-- Journals Page: Resident Contributors & Field Voices Section -->
+<section class="journal-contributors-section" id="journalContributors">
+    <div class="contrib-max-wrapper">
+        
+        <!-- Top Header Row -->
+        <div class="contrib-header">
+            <div class="contrib-heading-group">
+                <div class="contrib-eyebrow">
+                    <span class="contrib-dash"></span>
+                    <span>VOICES IN RESIDENCE</span>
+                </div>
+
+                <!-- Scroll-Triggered Word-by-Word Title -->
+                <h2 class="contrib-title" id="contribScrollTitle">
+                    <span>Letters</span> 
+                    <span>From</span> 
+                    <span>Our</span> 
+                    <span>Residents.</span>
+                </h2>
+            </div>
+
+            <div class="contrib-header-cta contrib-fade">
+                <a href="404.html" class="btn-contrib-outline">
+                    <span>Submit A Dispatch</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- 3-Column Sequential Contributor Cards -->
+        <div class="contrib-grid">
+            
+            <!-- Contributor 01 -->
+            <article class="contrib-card" data-contrib-idx="0">
+                <div class="contrib-card-top">
+                    <div class="contrib-img-frame">
+                        <img src="https://unsplash.com" alt="Clara Lindqvist - Spatial Designer" class="contrib-img">
+                        <span class="contrib-residency-tag">BALI RESIDENCY</span>
+                    </div>
+                </div>
+                <div class="contrib-card-body">
+                    <span class="contrib-issue-meta">ESSAY NO. 14 • 7 MIN READ</span>
+                    <h3>Designing Quietude in Tropical Brutalism</h3>
+                    <p class="contrib-quote">
+                        "Living for six weeks above the Uluwatu cliffs reshaped how I think about raw concrete, sea breeze, and acoustic stillness."
+                    </p>
+                    <div class="contrib-footer">
+                        <div class="contrib-author">
+                            <h4>Clara Lindqvist</h4>
+                            <span>Spatial Designer, Stockholm</span>
+                        </div>
+                        <a href="404.html" class="contrib-read-btn" aria-label="Read Clara Lindqvist Essay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7M7 7h10v10"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Contributor 02 -->
+            <article class="contrib-card" data-contrib-idx="1">
+                <div class="contrib-card-top">
+                    <div class="contrib-img-frame">
+                        <img src="https://unsplash.com" alt="Kenji Takahashi - Sound Artist" class="contrib-img">
+                        <span class="contrib-residency-tag">KYOTO RESIDENCY</span>
+                    </div>
+                </div>
+                <div class="contrib-card-body">
+                    <span class="contrib-issue-meta">ESSAY NO. 15 • 9 MIN READ</span>
+                    <h3>Field Recordings of Rain on Cedar Roofs</h3>
+                    <p class="contrib-quote">
+                        "Every courtyard at STACKLY Kyoto acts like a natural acoustic chamber—capturing dawn temple bells and cedar rain."
+                    </p>
+                    <div class="contrib-footer">
+                        <div class="contrib-author">
+                            <h4>Kenji Takahashi</h4>
+                            <span>Acoustic Composer, Osaka</span>
+                        </div>
+                        <a href="404.html" class="contrib-read-btn" aria-label="Read Kenji Takahashi Essay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7M7 7h10v10"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Contributor 03 -->
+            <article class="contrib-card" data-contrib-idx="2">
+                <div class="contrib-card-top">
+                    <div class="contrib-img-frame">
+                        <img src="https://unsplash.com" alt="Arjun Menon - Documentary Filmmaker" class="contrib-img">
+                        <span class="contrib-residency-tag">SALEM RESIDENCY</span>
+                    </div>
+                </div>
+                <div class="contrib-card-body">
+                    <span class="contrib-issue-meta">ESSAY NO. 16 • 6 MIN READ</span>
+                    <h3>Morning Mist Over the Shevaroy Ridges</h3>
+                    <p class="contrib-quote">
+                        "Between editing sessions in the fiber lab and sunrise coffee hikes, the highland air clears every creative bottleneck."
+                    </p>
+                    <div class="contrib-footer">
+                        <div class="contrib-author">
+                            <h4>Arjun Menon</h4>
+                            <span>Documentary Director, Bengaluru</span>
+                        </div>
+                        <a href="404.html" class="contrib-read-btn" aria-label="Read Arjun Menon Essay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7M7 7h10v10"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --surface: #121714;
+    --surface-hover: #171e1a;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- SECTION CONTAINER --- */
+.journal-contributors-section {
+    background-color: var(--primary);
+    padding: 130px 5%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.contrib-max-wrapper {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* --- TOP HEADER ROW --- */
+.contrib-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.contrib-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.1rem;
+}
+
+.contrib-dash {
+    width: 34px;
+    height: 1.5px;
+    background-color: var(--accent);
+}
+
+/* Scroll-Triggered Word-by-Word Title */
+.contrib-title {
+    font-family: var(--font-serif);
+    font-size: 3.8rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text-light);
+}
+
+.contrib-title span {
+    display: inline-block;
+    margin-right: 0.22em;
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.75s var(--ease-luxury), transform 0.75s var(--ease-luxury);
+}
+
+.contrib-title.reveal-active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contrib-title.reveal-active span:nth-child(1) { transition-delay: 0.05s; }
+.contrib-title.reveal-active span:nth-child(2) { transition-delay: 0.18s; }
+.contrib-title.reveal-active span:nth-child(3) { transition-delay: 0.30s; }
+.contrib-title.reveal-active span:nth-child(4) { transition-delay: 0.42s; }
+
+/* Header CTA Button */
+.btn-contrib-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.95rem 2rem;
+    border: 1px solid rgba(212, 175, 55, 0.38);
+    border-radius: 3px;
+    background-color: transparent;
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.35s var(--ease-luxury);
+}
+
+.btn-contrib-outline svg {
+    width: 15px;
+    height: 15px;
+    color: var(--accent);
+    transition: transform 0.35s var(--ease-luxury);
+}
+
+.btn-contrib-outline:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-contrib-outline:hover svg {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+.contrib-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s var(--ease-luxury) 0.45s, transform 0.8s var(--ease-luxury) 0.45s;
+}
+
+.contrib-fade.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 3-COLUMN SEQUENTIAL CONTRIBUTOR CARDS --- */
+.contrib-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+    width: 100%;
+}
+
+.contrib-card {
+    background-color: var(--surface);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    /* Sequential Scroll State */
+    opacity: 0;
+    transform: translateY(38px);
+    transition: opacity 0.8s var(--ease-luxury),
+                transform 0.8s var(--ease-luxury),
+                border-color 0.4s ease,
+                background-color 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.contrib-card.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contrib-card:hover {
+    background-color: var(--surface-hover);
+    border-color: rgba(212, 175, 55, 0.48);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.65);
+    transform: translateY(-6px);
+}
+
+/* Portrait Frame */
+.contrib-img-frame {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: #080a09;
+}
+
+.contrib-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: saturate(0.88) contrast(1.04);
+    transition: transform 0.85s var(--ease-luxury), filter 0.45s ease;
+}
+
+.contrib-card:hover .contrib-img {
+    transform: scale(1.06);
+    filter: saturate(1.04);
+}
+
+.contrib-residency-tag {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background-color: rgba(12, 16, 13, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0.35rem 0.8rem;
+    border-radius: 2px;
+}
+
+/* Card Body */
+.contrib-card-body {
+    padding: 1.9rem 1.8rem 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.contrib-issue-meta {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 0.7rem;
+}
+
+.contrib-card-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.contrib-card:hover .contrib-card-body h3 {
+    color: var(--accent);
+}
+
+.contrib-quote {
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 1.8rem;
+    flex-grow: 1;
+    transition: color 0.35s ease;
+}
+
+.contrib-card:hover .contrib-quote {
+    color: #c6cdc9;
+}
+
+/* Bottom Author & Read Arrow Row */
+.contrib-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.contrib-author h4 {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+
+.contrib-author span {
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    color: var(--muted);
+}
+
+.contrib-read-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: all 0.35s var(--ease-luxury);
+}
+
+.contrib-read-btn svg {
+    width: 15px;
+    height: 15px;
+    transition: transform 0.35s ease;
+}
+
+.contrib-card:hover .contrib-read-btn {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--primary);
+}
+
+.contrib-card:hover .contrib-read-btn svg {
+    transform: translate(2px, -2px);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1100px) {
+    .contrib-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .journal-contributors-section {
+        padding: 90px 5%;
+    }
+    .contrib-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contrib-title {
+        font-size: 2.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contrib-title {
+        font-size: 2.4rem;
+    }
+    .contrib-grid {
+        grid-template-columns: 1fr;
+    }
+    .btn-contrib-outline {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const contribObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('contrib-card')) {
+                    const idx = parseInt(entry.target.getAttribute('data-contrib-idx') || '0', 10);
+                    setTimeout(() => {
+                        entry.target.classList.add('reveal-active');
+                    }, idx * 160);
+                } else {
+                    entry.target.classList.add('reveal-active');
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.14
+    });
+
+    const titleEl = document.getElementById('contribScrollTitle');
+    const fadeEl = document.querySelector('.contrib-fade');
+    const cards = document.querySelectorAll('.contrib-card');
+
+    if (titleEl) contribObserver.observe(titleEl);
+    if (fadeEl) contribObserver.observe(fadeEl);
+    cards.forEach(card => contribObserver.observe(card));
+});
+
+</script>
+
+
+<!-- Immersive Verified Subscription CTA Banner Section -->
+<section class="ledger-subscribe-banner">
+    
+    <!-- Cinematic Panoramic Background Canvas Layer -->
+    <div class="ledger-parallax-bg">
+        <img src="https://unsplash.com" alt="STACKLY Panoramic Horizon Backdrop" class="ledger-bg-img">
+        <div class="ledger-dark-overlay"></div>
+    </div>
+
+    <!-- Core Form Layout Container -->
+    <div class="ledger-content-container">
+        <div class="ledger-header scroll-fade-in-id">
+            <p class="ledger-tag">The STACKLY Journal</p>
+            <h2 class="ledger-title">Subscribe to the Collective Manifest</h2>
+            <p class="ledger-subtitle">Join our network of global computational creators and claim early sequence drop access keys.</p>
+        </div>
+
+        <!-- Interactive Validation Form Core -->
+        <form class="ledger-form-wrapper scroll-fade-in-id" id="ledgerSubscribeForm" novalidate>
+            <div class="ledger-input-group" id="inputGroupContainer">
+                <div class="input-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                </div>
+                <input type="email" id="subscriberEmailField" placeholder="Enter your digital address vectors..." autocomplete="off" required>
+                
+                <!-- Dynamic Localized Client Error Prompt Label Container -->
+                <span class="ledger-error-prompt" id="clientErrorPrompt">Please fill out this field with a valid address.</span>
+            </div>
+
+            <button type="submit" class="btn btn-ledger-cta" id="submitLedgerBtn">
+                <span>Join Manifest</span> <i class="ri-arrow-right-line"></i>
+            </button>
+        </form>
+    </div>
+
+</section>
+
+<style>
+    /* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-ledger: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-snappy: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- BANNER CANVAS STRUCTURE --- */
+.ledger-subscribe-banner {
+    position: relative;
+    width: 100%;
+    padding: 100px 5%;
+    overflow: hidden;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(214, 175, 55, 0.05);
+}
+
+/* --- CINEMATIC PARALLAX BACKDROP LAYER --- */
+.ledger-parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ledger-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.5) contrast(1.1) brightness(0.35);
+    transform: scale(1.04);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ledger-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(12, 16, 13, 0.95) 0%, rgba(12, 16, 13, 0.6) 50%, rgba(12, 16, 13, 0.95) 100%);
+}
+
+.ledger-subscribe-banner:hover .ledger-bg-img {
+    transform: scale(1.01);
+}
+
+/* --- CONTENT ROW MATRIX DRAWERS --- */
+.ledger-content-container {
+    position: relative;
+    z-index: 5;
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.ledger-tag {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+.ledger-title {
+    font-family: var(--font-serif);
+    font-size: 3.8rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.2rem;
+}
+
+.ledger-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* --- INTERACTIVE VALIDATION FORM COMPONENT --- */
+.ledger-form-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.ledger-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(17, 22, 18, 0.6);
+    border: 1px solid rgba(214, 175, 55, 0.15);
+    border-radius: 4px;
+    padding: 0 1.5rem;
+    flex-grow: 1;
+    height: 60px;
+    transition: var(--transition-snappy);
+}
+
+.ledger-input-group:focus-within {
+    border-color: var(--accent);
+    background: rgba(17, 22, 18, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.input-icon-box {
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.2rem;
+    opacity: 0.8;
+}
+
+.input-icon-box svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ledger-input-group input {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-light);
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+
+.ledger-input-group input::placeholder {
+    color: rgba(138, 146, 142, 0.6);
+}
+
+/* Localized Premium Error Notification Tag */
+.ledger-error-prompt {
+    position: absolute;
+    bottom: -28px;
+    left: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--accent); /* Custom Golden error accent */
+    letter-spacing: 0.5px;
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+    transition: var(--transition-snappy);
+}
+
+/* Active UI Mutation Class Overrides for Field Validation Errors */
+.ledger-input-group.field-invalid {
+    border-color: #ef4444; /* Dynamic warning red indicator line */
+    animation: structuralShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.ledger-input-group.field-invalid .ledger-error-prompt {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Premium Verification Action Button */
+.btn-ledger-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 60px;
+    padding: 0 2.5rem;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    color: var(--primary);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-snappy);
+}
+
+.btn-ledger-cta i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-ledger-cta:hover {
+    background: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--primary);
+}
+
+.btn-ledger-cta:hover i {
+    transform: translateX(5px);
+}
+
+/* --- HARD-CODED SHAKE KEYFRAMES PHYSICS --- */
+@keyframes structuralShake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Intersection Scroll Placeholders */
+.scroll-fade-in-id {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: var(--transition-ledger);
+}
+.scroll-fade-in-id.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVE ADAPTABILITY MATRIX GRIDS --- */
+@media (max-width: 992px) {
+    .ledger-subscribe-banner { padding: 120px 5%; }
+    .ledger-title { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .ledger-form-wrapper { flex-direction: column; width: 100%; gap: 2.2rem; }
+    .ledger-input-group { width: 100%; }
+    .btn-ledger-cta { width: 100%; }
+    .ledger-error-prompt { bottom: -24px; }
+}
+
+@media (max-width: 480px) {
+    .ledger-subscribe-banner { padding: 90px 5%; }
+    .ledger-title { font-size: 2.3rem; }
+    .ledger-subtitle { font-size: 0.85rem; }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. HIGH-PERFORMANCE INTERSECTION OBSERVER FOR TRANSITION LOOPS ---
+    const ledgerOptions = {
+        root: null,
+        threshold: 0.15,
+        rootMargin: "0px"
+    };
+
+    const ledgerScrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, ledgerOptions);
+
+    const scrollTargets = document.querySelectorAll('.scroll-fade-in-id');
+    scrollTargets.forEach(target => ledgerScrollObserver.observe(target));
+
+    // --- 2. ACTIVE VERIFICATION & REDIRECTION ROUTING ENGINE ---
+    const subscribeForm = document.getElementById('ledgerSubscribeForm');
+    const emailField = document.getElementById('subscriberEmailField');
+    const inputGroup = document.getElementById('inputGroupContainer');
+
+    if (subscribeForm && emailField && inputGroup) {
+        
+        subscribeForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Intercept default unverified forms dispatch actions
+
+            const stringValue = emailField.value.trim();
+            // Basic structural matrix regex validation check for email vectors
+            const emailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (stringValue === "" || !emailRegexPattern.test(stringValue)) {
+                // Clear any existing active class cycles to allow animation refresh triggers
+                inputGroup.classList.remove('field-invalid');
+                void inputGroup.offsetWidth; // Force a hardware reflow layout cycle reload execution
+                
+                // Inject structural error status classes instantly
+                inputGroup.classList.add('field-invalid');
+            } else {
+                // Scrub validation error status classes cleanly on success parameters verification
+                inputGroup.classList.remove('field-invalid');
+                
+                // Perform clean production framework client navigation redirection
+                window.location.href = "404.html";
+            }
+        });
+
+        // Scrub layout warning states immediately when client edits tracking parameters
+        emailField.addEventListener('input', () => {
+            if (inputGroup.classList.contains('field-invalid')) {
+                inputGroup.classList.remove('field-invalid');
+            }
+        });
+    }
+});
+
+</script>
+
+<!-- Immersive Brand Infrastructure Footer Component -->
+<footer class="ecosystem-footer">
+    <div class="footer-max-wrapper">
+        
+        
+        <div class="footer-column brand-summary-box">
+            <!-- Brand Logo Image Tag serving as Smooth Back-To-Top Trigger -->
+           <a href="#" class="footer-logo-trigger" id="backToTopLogo" aria-label="Scroll Back to Top">
+    <img src="./assests/stackly-logo.png" alt="STACKLY Logo" class="footer-brand-logo">
+</a>
+            <p class="footer-bio-text">
+                A premium structural sanctuary and cooperative digital nomad network engineered explicitly to foster high-impact creation and deep natural alignment.
+            </p>
+            <div class="footer-social-row">
+                <!-- Inline SVG Vector Social Anchors Routing safely to 404.html -->
+                <a href="404.html" class="social-vector-link" aria-label="Instagram Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="Facebook Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="X Studio Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z M4 20l6.768 -6.768M20 4l-6.768 6.768"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="LinkedIn Connection Gate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="404.html" class="social-vector-link" aria-label="YouTube Cinema Channel">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="15" x="2" y="4" rx="2.18" ry="2.18"/><path d="m10 15 5-3-5-3z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Column 2: Discover Spaces Tree -->
+        <div class="footer-column">
+            <h3 class="footer-tree-title">Curated Spaces</h3>
+            <ul class="footer-links-tree">
+                <li><a href="404.html">Oasis Pod Clusters</a></li>
+                <li><a href="404.html">Panoramic Oasis Suites</a></li>
+                <li><a href="404.html">Nirvana Private Villas</a></li>
+                <li><a href="404.html">Zen Female Custom Pavilions</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Corporate Blueprint Ecosystem Links -->
+        <div class="footer-column">
+            <h3 class="footer-tree-title">Ecosystem Support</h3>
+            <ul class="footer-links-tree">
+                <li><a href="404.html">Ecosystem Ledger</a></li>
+                <li><a href="404.html">Redirection Nodes</a></li>
+                <li><a href="404.html">Nomad Concierge Desk</a></li>
+                <li><a href="404.html">Bespoke Enterprise Accreditations</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Geographic Address Vector & Channels Map -->
+        <div class="footer-column contact-info-box">
+            <h3 class="footer-tree-title">Resort Hub</h3>
+            <div class="contact-channel-row">
+                <div class="contact-vector-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <p>MMR Complex, Periyakollapatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+            </div>
+            <div class="contact-channel-row">
+                <div class="contact-vector-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.79 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <p>+91 7010792745</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Structural Sub-Baseline Copyright Row -->
+    <div class="footer-sub-baseline">
+        <div class="baseline-max-wrapper">
+            <p class="copyright-label">&copy; 2026 STACKLY Spaces Inc. All architectural rights reserved.</p>
+            <div class="baseline-privacy-tree">
+                <a href="404.html">Privacy Matrix</a>
+                <a href="404.html">Terms of Sequence</a>
+                <a href="404.html">Data Management</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+
+    .footer-logo-trigger {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer-brand-logo {
+    display: block;
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+}
+    /* --- BRAND CONFIGURATION VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --accent: #d4af37; /* STACKLY Gold */
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-footer: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- FOOTER CANVAS ARCHITECTURE --- */
+.ecosystem-footer {
+    background-color: #080c09;
+    padding: 100px 5% 0 5%;
+    border-top: 1px solid rgba(214, 175, 55, 0.1);
+    font-family: var(--font-sans);
+    position: relative;
+    width: 100%;
+}
+
+.footer-max-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr 1fr 1.1fr; 
+    gap: 4.5rem;
+    padding-bottom: 80px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* --- IDENTITY DETAILS & LOGO TRIGGER --- */
+.footer-logo-trigger {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1.8rem;
+    transition: var(--transition-footer);
+}
+
+.footer-logo-trigger:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.footer-brand-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-bio-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    max-width: 325px;
+}
+
+.footer-social-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-vector-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(214, 175, 55, 0.04);
+    border: 1px solid rgba(214, 175, 55, 0.15);
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition-footer);
+}
+
+.social-vector-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.social-vector-link:hover {
+    color: var(--primary);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(214, 175, 55, 0.15);
+}
+
+/* --- COLUMNS 2 & 3: LINKS TREES --- */
+.footer-tree-title {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-tree-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.footer-links-tree {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-links-tree a {
+    font-size: 0.95rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: var(--transition-footer);
+    display: inline-block;
+}
+
+.footer-links-tree a:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+/* --- COLUMN 4: CHANNELS & LABELS --- */
+.contact-info-box {
+    gap: 1.6rem;
+}
+
+.contact-channel-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+
+.contact-vector-icon {
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.contact-vector-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-channel-row p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+/* --- BOTTOM SUB-BASELINE --- */
+.footer-sub-baseline {
+    width: 100%;
+    border-top: 1px solid rgba(214, 175, 55, 0.08);
+    padding: 35px 0;
+}
+
+.baseline-max-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.copyright-label {
+    font-size: 0.85rem;
+    color: rgba(138, 146, 142, 0.7);
+}
+
+.baseline-privacy-tree {
+    display: flex;
+    gap: 2rem;
+}
+
+.baseline-privacy-tree a {
+    font-size: 0.85rem;
+    color: rgba(138, 146, 142, 0.7);
+    text-decoration: none;
+    transition: var(--transition-footer);
+}
+
+.baseline-privacy-tree a:hover {
+    color: var(--accent);
+}
+
+/* --- RESPONSIVE GRIDS BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .footer-max-wrapper { grid-template-columns: repeat(2, 1fr); gap: 4rem; }
+}
+
+@media (max-width: 768px) {
+    .ecosystem-footer { padding-top: 60px; }
+    .footer-max-wrapper { grid-template-columns: 1fr; gap: 3.5rem; padding-bottom: 60px; }
+    .footer-tree-title { margin-bottom: 1.5rem; }
+    .baseline-max-wrapper { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .baseline-privacy-tree { justify-content: center; gap: 1.5rem; }
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // --- AUTOMATED BACK-TO-TOP SCROLL ANIMATION FUNCTION ---
+    const backToTopLogo = document.getElementById('backToTopLogo');
+    
+    if (backToTopLogo) {
+        backToTopLogo.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            
+            // Execute smooth hardware scroll back to top apex coordinates
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// Footer Logo - Smooth Scroll to Top
+document.getElementById("backToTopLogo").addEventListener("click", function (event) {
+    event.preventDefault();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+</script>
+</body>
+</html>

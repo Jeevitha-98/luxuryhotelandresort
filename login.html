@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | STACKLY Luxury Hostel & Resort</title>
+    
+    <!-- Brand Typography -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <main class="auth-viewport">
+        <div class="auth-split-container">
+            
+            <!-- Left Column: Brand Narrative & Sanctuary Showcase (Matching Reference Layout) -->
+            <div class="auth-brand-panel">
+                <!-- Subtle Floating Vector Watermarks -->
+                <svg class="watermark-icon wm-top-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <svg class="watermark-icon wm-bottom-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                </svg>
+
+                <div class="brand-panel-content">
+                    <div class="brand-pill">
+                        <span class="pill-dot"></span>
+                        <span>STACKLY SANCTUARIES</span>
+                    </div>
+
+                    <h1 class="brand-headline">
+                        Stay Inspired.<br>
+                        <span class="gold-line">Live Deeper.</span>
+                    </h1>
+
+                    <p class="brand-subcopy">
+                        Thoughtfully engineered acoustic pods, cliffside thermal pools, and global creator hubs crafted for remote architects and modern explorers.
+                    </p>
+
+                    <div class="brand-showcase-frame">
+                        <img src="https://unsplash.com" alt="STACKLY Resort Courtyard & Collective" class="brand-showcase-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Authentication Form Card -->
+            <div class="auth-form-panel">
+                <div class="form-panel-inner">
+                    
+                    <!-- Back to Home Navigation -->
+                    <a href="index.html" class="back-home-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        <span>Back to Home</span>
+                    </a>
+
+                    <div class="form-header">
+                        <h2>Welcome Back</h2>
+                        <p>Sign in to manage your pod residencies, wellness rituals, and collective account.</p>
+                    </div>
+
+                    <!-- Login Form -->
+                    <form class="stackly-login-form" id="stacklyLoginForm" novalidate>
+                        
+                        <!-- Field 1: Login As (Account Type Selector) -->
+                        <div class="auth-field-group" id="groupRole">
+                            <label for="accountRole">Login As</label>
+                            <div class="auth-input-shell">
+                                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                <select id="accountRole" required>
+                                    <option value="" disabled selected>Select account type</option>
+                                    <option value="client">Client (Guest / Resident)</option>
+                                    <option value="partner">Partner (Host / Curator)</option>
+                                </select>
+                                <svg class="select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </div>
+                            <span class="auth-error-text">Please fill out this field</span>
+                        </div>
+
+                        <!-- Field 2: Email Address -->
+                        <div class="auth-field-group" id="groupEmail">
+                            <label for="loginEmail">Email Address</label>
+                            <div class="auth-input-shell">
+                                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                                <input type="email" id="loginEmail" placeholder="Enter your email" autocomplete="email" required>
+                            </div>
+                            <span class="auth-error-text">Please fill out this field</span>
+                        </div>
+
+                        <!-- Field 3: Password -->
+                        <div class="auth-field-group" id="groupPassword">
+                            <label for="loginPassword">Password</label>
+                            <div class="auth-input-shell">
+                                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <input type="password" id="loginPassword" placeholder="Enter your password" autocomplete="current-password" required>
+                                <button type="button" class="toggle-pw-btn" id="togglePwBtn" aria-label="Toggle Password Visibility">
+                                    <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="auth-error-text">Please fill out this field</span>
+                        </div>
+
+                        <!-- Forgot Password Link (Routes to 404.html) -->
+                        <div class="forgot-pw-row">
+                            <a href="404.html" class="forgot-link">Forgot Password?</a>
+                        </div>
+
+                        <!-- Primary Sign In Button -->
+                        <button type="submit" class="btn-signin-gold">Sign In</button>
+
+                    </form>
+
+                    <!-- Social Login Divider -->
+                    <div class="social-divider">
+                        <span>OR CONTINUE WITH</span>
+                    </div>
+
+                    <!-- Social Login Buttons (Both Route to 404.html) -->
+                    <div class="social-auth-grid">
+                        <a href="404.html" class="btn-social-auth">
+                            <!-- Google Vector Icon -->
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
+                                <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
+                                <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.8z"/>
+                                <path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 21.4 7.4 24 12 24z"/>
+                            </svg>
+                            <span>Google</span>
+                        </a>
+
+                        <a href="404.html" class="btn-social-auth">
+                            <!-- Facebook Vector Icon -->
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="#1877F2">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+
+                    <!-- Create Account Footer Prompt (Routes to signup.html) -->
+                    <p class="signup-prompt">
+                        Don't have an account? <a href="signup.html">Create Account</a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+   <style>
+    /* --- BRAND DESIGN VARIABLES --- */
+:root {
+    --primary: #0c100d;
+    --panel-left: #111613;
+    --panel-right: #151b18;
+    --input-bg: #1b221e;
+    --accent: #d4af37;
+    --text-light: #f5f5f5;
+    --muted: #8a928e;
+    --error-red: #f87171;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- OUTER VIEWPORT --- */
+.auth-viewport {
+    min-height: 100vh;
+    width: 100%;
+    padding: 2.5rem 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.06), transparent 55%), var(--primary);
+}
+
+.auth-split-container {
+    max-width: 1180px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75);
+}
+
+/* --- LEFT PANEL: BRAND STORY & IMAGE --- */
+.auth-brand-panel {
+    position: relative;
+    background: linear-gradient(155deg, #131915 0%, #0d120f 100%);
+    padding: 3.5rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(212, 175, 55, 0.1);
+    overflow: hidden;
+}
+
+.watermark-icon {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    color: rgba(212, 175, 55, 0.12);
+    pointer-events: none;
+}
+
+.wm-top-right {
+    top: 32px;
+    right: 32px;
+}
+
+.wm-bottom-left {
+    bottom: 28px;
+    left: 28px;
+}
+
+.brand-panel-content {
+    position: relative;
+    z-index: 2;
+}
+
+.brand-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 0.4rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 1.6rem;
+}
+
+.pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+.brand-headline {
+    font-family: var(--font-serif);
+    font-size: 3.3rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--text-light);
+    margin-bottom: 1.25rem;
+}
+
+.brand-headline .gold-line {
+    color: var(--accent);
+}
+
+.brand-subcopy {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 2.2rem;
+    max-width: 410px;
+}
+
+.brand-showcase-frame {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+}
+
+.brand-showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.92) contrast(1.04);
+    transition: transform 0.8s var(--ease-luxury);
+}
+
+.brand-showcase-frame:hover .brand-showcase-img {
+    transform: scale(1.05);
+}
+
+/* --- RIGHT PANEL: AUTHENTICATION FORM --- */
+.auth-form-panel {
+    background-color: var(--panel-right);
+    padding: 3.2rem 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-panel-inner {
+    width: 100%;
+    max-width: 420px;
+}
+
+.back-home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 1.4rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.back-home-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+.back-home-link:hover {
+    transform: translateX(-4px);
+    opacity: 0.85;
+}
+
+.form-header {
+    margin-bottom: 1.8rem;
+}
+
+.form-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+}
+
+.form-header p {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* Form Fields */
+.stackly-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.auth-field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-field-group label {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.3px;
+}
+
+.auth-input-shell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    border-radius: 8px;
+    height: 48px;
+    padding: 0 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-input-shell:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+.field-icon {
+    width: 17px;
+    height: 17px;
+    color: var(--muted);
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+.auth-input-shell:focus-within .field-icon {
+    color: var(--accent);
+}
+
+.auth-input-shell input,
+.auth-input-shell select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.auth-input-shell input::placeholder {
+    color: rgba(138, 146, 142, 0.6);
+}
+
+.auth-input-shell select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-right: 1.5rem;
+}
+
+.auth-input-shell select option {
+    background-color: var(--panel-right);
+    color: var(--text-light);
+}
+
+.select-chevron {
+    position: absolute;
+    right: 14px;
+    width: 15px;
+    height: 15px;
+    color: var(--muted);
+    pointer-events: none;
+}
+
+.toggle-pw-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: color 0.25s ease;
+}
+
+.toggle-pw-btn:hover {
+    color: var(--accent);
+}
+
+.toggle-pw-btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* Validation Prompt */
+.auth-error-text {
+    display: none;
+    font-size: 0.72rem;
+    color: var(--error-red);
+    margin-top: 0.35rem;
+}
+
+.auth-field-group.is-invalid .auth-input-shell {
+    border-color: var(--error-red);
+}
+
+.auth-field-group.is-invalid .auth-error-text {
+    display: block;
+}
+
+/* Forgot Password */
+.forgot-pw-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -0.25rem;
+}
+
+.forgot-link {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.25s ease;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+/* Sign In CTA Button */
+.btn-signin-gold {
+    width: 100%;
+    height: 48px;
+    margin-top: 0.3rem;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.35s var(--ease-luxury);
+}
+
+.btn-signin-gold:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(212, 175, 55, 0.24);
+}
+
+/* Divider */
+.social-divider {
+    position: relative;
+    text-align: center;
+    margin: 1.5rem 0 1.2rem 0;
+}
+
+.social-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(212, 175, 55, 0.14);
+}
+
+.social-divider span {
+    position: relative;
+    background-color: var(--panel-right);
+    padding: 0 0.85rem;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+}
+
+/* Social Login Grid */
+.social-auth-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-social-auth {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 44px;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-social-auth:hover {
+    border-color: var(--accent);
+    background-color: #212a25;
+    transform: translateY(-2px);
+}
+
+/* Create Account Prompt */
+.signup-prompt {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.signup-prompt a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.signup-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 960px) {
+    .auth-split-container {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+    }
+    .auth-brand-panel {
+        display: none;
+    }
+    .auth-form-panel {
+        padding: 2.6rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-viewport {
+        padding: 1.2rem;
+    }
+    .auth-form-panel {
+        padding: 2rem 1.4rem;
+    }
+    .social-auth-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+   </style>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('stacklyLoginForm');
+    const roleSelect = document.getElementById('accountRole');
+    const emailInput = document.getElementById('loginEmail');
+    const passwordInput = document.getElementById('loginPassword');
+    const togglePwBtn = document.getElementById('togglePwBtn');
+
+    const groupRole = document.getElementById('groupRole');
+    const groupEmail = document.getElementById('groupEmail');
+    const groupPassword = document.getElementById('groupPassword');
+
+    // 1. Toggle Password Visibility
+    if (togglePwBtn && passwordInput) {
+        togglePwBtn.addEventListener('click', () => {
+            const isHidden = passwordInput.type === 'password';
+            passwordInput.type = isHidden ? 'text' : 'password';
+        });
+    }
+
+    // 2. Clear Validation Errors Live on User Input
+    roleSelect.addEventListener('change', () => {
+        if (roleSelect.value) groupRole.classList.remove('is-invalid');
+    });
+
+    emailInput.addEventListener('input', () => {
+        if (emailInput.value.trim()) groupEmail.classList.remove('is-invalid');
+    });
+
+    passwordInput.addEventListener('input', () => {
+        if (passwordInput.value.trim()) groupPassword.classList.remove('is-invalid');
+    });
+
+    // 3. Validate Fields -> Save Email to localStorage -> Route to Role Dashboard
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!roleSelect.value) {
+            groupRole.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (!emailRegex.test(emailInput.value.trim())) {
+            groupEmail.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (!passwordInput.value.trim()) {
+            groupPassword.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Extract clean display username from email prefix & store in localStorage
+        const emailVal = emailInput.value.trim();
+        const roleVal = roleSelect.value;
+        const rawPrefix = emailVal.split('@')[0].replace(/[._-]+/g, ' ');
+        const formattedName = rawPrefix
+            .split(' ')
+            .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+            .join(' ');
+
+        localStorage.setItem('stackly_user_email', emailVal);
+        localStorage.setItem('stackly_user_name', formattedName);
+        localStorage.setItem('stackly_user_role', roleVal);
+
+        // Route to Partner Dashboard or Client Dashboard
+        if (roleVal === 'partner') {
+            window.location.href = 'partner-dashboard.html';
+        } else {
+            window.location.href = 'client-dashboard.html';
+        }
+    });
+});
+
+   </script>
+</body>
+</html>
